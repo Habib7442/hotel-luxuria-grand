@@ -1,65 +1,53 @@
-import Image from "next/image";
+import { Navbar } from "@/components/navbar";
+import { Hero } from "@/components/hero";
+import { FeaturedRooms } from "@/components/featured-rooms";
+import { BrandStory } from "@/components/brand-story";
+import { MapPin, Star, Hotel } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="flex-1 bg-cream">
+      <Navbar />
+      <Hero />
+      
+      {/* Welcome Strip */}
+      <section className="py-20 bg-cream border-y border-taupe/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <div className="flex flex-col items-center text-center group cursor-default">
+              <div className="w-12 h-12 bg-marigold/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-marigold/20 transition-colors">
+                <MapPin className="w-6 h-6 text-marigold" />
+              </div>
+              <p className="font-jakarta font-semibold text-[10px] uppercase tracking-[0.2em] text-taupe">Location</p>
+              <p className="font-lora text-lg text-tobacco mt-1">NIT Road, Silchar</p>
+            </div>
+
+            <div className="flex flex-col items-center text-center group cursor-default">
+              <div className="w-12 h-12 bg-marigold/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-marigold/20 transition-colors">
+                <Star className="w-6 h-6 text-marigold" />
+              </div>
+              <p className="font-jakarta font-semibold text-[10px] uppercase tracking-[0.2em] text-taupe">Rating</p>
+              <p className="font-lora text-lg text-tobacco mt-1">Excellent 4.5 / 5</p>
+            </div>
+
+            <div className="flex flex-col items-center text-center group cursor-default">
+              <div className="w-12 h-12 bg-marigold/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-marigold/20 transition-colors">
+                <Hotel className="w-6 h-6 text-marigold" />
+              </div>
+              <p className="font-jakarta font-semibold text-[10px] uppercase tracking-[0.2em] text-taupe">Experience</p>
+              <p className="font-lora text-lg text-tobacco mt-1">Premium Rooms & Suites</p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <FeaturedRooms />
+      <BrandStory />
+      
+      {/* Footer Placeholder for now */}
+      <div className="h-32 bg-tobacco flex items-center justify-center">
+        <p className="text-white font-playfair tracking-widest uppercase text-xs">© 2026 Hotel Luxuria Grand</p>
+      </div>
+    </main>
   );
 }
