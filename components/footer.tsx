@@ -89,14 +89,20 @@ export const Footer = () => {
               </div>
               <div className="flex items-start space-x-4">
                 <Phone size={20} className="text-royal-gold mt-1 shrink-0" />
-                <p className="text-champagne/60 text-sm font-jakarta font-bold">
-                  +91 81043 99400 <br />
-                  +91 81099 01800
-                </p>
+                <div className="flex flex-col space-y-1">
+                  <a href="tel:+918104399400" className="text-champagne/60 hover:text-royal-gold text-sm font-jakarta font-bold transition-colors">
+                    +91 81043 99400
+                  </a>
+                  <a href="tel:+918109901800" className="text-champagne/60 hover:text-royal-gold text-sm font-jakarta font-bold transition-colors">
+                    +91 81099 01800
+                  </a>
+                </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Mail size={20} className="text-royal-gold mt-1 shrink-0" />
-                <p className="text-champagne/60 text-sm font-jakarta uppercase font-bold">luxuriagrand2025@gmail.com</p>
+                <a href="mailto:luxuriagrand2025@gmail.com" className="text-champagne/60 hover:text-royal-gold text-sm font-jakarta uppercase font-bold transition-colors">
+                  luxuriagrand2025@gmail.com
+                </a>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -112,13 +112,13 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="pt-12 flex justify-center"
+          className="pt-12 flex flex-col md:flex-row justify-center items-center gap-6"
         >
           <Button
             asChild
             className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 bg-royal-gold text-midnight-purple rounded-none transition-all duration-500 shadow-2xl hover:bg-champagne cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto relative overflow-hidden"
           >
-            <Link href="/book" className="flex items-center gap-4 relative z-10">
+            <Link href="/rooms" className="flex items-center gap-4 relative z-10">
               Start Your Journey
               <motion.div
                 animate={{ x: [0, 5, 0] }}
@@ -127,6 +127,17 @@ export const Hero = () => {
                 <MoveRight className="w-5 h-5" />
               </motion.div>
             </Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 border-royal-gold/50 text-royal-gold rounded-none transition-all duration-500 hover:bg-royal-gold/10 cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto"
+          >
+            <a href="tel:+918104399400" className="flex items-center gap-4">
+              <Phone className="w-5 h-5" />
+              Call to Book
+            </a>
           </Button>
         </motion.div>
       </div>
