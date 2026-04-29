@@ -8,7 +8,8 @@ import Link from "next/link";
 
 export const BrandStory = () => {
   return (
-    <section className="py-20 md:py-32 bg-white overflow-hidden">
+    <section className="py-24 md:py-48 bg-midnight-purple overflow-hidden relative">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-deep-maroon/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
           {/* Image Stack */}
@@ -17,28 +18,30 @@ export const BrandStory = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="relative aspect-[4/5] w-full md:w-[85%] rounded-lg overflow-hidden shadow-2xl z-10"
+              transition={{ duration: 1.2 }}
+              className="relative aspect-[4/5] w-full md:w-[85%] rounded-none overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] z-10 border border-white/5"
             >
               <Image
-                src="/assets/lobby_story.png"
+                src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.28.45 PM.jpeg"
                 alt="Luxuria Grand Lobby"
                 fill
-                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover scale-110 hover:scale-100 transition-transform duration-1000"
               />
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: 50 }}
+              initial={{ opacity: 0, scale: 0.9, x: 50 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="absolute -bottom-12 -right-4 md:-right-12 aspect-square w-[50%] rounded-lg overflow-hidden shadow-2xl z-20 border-4 md:border-8 border-white"
+              transition={{ duration: 1.2, delay: 0.3 }}
+              className="absolute -bottom-12 -right-4 md:-right-12 aspect-square w-[55%] rounded-none overflow-hidden shadow-2xl z-20 border-[8px] md:border-[16px] border-midnight-purple"
             >
               <Image
-                src="/assets/amenities_story.png"
+                src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.40 PM.jpeg"
                 alt="Luxury Details"
                 fill
+                sizes="(max-width: 768px) 50vw, 30vw"
                 className="object-cover"
               />
             </motion.div>
@@ -48,37 +51,37 @@ export const BrandStory = () => {
           <div className="w-full md:w-1/2 space-y-8">
             <div>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, letterSpacing: "0.2em" }}
+                whileInView={{ opacity: 1, letterSpacing: "0.6em" }}
                 viewport={{ once: true }}
-                className="script-text text-2xl md:text-3xl text-marigold mb-4"
+                className="font-jakarta text-[10px] md:text-xs text-royal-gold uppercase font-bold mb-6"
               >
                 Our Legacy
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-4xl md:text-7xl font-playfair font-bold text-tobacco uppercase leading-tight"
+                transition={{ duration: 1 }}
+                className="text-[15vw] md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-champagne uppercase leading-[0.8] tracking-tighter"
               >
-                Where Luxury <br />
-                Meets <span className="italic">Heritage</span>
+                Our Story <br />
+                <span className="text-royal-gold">Your Luxury</span>
               </motion.h2>
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="space-y-4 text-taupe font-jakarta text-lg leading-relaxed max-w-xl"
+              transition={{ duration: 1.5, delay: 0.4 }}
+              className="space-y-6 text-champagne/60 font-jakarta text-sm md:text-base leading-relaxed max-w-xl font-medium tracking-wide"
             >
               <p>
-                Nestled in the heart of Silchar, Hotel Luxuria Grand is more than just a destination; it's an experience curated for those who seek the extraordinary. From our meticulously designed suites to our world-class hospitality, every detail is a tribute to the art of fine living.
+                Located in the heart of Silchar, Hotel Luxuria Grand is a sanctuary designed for those who seek the extraordinary. Every corner of our property is a testament to the art of fine living, blending world-class amenities with the warmth of Barak Valley hospitality.
               </p>
               <p>
-                Whether you're here for a grand celebration or a quiet retreat, we invite you to immerse yourself in a world where warmth meets elegance.
+                Whether you are here for a high-profile corporate event or a restorative retreat, we invite you to experience a stay where every detail is tailored to your perfection.
               </p>
             </motion.div>
 
@@ -86,10 +89,10 @@ export const BrandStory = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="pt-8"
+              transition={{ duration: 1, delay: 0.8 }}
+              className="pt-10"
             >
-              <Button asChild className="bg-tobacco text-white hover:bg-marigold px-8 md:px-12 py-6 md:py-8 rounded-full text-[10px] md:text-sm uppercase tracking-widest transition-all h-auto font-bold">
+              <Button asChild className="bg-royal-gold text-midnight-purple hover:bg-champagne px-12 md:px-16 py-8 md:py-10 rounded-none text-[10px] md:text-xs uppercase tracking-[0.3em] transition-all duration-500 h-auto font-bold shadow-2xl shadow-royal-gold/10">
                 <Link href="/about">Discover Our Story</Link>
               </Button>
             </motion.div>

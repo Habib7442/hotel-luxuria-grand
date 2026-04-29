@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lora, Cormorant_Upright, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Lora, Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const playfair = Playfair_Display({
-  variable: "--font-playfair",
   subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 const lora = Lora({
-  variable: "--font-lora",
   subsets: ["latin"],
+  variable: "--font-lora",
 });
 
-const cormorant = Cormorant_Upright({
-  variable: "--font-cormorant",
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
 });
 
 const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
   subsets: ["latin"],
+  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Luxuria Grand | Silchar's Premier Luxury Hotel",
-  description: "Experience grand luxury at Hotel Luxuria Grand, NIT Road, Silchar. The most desirable and glamorous destination in Barak Valley.",
+  title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
+  description: "Experience the ultimate luxury and comfort at Hotel Luxuria Grand, Silchar's premier destination for fine living, exquisite dining, and grand events.",
 };
 
 export default function RootLayout({
@@ -39,7 +42,15 @@ export default function RootLayout({
       className={`${playfair.variable} ${lora.variable} ${cormorant.variable} ${jakarta.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-cream text-espresso" suppressHydrationWarning>{children}</body>
+      <body className="min-h-full flex flex-col bg-midnight-purple text-champagne" suppressHydrationWarning>
+        <SmoothScroll>
+          <Navbar />
+          <div className="flex-grow">
+            {children}
+          </div>
+          <Footer />
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

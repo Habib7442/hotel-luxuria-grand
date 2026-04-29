@@ -1,0 +1,134 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, MoveRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-black border-t border-white/5 pt-24 pb-12 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-24">
+          
+          {/* Column 1: Brand Story */}
+          <div className="space-y-8">
+            <Link href="/" className="group block w-fit">
+              <Image 
+                src="/assets/logo.png" 
+                alt="Hotel Luxuria Grand" 
+                width={180} 
+                height={90} 
+                className="h-14 w-auto object-contain"
+              />
+              <p className="text-xs font-jakarta font-bold tracking-[0.4em] uppercase text-white/40 mt-3">
+                Silchar
+              </p>
+            </Link>
+            <p className="text-champagne/50 font-jakarta text-sm leading-relaxed max-w-sm">
+              The pinnacle of luxury in Silchar. Our hotel combines modern elegance with 
+              timeless hospitality to create an unforgettable sanctuary for every guest.
+            </p>
+            <div className="flex items-center space-x-4">
+              {[
+                { name: "instagram", icon: "/social-icons/instagram.png" },
+                { name: "facebook", icon: "/social-icons/facebook.png" },
+                { name: "whatsapp", icon: "/social-icons/whatsapp.png" },
+                { name: "linkedin", icon: "/social-icons/linkedin.png" },
+                { name: "X", icon: "/social-icons/X.png" },
+              ].map((social) => (
+                <Link 
+                  key={social.name} 
+                  href="#" 
+                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/10 hover:bg-royal-gold/20 transition-all group"
+                >
+                  <Image 
+                    src={social.icon} 
+                    alt={social.name} 
+                    width={18} 
+                    height={18} 
+                    className={cn(
+                      "opacity-100 transition-opacity",
+                      social.name === "X" && "brightness-0 invert"
+                    )}
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 2: Navigation Links */}
+          <div className="space-y-8">
+            <h4 className="text-royal-gold font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Navigation</h4>
+            <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
+              {["Rooms", "Dining", "Gallery", "Events", "About Us", "Contact", "Privacy", "Terms"].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-champagne/60 hover:text-white transition-colors text-sm font-jakarta uppercase tracking-widest font-bold">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Contact Info */}
+          <div className="space-y-8">
+            <h4 className="text-royal-gold font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Connect</h4>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <MapPin size={20} className="text-royal-gold mt-1 shrink-0" />
+                <p className="text-champagne/60 text-sm font-jakarta leading-relaxed">
+                  Ghungoor Kuarpar Road, <br />
+                  Near Saint Captino School, <br />
+                  Silchar-788010, Assam
+                </p>
+              </div>
+              <div className="flex items-start space-x-4">
+                <Phone size={20} className="text-royal-gold mt-1 shrink-0" />
+                <p className="text-champagne/60 text-sm font-jakarta font-bold">
+                  +91 81043 99400 <br />
+                  +91 81099 01800
+                </p>
+              </div>
+              <div className="flex items-start space-x-4">
+                <Mail size={20} className="text-royal-gold mt-1 shrink-0" />
+                <p className="text-champagne/60 text-sm font-jakarta uppercase font-bold">luxuriagrand2025@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Digital Visiting Card Row */}
+        <div className="pt-16 border-t border-white/5 mb-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-md">
+              <h4 className="text-royal-gold font-jakarta font-bold uppercase text-xs tracking-[0.3em] mb-4">Official Digital Card</h4>
+              <p className="text-champagne/40 text-sm font-jakarta">Scan or save our official contact details for quick access to our premium concierge services.</p>
+            </div>
+            <div className="relative group overflow-hidden rounded-md border border-white/10 shadow-2xl max-w-xl w-full">
+              <Image 
+                src="/assets/visiting_card.png" 
+                alt="Hotel Luxuria Grand Visiting Card" 
+                width={600} 
+                height={320} 
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-midnight-purple/10 group-hover:bg-transparent transition-colors duration-500" />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-center items-center">
+          <p className="text-white/20 text-[10px] font-jakarta uppercase tracking-[0.2em]">
+            &copy; {currentYear} Hotel Luxuria Grand. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};

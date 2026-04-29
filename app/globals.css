@@ -5,11 +5,12 @@
   --color-cream: #FFF8EF;
   --color-tobacco: #3D2B1F;
   --color-marigold: #E8701A;
-  --color-teal: #1A8C8C;
-  --color-sunflower: #F5C518;
-  --color-palm: #3B6E4A;
-  --color-espresso: #1C1007;
-  --color-taupe: #7A614E;
+  --color-royal-gold: #D4AF37;
+  --color-champagne: #F7E7CE;
+  --color-midnight-purple: #0A0118;
+  --color-velvet-violet: #2E0249;
+  --color-deep-maroon: #1A0202;
+  --color-glass-dark: rgba(10, 1, 24, 0.7);
 
   /* Fonts */
   --font-playfair: var(--font-playfair);
@@ -17,20 +18,20 @@
   --font-lora: var(--font-lora);
   --font-jakarta: var(--font-jakarta);
 
-  /* Overwrite default background/foreground if needed */
-  --color-background: var(--color-cream);
-  --color-foreground: var(--color-espresso);
+  /* Overwrite default background/foreground */
+  --color-background: var(--color-midnight-purple);
+  --color-foreground: var(--color-champagne);
 }
 
 :root {
-  --background: #FFF8EF;
-  --foreground: #1C1007;
+  --background: #0A0118;
+  --foreground: #F7E7CE;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-lora), serif;
+  font-family: var(--font-jakarta), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
