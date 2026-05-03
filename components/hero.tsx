@@ -24,7 +24,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden bg-midnight-purple">
+    <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden bg-onyx">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -32,7 +32,7 @@ export const Hero = () => {
           alt="Hotel Luxuria Grand Exterior"
           fill
           sizes="100vw"
-          className="object-cover brightness-[0.6]"
+          className="object-cover brightness-[0.5]"
           priority
         />
         
@@ -69,11 +69,11 @@ export const Hero = () => {
         `}</style>
 
         {/* Main Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-midnight-purple z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-onyx z-10" />
         
         {/* Subtle Luxury Glows */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(46,2,73,0.15)_0%,transparent_70%)] z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(26,2,2,0.2)_0%,transparent_50%)] z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.05)_0%,transparent_70%)] z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(13,2,2,0.1)_0%,transparent_50%)] z-10" />
       </div>
 
       {/* Hero Content */}
@@ -83,7 +83,7 @@ export const Hero = () => {
             initial={{ opacity: 0, letterSpacing: "0.2em", y: 15 }}
             animate={{ opacity: 1, letterSpacing: "0.6em", y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="font-jakarta text-[10px] md:text-xs text-royal-gold uppercase font-bold text-center"
+            className="font-jakarta text-[11px] md:text-xs text-champagne uppercase font-bold text-center drop-shadow-md"
           >
             Silchar&apos;s Most Glamorous Destination
           </motion.p>
@@ -92,19 +92,19 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-[15vw] md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-champagne uppercase leading-[0.8] tracking-tighter"
+            className="text-[15vw] md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
           >
             The Art of <br />
-            <span className="text-royal-gold italic font-playfair font-normal">Grand Living</span>
+            <span className="text-champagne italic font-cormorant font-normal lowercase">Grand Living</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-champagne/50 font-jakarta text-[10px] md:text-xs tracking-[0.3em] uppercase max-w-lg mx-auto pt-4 font-semibold"
+            className="text-ivory font-jakarta text-[11px] md:text-sm tracking-[0.3em] uppercase max-w-xl mx-auto pt-6 font-semibold drop-shadow-lg"
           >
-            Experience unmatched hospitality at NIT Road
+            Refined accommodation on Ghungoor Kuarpar Road
           </motion.p>
         </div>
 
@@ -116,9 +116,9 @@ export const Hero = () => {
         >
           <Button
             asChild
-            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 bg-royal-gold text-midnight-purple rounded-none transition-all duration-500 shadow-2xl hover:bg-champagne cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto relative overflow-hidden"
+            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 bg-champagne text-black rounded-none transition-all duration-500 shadow-2xl hover:bg-brass cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto relative overflow-hidden border border-white/5"
           >
-            <Link href="/rooms" className="flex items-center gap-4 relative z-10">
+            <Link href="/#rooms" className="flex items-center gap-4 relative z-10">
               Start Your Journey
               <motion.div
                 animate={{ x: [0, 5, 0] }}
@@ -132,9 +132,9 @@ export const Hero = () => {
           <Button
             asChild
             variant="outline"
-            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 border-royal-gold/50 text-royal-gold rounded-none transition-all duration-500 hover:bg-royal-gold/10 cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto"
+            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 border-champagne/50 text-champagne rounded-none transition-all duration-500 hover:bg-champagne hover:text-black cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto"
           >
-            <a href="tel:+918104399400" className="flex items-center gap-4">
+            <a href="tel:+919181043994" className="flex items-center gap-4">
               <Phone className="w-5 h-5" />
               Call to Book
             </a>

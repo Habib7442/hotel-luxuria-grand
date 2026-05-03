@@ -10,34 +10,53 @@ import { cn } from "@/lib/utils";
 
 const rooms = [
   {
-    title: "Executive Suite",
-    description: "The pinnacle of Barak Valley luxury with sweeping views and bespoke interiors.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.47 PM.jpeg",
-    price: "₹8,500",
-  },
-  {
-    title: "Luxury Sanctuary",
-    description: "Elegant design meets absolute privacy for a truly restorative experience.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.22 PM.jpeg",
-    price: "₹6,500",
-  },
-  {
-    title: "Twin Deluxe",
-    description: "A sophisticated haven designed for shared comfort and modern utility.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.30 PM.jpeg",
-    price: "₹5,000",
-  },
-  {
-    title: "Presidential Royal",
-    description: "Our grandest accommodation, featuring expansive living spaces and royal treatment.",
+    title: "President Suite",
+    description: "Our grandest accommodation, offering unmatched luxury, expansive living spaces, and royal treatment in the heart of Silchar.",
     image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.jpeg",
-    price: "₹12,000",
+    priceSingle: "₹5,500",
+    priceDouble: "₹6,500",
   },
   {
-    title: "Club Premium",
-    description: "Modern elegance tailored for the discerning traveler who values style and comfort.",
+    title: "Executive Suite",
+    description: "The pinnacle of Barak Valley luxury with premium services, bespoke interiors, and sophisticated design.",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.31 PM.jpeg",
+    priceSingle: "₹5,000",
+    priceDouble: "₹6,000",
+  },
+  {
+    title: "Suite",
+    description: "A spacious haven featuring a separate living area, perfect for families and extended stays.",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.22 PM.jpeg",
+    priceSingle: "₹4,500",
+    priceDouble: "₹5,500",
+  },
+  {
+    title: "Executive",
+    description: "Tailored for the discerning professional, offering a perfect blend of modern utility and refined comfort.",
     image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.34 PM.jpeg",
-    price: "₹7,200",
+    priceSingle: "₹3,500",
+    priceDouble: "₹4,500",
+  },
+  {
+    title: "Super Deluxe",
+    description: "Premium comfort with elegant furnishings, modern amenities, and a welcoming ambiance.",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.30 PM.jpeg",
+    priceSingle: "₹3,000",
+    priceDouble: "₹4,000",
+  },
+  {
+    title: "Deluxe",
+    description: "Refined space and essential luxuries designed for a comfortable and restorative experience.",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.40 PM.jpeg",
+    priceSingle: "₹2,500",
+    priceDouble: "₹3,500",
+  },
+  {
+    title: "Standard",
+    description: "Comfortable and essential accommodation, ideal for solo travelers or short business trips.",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.06 PM.jpeg",
+    priceSingle: "₹2,200",
+    priceDouble: "₹3,200",
   },
 ];
 
@@ -97,7 +116,7 @@ export const FeaturedRooms = () => {
   };
 
   return (
-    <section className="py-24 md:py-40 bg-gradient-to-b from-midnight-purple to-deep-maroon overflow-hidden relative">
+    <section className="py-16 md:py-28 bg-onyx overflow-hidden relative">
       {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
       
@@ -108,7 +127,7 @@ export const FeaturedRooms = () => {
             initial={{ opacity: 0, letterSpacing: "0.2em" }}
             whileInView={{ opacity: 1, letterSpacing: "0.5em" }}
             viewport={{ once: true }}
-            className="font-jakarta text-xs md:text-sm text-royal-gold uppercase font-bold mb-4"
+            className="font-jakarta text-xs md:text-sm text-champagne uppercase font-bold mb-4"
           >
             Curated Living
           </motion.p>
@@ -117,11 +136,19 @@ export const FeaturedRooms = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="text-[15vw] md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-champagne uppercase leading-[0.8] tracking-tighter"
+            className="text-4xl md:text-6xl lg:text-7xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-4"
           >
-            Luxury Rooms <br />
-            <span className="text-royal-gold">Just For You</span>
+            Curated <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">Accommodations</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-ivory font-jakarta text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold"
+          >
+            Single & Double Occupancy Rates • Extra Person @ ₹800
+          </motion.p>
         </div>
 
         {/* Carousel Container */}
@@ -146,36 +173,53 @@ export const FeaturedRooms = () => {
                     cardsToShow === 1 ? "mx-auto" : ""
                   )}
                 >
-                  <div className="group/card relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/5 transition-all duration-700 hover:border-royal-gold/30 shadow-2xl">
+                  <div className="group/card relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/5 transition-all duration-700 hover:border-champagne/30 shadow-2xl">
                     <div className="relative aspect-[4/5] overflow-hidden">
                       <Image
                         src={room.image}
                         alt={room.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover group-hover/card:scale-105 transition-transform duration-1000"
                         priority={idx === 0 && currentIndex === 0}
                       />
-                      <div className="absolute top-0 right-0 bg-royal-gold text-midnight-purple px-6 py-2 text-[10px] md:text-xs font-jakarta font-bold uppercase tracking-widest z-20">
-                        {room.price} <span className="font-normal opacity-70">/ Night</span>
+                      {/* Price Badge */}
+                      <div className="absolute top-4 right-4 z-20">
+                        <div className="bg-champagne px-4 py-3 rounded-none shadow-2xl flex flex-col items-center border border-white/20">
+                          <div className="flex gap-3 items-baseline">
+                            <div className="text-center">
+                              <p className="text-[#2E0249] font-jakarta font-black text-base">{room.priceSingle}</p>
+                              <p className="text-[#2E0249]/60 text-[7px] uppercase tracking-widest font-black">Single</p>
+                            </div>
+                            <div className="w-[1px] h-4 bg-[#2E0249]/10" />
+                            <div className="text-center">
+                              <p className="text-[#2E0249] font-jakarta font-black text-base">{room.priceDouble}</p>
+                              <p className="text-[#2E0249]/60 text-[7px] uppercase tracking-widest font-black">Double</p>
+                            </div>
+                          </div>
+                          <p className="text-[#2E0249]/40 text-[6px] uppercase tracking-widest mt-2 border-t border-[#2E0249]/5 pt-1 w-full text-center font-bold">
+                            + Govt. Tax as applicable
+                          </p>
+                        </div>
                       </div>
                       
                       {/* Gradient Overlay for Card */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-midnight-purple via-transparent to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent opacity-60" />
                     </div>
 
-                    <div className="p-8 md:p-10 relative z-10 bg-midnight-purple/40">
-                      <h3 className="text-2xl md:text-3xl font-playfair font-bold text-champagne mb-4 group-hover/card:text-royal-gold transition-colors duration-500 uppercase tracking-tight">
+                    <div className="p-8 md:p-10 relative z-10 bg-onyx/60">
+                      <h3 className="text-2xl md:text-3xl font-cormorant font-bold text-ivory mb-4 group-hover/card:text-champagne transition-colors duration-500 uppercase tracking-tight">
                         {room.title}
                       </h3>
-                      <p className="text-champagne/60 font-jakarta text-sm leading-relaxed mb-8 line-clamp-2 font-medium">
+                      <p className="text-ivory/70 font-jakarta text-sm leading-relaxed mb-8 line-clamp-2 font-medium">
                         {room.description}
                       </p>
-                      <Button asChild variant="link" className="text-royal-gold p-0 h-auto font-bold uppercase tracking-[0.2em] text-[10px] hover:text-champagne transition-all duration-300 gap-3 group/btn">
-                        <Link href="/rooms">
-                          View Details 
-                          <MoveRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
-                        </Link>
+                    </div>
+                    <div className="p-8 pt-0">
+                      <Button asChild className="w-full bg-champagne text-black hover:bg-brass rounded-none py-6 text-[10px] uppercase tracking-[0.3em] font-bold h-auto transition-all duration-500">
+                        <a href="tel:+919181043994" className="flex items-center justify-center gap-4">
+                          Reserve Now <MoveRight className="w-4 h-4" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -187,15 +231,15 @@ export const FeaturedRooms = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 md:-left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-black/40 backdrop-blur-xl border border-white/10 text-royal-gold rounded-full z-40 transition-all hover:bg-royal-gold hover:text-midnight-purple shadow-2xl group/prev opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+            className="absolute left-2 md:-left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 flex items-center justify-center bg-black/60 backdrop-blur-xl border border-white/10 text-champagne rounded-full z-40 transition-all hover:bg-champagne hover:text-black shadow-2xl group/prev md:opacity-0 md:group-hover:opacity-100 md:-translate-x-4 md:group-hover:translate-x-0"
           >
-            <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+            <ChevronLeft className="w-5 h-5 md:w-8 md:h-8" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 md:-right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-black/40 backdrop-blur-xl border border-white/10 text-royal-gold rounded-full z-40 transition-all hover:bg-royal-gold hover:text-midnight-purple shadow-2xl group/next opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0"
+            className="absolute right-2 md:-right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 flex items-center justify-center bg-black/60 backdrop-blur-xl border border-white/10 text-champagne rounded-full z-40 transition-all hover:bg-champagne hover:text-black shadow-2xl group/next md:opacity-0 md:group-hover:opacity-100 md:translate-x-4 md:group-hover:translate-x-0"
           >
-            <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+            <ChevronRight className="w-5 h-5 md:w-8 md:h-8" />
           </button>
         </div>
 
@@ -210,7 +254,7 @@ export const FeaturedRooms = () => {
               }}
               className={cn(
                 "h-1 transition-all duration-500",
-                currentIndex === idx ? "w-12 bg-royal-gold" : "w-6 bg-white/10 hover:bg-white/30"
+                currentIndex === idx ? "w-12 bg-champagne" : "w-6 bg-white/10 hover:bg-white/30"
               )}
             />
           ))}

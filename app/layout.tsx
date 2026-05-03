@@ -29,6 +29,57 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
   description: "Experience the ultimate luxury and comfort at Hotel Luxuria Grand, Silchar's premier destination for fine living, exquisite dining, and grand events.",
+  metadataBase: new URL("https://hotel-luxuria-grand.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
+    description: "Experience the ultimate luxury and comfort at Hotel Luxuria Grand, Silchar's premier destination for fine living.",
+    url: "https://hotel-luxuria-grand.vercel.app",
+    siteName: "Hotel Luxuria Grand",
+    images: [
+      {
+        url: "/assets/hero.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Hotel Luxuria Grand Silchar",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
+    description: "Silchar's premier destination for fine living and grand events.",
+    images: ["/assets/hero.jpeg"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Hotel Luxuria Grand",
+  "description": "An upscale hotel in Silchar, Assam offering refined accommodations across seven categories, with banquet, dining, and event facilities.",
+  "image": "https://hotel-luxuria-grand.vercel.app/assets/hero.jpeg",
+  "url": "https://hotel-luxuria-grand.vercel.app",
+  "telephone": "+919181043994",
+  "priceRange": "₹2200-₹6500",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ghungoor Kuarpar Road, Near Saint Capitanio School",
+    "addressLocality": "Silchar",
+    "addressRegion": "Assam",
+    "postalCode": "788015",
+    "addressCountry": "IN"
+  },
+  "starRating": {
+    "@type": "Rating",
+    "ratingValue": "4"
+  },
+  "checkinTime": "12:00",
+  "checkoutTime": "11:00"
 };
 
 export default function RootLayout({
@@ -42,7 +93,13 @@ export default function RootLayout({
       className={`${playfair.variable} ${lora.variable} ${cormorant.variable} ${jakarta.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-midnight-purple text-champagne" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-onyx text-champagne font-jakarta" suppressHydrationWarning>
         <Navbar />
         <SmoothScroll>
           <div className="flex-grow">

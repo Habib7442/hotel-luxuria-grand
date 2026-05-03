@@ -39,11 +39,11 @@ export const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "Rooms", href: "/rooms" },
+    { name: "Rooms", href: "/#rooms" },
     { name: "Dining", href: "/dining" },
-    { name: "About", href: "/about" },
-    { name: "Events", href: "/events" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "About", href: "/#about" },
+    { name: "Events", href: "/#events" },
+    { name: "Gallery", href: "/#gallery" },
   ];
 
   const mobileMenu = (
@@ -64,7 +64,7 @@ export const Navbar = () => {
             width: "100vw",
             height: "100vh",
             zIndex: 99999,
-            backgroundColor: "#0d0221",
+            backgroundColor: "#0B0B0C",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -74,7 +74,7 @@ export const Navbar = () => {
           {/* Close Button */}
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-8 right-6 text-royal-gold p-2 transition-transform active:scale-90"
+            className="absolute top-8 right-6 text-champagne p-2 transition-transform active:scale-90"
             style={{ zIndex: 100000 }}
           >
             <X size={32} />
@@ -99,7 +99,7 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-4xl font-playfair font-bold text-champagne hover:text-royal-gold transition-colors uppercase tracking-widest"
+                    className="text-4xl font-cormorant font-bold text-champagne hover:text-brass transition-colors uppercase tracking-widest italic"
                   >
                     {link.name}
                   </Link>
@@ -114,11 +114,11 @@ export const Navbar = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col space-y-4 w-full max-w-xs mx-auto"
             >
-              <Button className="bg-royal-gold text-midnight-purple w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest shadow-xl">
+              <Button className="bg-champagne text-black w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest shadow-xl hover:bg-brass transition-colors">
                 Reserve Now
               </Button>
-              <a href="tel:+918104399400" className="w-full">
-                <Button variant="outline" className="border-royal-gold/50 text-royal-gold w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-royal-gold/10">
+              <a href="tel:+919181043994" className="w-full">
+                <Button variant="outline" className="border-champagne/50 text-champagne w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-champagne/10">
                   <Phone className="mr-2 w-4 h-4" /> Call to Book
                 </Button>
               </a>
@@ -144,13 +144,13 @@ export const Navbar = () => {
       <nav className={cn(
         "fixed top-0 left-0 right-0 z-[100] transition-all duration-700",
         isScrolled
-          ? "bg-midnight-purple/80 backdrop-blur-2xl border-b border-white/5 py-4"
+          ? "bg-onyx/80 backdrop-blur-2xl border-b border-white/5 py-4"
           : "bg-transparent py-8"
       )}>
         <div className="container mx-auto px-6 flex items-center justify-between">
           {/* Left Side: Hotel Name/Logo */}
           <div className="flex items-center">
-            <Link href="/" className="group flex flex-col items-start">
+            <Link href="/" className="group flex flex-col items-start relative z-50">
               <Image
                 src="/assets/logo.png"
                 alt="Hotel Luxuria Grand"
@@ -161,7 +161,7 @@ export const Navbar = () => {
               />
               <p className={cn(
                 "text-[8px] font-jakarta font-bold tracking-[0.4em] uppercase transition-colors mt-1.5",
-                isScrolled ? "text-royal-gold/60 group-hover:text-royal-gold" : "text-white/40 group-hover:text-white"
+                isScrolled ? "text-champagne group-hover:text-brass" : "text-ivory group-hover:text-white"
               )}>
                 Silchar
               </p>
@@ -178,7 +178,7 @@ export const Navbar = () => {
                   href={link.href}
                   className={cn(
                     "text-[10px] font-jakarta font-bold uppercase tracking-[0.2em] transition-all duration-300",
-                    isScrolled ? "text-champagne/70 hover:text-royal-gold" : "text-white/60 hover:text-white"
+                    isScrolled ? "text-champagne/70 hover:text-brass" : "text-white/60 hover:text-white"
                   )}
                 >
                   {link.name}
@@ -188,7 +188,7 @@ export const Navbar = () => {
 
             {/* Reserve Button (Desktop) */}
             <div className="hidden md:block">
-              <Button className="bg-royal-gold text-midnight-purple hover:bg-champagne transition-all duration-500 rounded-full px-8 py-6 text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+              <Button className="bg-champagne text-black hover:bg-brass transition-all duration-500 rounded-full px-8 py-6 text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(201,169,110,0.2)]">
                 Reserve Now
               </Button>
             </div>
@@ -196,7 +196,7 @@ export const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-royal-gold p-2 transition-transform active:scale-90"
+              className="lg:hidden text-champagne p-2 transition-transform active:scale-90"
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>

@@ -11,7 +11,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-white/5 pt-24 pb-12 overflow-hidden">
+    <footer className="bg-onyx border-t border-white/5 pt-16 pb-12 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-24">
           
@@ -44,7 +44,7 @@ export const Footer = () => {
                 <Link 
                   key={social.name} 
                   href="#" 
-                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/10 hover:bg-royal-gold/20 transition-all group"
+                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/10 hover:bg-champagne/20 transition-all group"
                 >
                   <Image 
                     src={social.icon} 
@@ -63,12 +63,19 @@ export const Footer = () => {
 
           {/* Column 2: Navigation Links */}
           <div className="space-y-8">
-            <h4 className="text-royal-gold font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Navigation</h4>
+            <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Navigation</h4>
             <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
-              {["Rooms", "Dining", "Gallery", "Events", "About Us", "Contact", "Privacy", "Terms"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-champagne/60 hover:text-white transition-colors text-sm font-jakarta uppercase tracking-widest font-bold">
-                    {item}
+              {[
+                { name: "Rooms", href: "/#rooms" },
+                { name: "Dining", href: "/dining" },
+                { name: "Gallery", href: "/#gallery" },
+                { name: "Events", href: "/#events" },
+                { name: "About Us", href: "/#about" },
+                { name: "Contact", href: "/#contact" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-champagne/60 hover:text-white transition-colors text-sm font-jakarta uppercase tracking-widest font-bold">
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -77,30 +84,30 @@ export const Footer = () => {
 
           {/* Column 3: Contact Info */}
           <div className="space-y-8">
-            <h4 className="text-royal-gold font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Connect</h4>
+            <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Connect</h4>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <MapPin size={20} className="text-royal-gold mt-1 shrink-0" />
+                <MapPin size={20} className="text-champagne mt-1 shrink-0" />
                 <p className="text-champagne/60 text-sm font-jakarta leading-relaxed">
                   Ghungoor Kuarpar Road, <br />
-                  Near Saint Captino School, <br />
-                  Silchar-788010, Assam
+                  Near Saint Capitanio School, <br />
+                  Silchar-788015, Assam
                 </p>
               </div>
               <div className="flex items-start space-x-4">
-                <Phone size={20} className="text-royal-gold mt-1 shrink-0" />
+                <Phone size={20} className="text-champagne mt-1 shrink-0" />
                 <div className="flex flex-col space-y-1">
-                  <a href="tel:+918104399400" className="text-champagne/60 hover:text-royal-gold text-sm font-jakarta font-bold transition-colors">
-                    +91 81043 99400
+                  <a href="tel:+919181043994" className="text-champagne/60 hover:text-champagne text-sm font-jakarta font-bold transition-colors">
+                    +91 91810 43994
                   </a>
-                  <a href="tel:+918109901800" className="text-champagne/60 hover:text-royal-gold text-sm font-jakarta font-bold transition-colors">
-                    +91 81099 01800
+                  <a href="tel:+919181099018" className="text-champagne/60 hover:text-champagne text-sm font-jakarta font-bold transition-colors">
+                    +91 91810 99018
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <Mail size={20} className="text-royal-gold mt-1 shrink-0" />
-                <a href="mailto:luxuriagrand2025@gmail.com" className="text-champagne/60 hover:text-royal-gold text-sm font-jakarta uppercase font-bold transition-colors">
+                <Mail size={20} className="text-champagne mt-1 shrink-0" />
+                <a href="mailto:luxuriagrand2025@gmail.com" className="text-champagne/60 hover:text-champagne text-sm font-jakarta uppercase font-bold transition-colors">
                   luxuriagrand2025@gmail.com
                 </a>
               </div>
@@ -112,7 +119,7 @@ export const Footer = () => {
         <div className="pt-16 border-t border-white/5 mb-16">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="max-w-md">
-              <h4 className="text-royal-gold font-jakarta font-bold uppercase text-xs tracking-[0.3em] mb-4">Official Digital Card</h4>
+               <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em] mb-4">Official Digital Card</h4>
               <p className="text-champagne/40 text-sm font-jakarta">Scan or save our official contact details for quick access to our premium concierge services.</p>
             </div>
             <div className="relative group overflow-hidden rounded-md border border-white/10 shadow-2xl max-w-xl w-full">
@@ -123,7 +130,7 @@ export const Footer = () => {
                 height={320} 
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-midnight-purple/10 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-onyx/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
           </div>
         </div>

@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-cream: #FFF8EF;
-  --color-tobacco: #3D2B1F;
-  --color-marigold: #E8701A;
-  --color-royal-gold: #D4AF37;
-  --color-champagne: #F7E7CE;
-  --color-midnight-purple: #0A0118;
-  --color-velvet-violet: #2E0249;
-  --color-deep-maroon: #1A0202;
-  --color-glass-dark: rgba(10, 1, 24, 0.7);
+  /* Official PRD Colors - Elite Luxury Palette */
+  --color-onyx: #0B0B0C;
+  --color-ivory: #F5F1E8;
+  --color-champagne: #C9A96E;
+  --color-brass: #8C6F3F;
+  --color-aubergine: #2A1B2D;
+  --color-terracotta: #B5573A;
+  
+  /* Legacy/Utility Colors */
+  --color-royal-gold: var(--color-champagne);
+  --color-midnight-purple: var(--color-onyx);
+  --color-glass-dark: rgba(11, 11, 12, 0.7);
 
   /* Fonts */
   --font-playfair: var(--font-playfair);
@@ -19,13 +21,13 @@
   --font-jakarta: var(--font-jakarta);
 
   /* Overwrite default background/foreground */
-  --color-background: var(--color-midnight-purple);
+  --color-background: var(--color-onyx);
   --color-foreground: var(--color-champagne);
 }
 
 :root {
-  --background: #0A0118;
-  --foreground: #F7E7CE;
+  --background: #0B0B0C;
+  --foreground: #C9A96E;
 }
 
 body {
