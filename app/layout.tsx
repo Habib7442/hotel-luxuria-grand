@@ -33,18 +33,18 @@ export const metadata: Metadata = {
   },
   description: "Experience refined luxury on Ghungoor Kuarpar Road. The most glamorous hotel in Silchar, offering premium rooms, grand banquets, and signature dining at Luxuria Grand.",
   keywords: ["hotels in Silchar", "luxury hotel Silchar", "Silchar wedding venue", "banquet hall Silchar", "best hotel in Silchar", "Hotel Luxuria Grand Silchar"],
-  metadataBase: new URL("https://hotelluxuriagrand.com"),
+  metadataBase: new URL("https://www.hotelluxuriagrand.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Hotel Luxuria Grand — Elite Luxury Hotel in Silchar",
     description: "Discover Silchar's most refined sanctuary. Premium suites, signature dining, and unforgettable events at Hotel Luxuria Grand.",
-    url: "https://hotelluxuriagrand.com",
+    url: "https://www.hotelluxuriagrand.com",
     siteName: "Hotel Luxuria Grand",
     images: [
       {
-        url: "/assets/hero.jpeg",
+        url: "/og_image.png",
         width: 1200,
         height: 630,
         alt: "Hotel Luxuria Grand Silchar",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
     description: "Experience the art of grand living in the heart of Silchar.",
-    images: ["/assets/hero.jpeg"],
+    images: ["/og_image.png"],
   },
 };
 
@@ -66,8 +66,8 @@ const jsonLd = {
   "@type": "Hotel",
   "name": "Hotel Luxuria Grand",
   "description": "An upscale hotel in Silchar, Assam offering refined accommodations across seven categories, with banquet, dining, and event facilities.",
-  "image": "https://hotel-luxuria-grand.vercel.app/assets/hero.jpeg",
-  "url": "https://hotel-luxuria-grand.vercel.app",
+  "image": "https://www.hotelluxuriagrand.com/og_image.png",
+  "url": "https://www.hotelluxuriagrand.com",
   "telephone": "+919181043994",
   "priceRange": "₹2200-₹6500",
   "address": {
