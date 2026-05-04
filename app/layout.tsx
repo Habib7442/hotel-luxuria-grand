@@ -27,16 +27,20 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
-  description: "Experience the ultimate luxury and comfort at Hotel Luxuria Grand, Silchar's premier destination for fine living, exquisite dining, and grand events.",
-  metadataBase: new URL("https://hotel-luxuria-grand.vercel.app"),
+  title: {
+    default: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
+    template: "%s — Hotel Luxuria Grand, Silchar",
+  },
+  description: "Experience refined luxury on Ghungoor Kuarpar Road. The most glamorous hotel in Silchar, offering premium rooms, grand banquets, and signature dining at Luxuria Grand.",
+  keywords: ["hotels in Silchar", "luxury hotel Silchar", "Silchar wedding venue", "banquet hall Silchar", "best hotel in Silchar", "Hotel Luxuria Grand Silchar"],
+  metadataBase: new URL("https://hotelluxuriagrand.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
-    description: "Experience the ultimate luxury and comfort at Hotel Luxuria Grand, Silchar's premier destination for fine living.",
-    url: "https://hotel-luxuria-grand.vercel.app",
+    title: "Hotel Luxuria Grand — Elite Luxury Hotel in Silchar",
+    description: "Discover Silchar's most refined sanctuary. Premium suites, signature dining, and unforgettable events at Hotel Luxuria Grand.",
+    url: "https://hotelluxuriagrand.com",
     siteName: "Hotel Luxuria Grand",
     images: [
       {
@@ -51,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hotel Luxuria Grand | Elite Luxury Hotel in Silchar",
-    description: "Silchar's premier destination for fine living and grand events.",
+    title: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
+    description: "Experience the art of grand living in the heart of Silchar.",
     images: ["/assets/hero.jpeg"],
   },
 };

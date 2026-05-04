@@ -39,11 +39,12 @@ export const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "Rooms", href: "/#rooms" },
+    { name: "Rooms", href: "/rooms" },
     { name: "Dining", href: "/dining" },
-    { name: "About", href: "/#about" },
-    { name: "Events", href: "/#events" },
-    { name: "Gallery", href: "/#gallery" },
+    { name: "About", href: "/about" },
+    { name: "Events", href: "/events" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Reviews", href: "https://www.google.com/search?sca_esv=6a96e87a209ffeb9&rlz=1C1CHBD_enIN1185IN1185&sxsrf=ANbL-n7o4bnX9AKbAQqIjg-Mak2oO9_baw:1777857556396&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcFxboClSYhUlfcnk14JnFGbuxCDrgBszO1QuUIE3mECRZcYvsx5sjVqFS7lF4P9nA8qNhxPm7PGZ-JjN2wsBCdKJF1V&q=Luxuria+Grand+Reviews&sa=X&ved=2ahUKEwjlyvDAu56UAxXKTmwGHbOiPYUQ0bkNegQINRAF&biw=1280&bih=585&dpr=1.5" },
   ];
 
   const mobileMenu = (
@@ -99,6 +100,8 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-4xl font-cormorant font-bold text-champagne hover:text-brass transition-colors uppercase tracking-widest italic"
                   >
                     {link.name}
@@ -114,8 +117,10 @@ export const Navbar = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col space-y-4 w-full max-w-xs mx-auto"
             >
-              <Button className="bg-champagne text-black w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest shadow-xl hover:bg-brass transition-colors">
-                Reserve Now
+              <Button asChild className="bg-champagne text-black w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest shadow-xl hover:bg-brass transition-colors">
+                <Link href="/book" onClick={() => setIsMobileMenuOpen(false)}>
+                  Reserve Now
+                </Link>
               </Button>
               <a href="tel:+919181043994" className="w-full">
                 <Button variant="outline" className="border-champagne/50 text-champagne w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-champagne/10">
@@ -176,6 +181,8 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={cn(
                     "text-[10px] font-jakarta font-bold uppercase tracking-[0.2em] transition-all duration-300",
                     isScrolled ? "text-champagne/70 hover:text-brass" : "text-white/60 hover:text-white"
@@ -188,8 +195,8 @@ export const Navbar = () => {
 
             {/* Reserve Button (Desktop) */}
             <div className="hidden md:block">
-              <Button className="bg-champagne text-black hover:bg-brass transition-all duration-500 rounded-full px-8 py-6 text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(201,169,110,0.2)]">
-                Reserve Now
+              <Button asChild className="bg-champagne text-black hover:bg-brass transition-all duration-500 rounded-full px-8 py-6 text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(201,169,110,0.2)]">
+                <Link href="/book">Reserve Now</Link>
               </Button>
             </div>
 

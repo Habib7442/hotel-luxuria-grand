@@ -116,9 +116,9 @@ export const Hero = () => {
         >
           <Button
             asChild
-            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 bg-champagne text-black rounded-none transition-all duration-500 shadow-2xl hover:bg-brass cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto relative overflow-hidden border border-white/5"
+            className="group flex items-center justify-center gap-4 py-6 md:py-8 bg-champagne text-black rounded-none transition-all duration-500 shadow-2xl hover:bg-brass cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-full md:w-[320px] relative overflow-hidden border border-white/5"
           >
-            <Link href="/#rooms" className="flex items-center gap-4 relative z-10">
+            <Link href="/rooms" className="flex items-center gap-4 relative z-10">
               Start Your Journey
               <motion.div
                 animate={{ x: [0, 5, 0] }}
@@ -132,7 +132,7 @@ export const Hero = () => {
           <Button
             asChild
             variant="outline"
-            className="group flex items-center gap-4 px-10 md:px-14 py-6 md:py-8 border-champagne/50 text-champagne rounded-none transition-all duration-500 hover:bg-champagne hover:text-black cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-auto"
+            className="group flex items-center justify-center gap-4 py-6 md:py-8 border-champagne/50 text-champagne rounded-none transition-all duration-500 hover:bg-champagne hover:text-black cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-full md:w-[320px]"
           >
             <a href="tel:+919181043994" className="flex items-center gap-4">
               <Phone className="w-5 h-5" />

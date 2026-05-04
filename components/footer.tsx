@@ -35,15 +35,17 @@ export const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               {[
-                { name: "instagram", icon: "/social-icons/instagram.png" },
-                { name: "facebook", icon: "/social-icons/facebook.png" },
-                { name: "whatsapp", icon: "/social-icons/whatsapp.png" },
-                { name: "linkedin", icon: "/social-icons/linkedin.png" },
-                { name: "X", icon: "/social-icons/X.png" },
+                { name: "instagram", icon: "/social-icons/instagram.png", href: "https://www.instagram.com/luxuria_grand/" },
+                { name: "facebook", icon: "/social-icons/facebook.png", href: "#" },
+                { name: "whatsapp", icon: "/social-icons/whatsapp.png", href: "https://wa.me/919181043994" },
+                { name: "linkedin", icon: "/social-icons/linkedin.png", href: "#" },
+                { name: "X", icon: "/social-icons/X.png", href: "#" },
               ].map((social) => (
-                <Link 
+                <a 
                   key={social.name} 
-                  href="#" 
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/10 hover:bg-champagne/20 transition-all group"
                 >
                   <Image 
@@ -56,7 +58,7 @@ export const Footer = () => {
                       social.name === "X" && "brightness-0 invert"
                     )}
                   />
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -66,11 +68,12 @@ export const Footer = () => {
             <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Navigation</h4>
             <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
               {[
-                { name: "Rooms", href: "/#rooms" },
+                { name: "Rooms", href: "/rooms" },
                 { name: "Dining", href: "/dining" },
-                { name: "Gallery", href: "/#gallery" },
-                { name: "Events", href: "/#events" },
-                { name: "About Us", href: "/#about" },
+                { name: "Book Now", href: "/book" },
+                { name: "Reserve Table", href: "/book?type=dining" },
+                { name: "Events", href: "/events" },
+                { name: "About Us", href: "/about" },
                 { name: "Contact", href: "/#contact" },
               ].map((item) => (
                 <li key={item.name}>

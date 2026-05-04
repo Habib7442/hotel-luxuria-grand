@@ -80,10 +80,6 @@ export const ContactMap = () => {
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0 w-full h-full"
             ></iframe>
-            {/* Overlay to dim map and handle smooth transition without flickering */}
-            <div className="absolute inset-0 bg-onyx/40 group-hover/map:opacity-0 transition-opacity duration-700 pointer-events-none" />
-            
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-onyx via-transparent to-transparent hidden lg:block" />
             <div className="absolute inset-0 pointer-events-none border border-champagne/10" />
           </div>
         </div>
