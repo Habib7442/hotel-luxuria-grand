@@ -139,7 +139,7 @@ export default function RoomsContent() {
 
                 {/* Content Side */}
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                  <h2 className="text-3xl md:text-4xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-4 group-hover:text-champagne transition-colors">
+                  <h2 className="text-2xl md:text-4xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-4 group-hover:text-champagne transition-colors">
                     {room.title}
                   </h2>
                   <p className="text-ivory/60 text-sm leading-relaxed mb-8 font-jakarta">

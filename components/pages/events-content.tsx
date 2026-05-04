@@ -33,7 +33,7 @@ export default function EventsContent() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
+            className="text-3xl md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
           >
             Unforgettable <br />
             <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal block mt-4">Occasions</span>
@@ -45,7 +45,7 @@ export default function EventsContent() {
       <section className="py-24 md:py-40 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-10">
+            <h2 className="text-3xl md:text-6xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-10">
               Host the <span className="text-champagne">Extraordinary</span>
             </h2>
             <div className="w-20 h-[1px] bg-champagne mx-auto mb-10" />

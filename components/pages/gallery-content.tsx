@@ -46,7 +46,7 @@ export default function GalleryContent() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-8xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter"
+            className="text-5xl md:text-8xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter"
           >
             Gallery
           </motion.h1>

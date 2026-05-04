@@ -92,7 +92,7 @@ export default function BookingContent() {
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-jakarta font-extrabold text-ivory uppercase leading-[0.9] tracking-tighter mb-10"
+                className="text-4xl md:text-6xl lg:text-7xl font-jakarta font-extrabold text-ivory uppercase leading-[0.9] tracking-tighter mb-10"
               >
                 Reservations <br />
                 <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">& Bookings</span>

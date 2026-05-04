@@ -45,7 +45,7 @@ export default function DiningContent() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-[12vw] md:text-[100px] lg:text-[150px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
+            className="text-[10vw] md:text-[100px] lg:text-[150px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
           >
             Culinary <br />
             <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal block mt-4">Heritage</span>
@@ -252,7 +252,7 @@ export default function DiningContent() {
             <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-champagne/30" />
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-champagne/30" />
 
-            <h2 className="text-5xl md:text-8xl font-jakarta font-extrabold text-ivory uppercase leading-[0.8] mb-10 tracking-tighter">
+            <h2 className="text-4xl md:text-8xl font-jakarta font-extrabold text-ivory uppercase leading-[0.8] mb-10 tracking-tighter">
               Book Your <br />
               <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">Table</span>
             </h2>
