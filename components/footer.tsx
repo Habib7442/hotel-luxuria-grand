@@ -70,11 +70,10 @@ export const Footer = () => {
               {[
                 { name: "Rooms", href: "/rooms" },
                 { name: "Dining", href: "/dining" },
+                { name: "Exclusive Offers", href: "/offers" },
                 { name: "Book Now", href: "/book" },
-                { name: "Reserve Table", href: "/book?type=dining" },
-                { name: "Events", href: "/events" },
                 { name: "About Us", href: "/about" },
-                { name: "Contact", href: "/#contact" },
+                { name: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-champagne/60 hover:text-white transition-colors text-sm font-jakarta uppercase tracking-widest font-bold">
@@ -139,10 +138,26 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-center items-center">
+        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-white/20 text-[10px] font-jakarta uppercase tracking-[0.2em]">
             &copy; {currentYear} Hotel Luxuria Grand. All rights reserved.
           </p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {[
+              { name: "Privacy Policy", href: "/legal/privacy" },
+              { name: "Terms & Conditions", href: "/legal/terms" },
+              { name: "Cancellation", href: "/legal/cancellation-policy" },
+              { name: "Refunds", href: "/legal/refund-policy" },
+            ].map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href} 
+                className="text-white/20 hover:text-champagne transition-colors text-[9px] uppercase tracking-widest font-bold"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

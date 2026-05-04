@@ -46,7 +46,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-[12vw] md:text-[100px] lg:text-[150px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
+            className="text-[10vw] md:text-[100px] lg:text-[150px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
           >
             Our <br />
             <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal block mt-4">Legacy</span>
@@ -67,7 +67,7 @@ export default function AboutContent() {
               <p className="font-jakarta text-xs text-champagne uppercase font-bold tracking-[0.3em] mb-8">
                 Welcome to Luxuria Grand
               </p>
-              <h2 className="text-5xl md:text-7xl font-jakarta font-extrabold text-ivory uppercase leading-[0.9] mb-10 tracking-tighter">
+              <h2 className="text-4xl md:text-7xl font-jakarta font-extrabold text-ivory uppercase leading-[0.9] mb-10 tracking-tighter">
                 Redefining <br />
                 <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">Excellence</span>
               </h2>
@@ -128,7 +128,7 @@ export default function AboutContent() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-24">
             <p className="font-jakarta text-xs text-champagne uppercase font-bold tracking-[0.4em] mb-6">Our Philosophy</p>
-            <h2 className="text-5xl md:text-7xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter">
+            <h2 className="text-4xl md:text-7xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter">
               The Values That <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">Drive Us</span>
             </h2>
           </div>

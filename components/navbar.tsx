@@ -41,10 +41,10 @@ export const Navbar = () => {
   const navLinks = [
     { name: "Rooms", href: "/rooms" },
     { name: "Dining", href: "/dining" },
-    { name: "About", href: "/about" },
+    { name: "Offers", href: "/offers" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Reviews", href: "https://www.google.com/search?sca_esv=6a96e87a209ffeb9&rlz=1C1CHBD_enIN1185IN1185&sxsrf=ANbL-n7o4bnX9AKbAQqIjg-Mak2oO9_baw:1777857556396&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcFxboClSYhUlfcnk14JnFGbuxCDrgBszO1QuUIE3mECRZcYvsx5sjVqFS7lF4P9nA8qNhxPm7PGZ-JjN2wsBCdKJF1V&q=Luxuria+Grand+Reviews&sa=X&ved=2ahUKEwjlyvDAu56UAxXKTmwGHbOiPYUQ0bkNegQINRAF&biw=1280&bih=585&dpr=1.5" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const mobileMenu = (
