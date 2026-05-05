@@ -32,6 +32,7 @@ export const Hero = () => {
           alt="Hotel Luxuria Grand Exterior"
           fill
           sizes="100vw"
+          quality={90}
           className="object-cover brightness-[0.5]"
           priority
         />

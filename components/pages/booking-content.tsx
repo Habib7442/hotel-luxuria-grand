@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, Users, Home, MessageSquare, MoveRight, Utensils, PartyPopper, Clock } from "lucide-react";
+import { Calendar, Users, Home, MessageSquare, MoveRight, Utensils, PartyPopper, Clock, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -151,23 +151,23 @@ export default function BookingContent() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Calendar className="w-3 h-3" /> Check-in
+                        <Calendar className="w-3 h-3 text-white" /> Check-in
                       </label>
                       <input 
                         type="date"
                         required
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none"
+                        className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setRoomData({...roomData, checkIn: e.target.value})}
                       />
                     </div>
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Calendar className="w-3 h-3" /> Check-out
+                        <Calendar className="w-3 h-3 text-white" /> Check-out
                       </label>
                       <input 
                         type="date"
                         required
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none"
+                        className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setRoomData({...roomData, checkOut: e.target.value})}
                       />
                     </div>
@@ -176,37 +176,43 @@ export default function BookingContent() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Home className="w-3 h-3" /> Room Type
+                        <Home className="w-3 h-3 text-white" /> Room Type
                       </label>
-                      <select 
-                        className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
-                        value={roomData.roomType}
-                        onChange={(e) => setRoomData({...roomData, roomType: e.target.value})}
-                      >
-                        {roomTypes.map(room => (
-                          <option key={room} value={room} className="bg-onyx">{room}</option>
-                        ))}
-                      </select>
+                      <div className="relative group/select">
+                        <select 
+                          className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
+                          value={roomData.roomType}
+                          onChange={(e) => setRoomData({...roomData, roomType: e.target.value})}
+                        >
+                          {roomTypes.map(room => (
+                            <option key={room} value={room} className="bg-onyx">{room}</option>
+                          ))}
+                        </select>
+                        <ChevronDown className="absolute right-0 bottom-4 w-4 h-4 text-champagne/50 group-focus-within/select:text-champagne group-focus-within/select:rotate-180 transition-all pointer-events-none" />
+                      </div>
                     </div>
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Users className="w-3 h-3" /> Guests
+                        <Users className="w-3 h-3 text-white" /> Guests
                       </label>
-                      <select 
-                        className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
-                        value={roomData.guests}
-                        onChange={(e) => setRoomData({...roomData, guests: e.target.value})}
-                      >
-                        {[1,2,3,4].map(n => (
-                          <option key={n} value={n} className="bg-onyx">{n} Guest{n > 1 ? 's' : ''}</option>
-                        ))}
-                      </select>
+                      <div className="relative group/select">
+                        <select 
+                          className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
+                          value={roomData.guests}
+                          onChange={(e) => setRoomData({...roomData, guests: e.target.value})}
+                        >
+                          {[1,2,3,4].map(n => (
+                            <option key={n} value={n} className="bg-onyx">{n} Guest{n > 1 ? 's' : ''}</option>
+                          ))}
+                        </select>
+                        <ChevronDown className="absolute right-0 bottom-4 w-4 h-4 text-champagne/50 group-focus-within/select:text-champagne group-focus-within/select:rotate-180 transition-all pointer-events-none" />
+                      </div>
                     </div>
                   </div>
 
                   <div className="space-y-4">
                     <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                      <MessageSquare className="w-3 h-3" /> Special Requests
+                      <MessageSquare className="w-3 h-3 text-white" /> Special Requests
                     </label>
                     <textarea 
                       rows={3}
@@ -216,8 +222,8 @@ export default function BookingContent() {
                     ></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full bg-champagne text-black hover:bg-brass rounded-none py-8 text-xs font-bold uppercase tracking-[0.4em] h-auto group">
-                    Confirm Stay on WhatsApp <MoveRight className="ml-4 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  <Button type="submit" className="w-full bg-champagne text-black hover:bg-brass rounded-none py-8 text-[10px] md:text-xs font-bold uppercase tracking-widest md:tracking-[0.4em] h-auto group flex items-center justify-center px-4">
+                    <span className="truncate">Confirm Stay on WhatsApp</span> <MoveRight className="ml-4 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform shrink-0" />
                   </Button>
                 </form>
               ) : (
@@ -225,54 +231,60 @@ export default function BookingContent() {
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <PartyPopper className="w-3 h-3" /> Occasion
+                        <PartyPopper className="w-3 h-3 text-white" /> Occasion
                       </label>
-                      <select 
-                        className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
-                        value={diningData.occasion}
-                        onChange={(e) => setDiningData({...diningData, occasion: e.target.value})}
-                      >
-                        {occasions.map(occ => (
-                          <option key={occ} value={occ} className="bg-onyx">{occ}</option>
-                        ))}
-                      </select>
+                      <div className="relative group/select">
+                        <select 
+                          className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
+                          value={diningData.occasion}
+                          onChange={(e) => setDiningData({...diningData, occasion: e.target.value})}
+                        >
+                          {occasions.map(occ => (
+                            <option key={occ} value={occ} className="bg-onyx">{occ}</option>
+                          ))}
+                        </select>
+                        <ChevronDown className="absolute right-0 bottom-4 w-4 h-4 text-champagne/50 group-focus-within/select:text-champagne group-focus-within/select:rotate-180 transition-all pointer-events-none" />
+                      </div>
                     </div>
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Utensils className="w-3 h-3" /> Venue
+                        <Utensils className="w-3 h-3 text-white" /> Venue
                       </label>
-                      <select 
-                        className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
-                        value={diningData.venue}
-                        onChange={(e) => setDiningData({...diningData, venue: e.target.value})}
-                      >
-                        {venues.map(v => (
-                          <option key={v} value={v} className="bg-onyx">{v}</option>
-                        ))}
-                      </select>
+                      <div className="relative group/select">
+                        <select 
+                          className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
+                          value={diningData.venue}
+                          onChange={(e) => setDiningData({...diningData, venue: e.target.value})}
+                        >
+                          {venues.map(v => (
+                            <option key={v} value={v} className="bg-onyx">{v}</option>
+                          ))}
+                        </select>
+                        <ChevronDown className="absolute right-0 bottom-4 w-4 h-4 text-champagne/50 group-focus-within/select:text-champagne group-focus-within/select:rotate-180 transition-all pointer-events-none" />
+                      </div>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Calendar className="w-3 h-3" /> Date
+                        <Calendar className="w-3 h-3 text-white" /> Date
                       </label>
                       <input 
                         type="date"
                         required
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none"
+                        className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setDiningData({...diningData, date: e.target.value})}
                       />
                     </div>
                     <div className="space-y-4">
                       <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                        <Clock className="w-3 h-3" /> Time
+                        <Clock className="w-3 h-3 text-white" /> Time
                       </label>
                       <input 
                         type="time"
                         required
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none"
+                        className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setDiningData({...diningData, time: e.target.value})}
                       />
                     </div>
@@ -280,22 +292,25 @@ export default function BookingContent() {
 
                   <div className="space-y-4">
                     <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                      <Users className="w-3 h-3" /> Guests
+                      <Users className="w-3 h-3 text-white" /> Guests
                     </label>
-                    <select 
-                      className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
-                      value={diningData.guests}
-                      onChange={(e) => setDiningData({...diningData, guests: e.target.value})}
-                    >
-                      {[1,2,3,4,5,6,8,10,12,15,20].map(n => (
-                        <option key={n} value={n} className="bg-onyx">{n} Person{n > 1 ? 's' : ''}</option>
-                      ))}
-                    </select>
+                    <div className="relative group/select">
+                      <select 
+                        className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
+                        value={diningData.guests}
+                        onChange={(e) => setDiningData({...diningData, guests: e.target.value})}
+                      >
+                        {[1,2,3,4,5,6,8,10,12,15,20].map(n => (
+                          <option key={n} value={n} className="bg-onyx">{n} Person{n > 1 ? 's' : ''}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-0 bottom-4 w-4 h-4 text-champagne/50 group-focus-within/select:text-champagne group-focus-within/select:rotate-180 transition-all pointer-events-none" />
+                    </div>
                   </div>
 
                   <div className="space-y-4">
                     <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
-                      <MessageSquare className="w-3 h-3" /> Message
+                      <MessageSquare className="w-3 h-3 text-white" /> Message
                     </label>
                     <textarea 
                       rows={3}
@@ -305,8 +320,8 @@ export default function BookingContent() {
                     ></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full bg-champagne text-black hover:bg-brass rounded-none py-8 text-xs font-bold uppercase tracking-[0.4em] h-auto group">
-                    Reserve Table on WhatsApp <MoveRight className="ml-4 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  <Button type="submit" className="w-full bg-champagne text-black hover:bg-brass rounded-none py-8 text-[10px] md:text-xs font-bold uppercase tracking-widest md:tracking-[0.4em] h-auto group flex items-center justify-center px-4">
+                    <span className="truncate">Reserve Table on WhatsApp</span> <MoveRight className="ml-4 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform shrink-0" />
                   </Button>
                 </form>
               )}

@@ -9,7 +9,7 @@ export default function Preloader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500); // Cinematic duration
+    }, 2000); // Optimized cinematic duration
 
     return () => clearTimeout(timer);
   }, []);

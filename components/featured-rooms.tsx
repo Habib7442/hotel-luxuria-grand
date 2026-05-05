@@ -181,7 +181,6 @@ export const FeaturedRooms = () => {
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover group-hover/card:scale-105 transition-transform duration-1000"
-                        priority={idx === 0 && currentIndex === 0}
                       />
                       {/* Price Badge */}
                       <div className="absolute top-4 right-4 z-20">
