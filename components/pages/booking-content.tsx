@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, Users, Home, MessageSquare, MoveRight, Utensils, PartyPopper, Clock, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
