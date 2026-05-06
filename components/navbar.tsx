@@ -44,6 +44,7 @@ export const Navbar = () => {
     { name: "Offers", href: "/offers" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
+    { name: "Reviews", href: "https://www.google.com/search?q=Luxuria+Grand+Reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcFxboClSYhUlfcnk14JnFGbuxCDrgBszO1QuUIE3mECRZcYvsx5sjVqFS7lF4P9nA8qNhxPm7PGZ-JjN2wsBCdKJF1V" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -69,7 +70,8 @@ export const Navbar = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "flex-start",
+            overflowY: "auto",
           }}
         >
           {/* Close Button */}
@@ -87,7 +89,7 @@ export const Navbar = () => {
             style={{ opacity: 0.03, backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "20px 20px" }}
           />
 
-          <div className="flex flex-col items-center w-full max-h-full overflow-y-auto py-24 px-10 space-y-10 relative">
+          <div className="flex flex-col items-center w-full py-32 px-10 space-y-12 relative min-h-full">
             {/* Navigation Links */}
             <div className="flex flex-col items-center space-y-6">
               {navLinks.map((link, idx) => (

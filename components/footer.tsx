@@ -73,6 +73,7 @@ export const Footer = () => {
                 { name: "Exclusive Offers", href: "/offers" },
                 { name: "Book Now", href: "/book" },
                 { name: "About Us", href: "/about" },
+                { name: "Write a Review", href: "https://www.google.com/search?q=Luxuria+Grand+Reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcFxboClSYhUlfcnk14JnFGbuxCDrgBszO1QuUIE3mECRZcYvsx5sjVqFS7lF4P9nA8qNhxPm7PGZ-JjN2wsBCdKJF1V" },
                 { name: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.name}>

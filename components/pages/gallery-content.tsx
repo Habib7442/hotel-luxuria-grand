@@ -8,18 +8,18 @@ import { Maximize2, X } from "lucide-react";
 const categories = ["All", "Rooms", "Dining", "General"];
 
 const galleryImages = [
-  { src: "/assets/new_assets/exterior.jpeg", category: "General", title: "The Grand Facade" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.12 PM.jpeg", category: "Rooms", title: "Deluxe Comfort" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.31 PM.jpeg", category: "Rooms", title: "Executive Space" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.27.26 PM.jpeg", category: "Dining", title: "Café Cove Ambiance" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.25.07 PM.jpeg", category: "Dining", title: "Breakfast Spot" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.27.35 PM.jpeg", category: "Dining", title: "Buffet Spread" },
-  { src: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).jpeg", category: "Dining", title: "Gourmet Platter" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.jpeg", category: "Rooms", title: "Presidential View" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.03 PM.jpeg", category: "Rooms", title: "Standard Elegance" },
-  { src: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.51 PM.jpeg", category: "Dining", title: "Signature Drinks" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.23.51 PM.jpeg", category: "General", title: "Main Hall" },
-  { src: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.jpeg", category: "Rooms", title: "Suite Living" },
+  { src: "/assets/new_assets_2/EXTERIOR.jpeg", category: "General", title: "The Grand Facade" },
+  { src: "/assets/new_assets_2/HOTEL RRONT(1).jpeg", category: "General", title: "Architecture" },
+  { src: "/assets/new_assets_2/President Suite 5500-6500.jpeg", category: "Rooms", title: "Presidential Suite" },
+  { src: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg", category: "Rooms", title: "Executive Luxury" },
+  { src: "/assets/new_assets_2/CAFE.jpeg", category: "Dining", title: "Café Cove" },
+  { src: "/assets/new_assets_2/BANQUET AVAANI_S .jpeg", category: "General", title: "Banquet Avaani" },
+  { src: "/assets/new_assets_2/HOTEL ENTERANCE.jpeg", category: "General", title: "Grand Entrance" },
+  { src: "/assets/new_assets_2/Exective room @ 3500-4500.jpeg", category: "Rooms", title: "Refined Living" },
+  { src: "/assets/new_assets_2/CAFE(1).jpeg", category: "Dining", title: "Fine Dining" },
+  { src: "/assets/new_assets_2/BANQUET AVAANI_S (1).jpeg", category: "General", title: "Event Spaces" },
+  { src: "/assets/new_assets_2/President Suite 5500-6500(1).jpeg", category: "Rooms", title: "Modern Suites" },
+  { src: "/assets/new_assets_2/EXTERIOR(1).jpeg", category: "General", title: "Night View" },
 ];
 
 export default function GalleryContent() {

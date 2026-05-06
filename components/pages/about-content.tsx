@@ -20,7 +20,7 @@ export default function AboutContent() {
           className="absolute inset-0"
         >
           <Image
-            src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.23.51 PM.jpeg"
+            src="/assets/new_assets_2/HOTEL RRONT(3).jpeg"
             alt="Luxuria Grand Lobby"
             fill
             sizes="100vw"
@@ -98,7 +98,7 @@ export default function AboutContent() {
                 className="relative aspect-[4/5] overflow-hidden group shadow-2xl"
               >
                 <Image
-                  src="/assets/new_assets/exterior.jpeg"
+                  src="/assets/new_assets_2/EXTERIOR(1).jpeg"
                   alt="Luxuria Grand Exterior"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

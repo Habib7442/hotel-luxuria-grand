@@ -22,8 +22,8 @@ export const BrandStory = () => {
               className="relative aspect-[4/5] w-full md:w-[85%] rounded-none overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] z-10 border border-white/5"
             >
               <Image
-                src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.28.45 PM.jpeg"
-                alt="Luxuria Grand Lobby"
+                src="/assets/new_assets_2/HOTEL FRONT.jpeg"
+                alt="Hotel Luxuria Grand Exterior"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover scale-110 hover:scale-100 transition-transform duration-1000"
@@ -38,8 +38,8 @@ export const BrandStory = () => {
               className="absolute -bottom-12 -right-4 md:-right-12 aspect-square w-[55%] rounded-none overflow-hidden shadow-2xl z-20 border-[8px] md:border-[16px] border-onyx"
             >
               <Image
-                src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.40 PM.jpeg"
-                alt="Luxury Details"
+                src="/assets/new_assets_2/HOTEL ENTERANCE.jpeg"
+                alt="Grand Entrance"
                 fill
                 sizes="(max-width: 768px) 50vw, 30vw"
                 className="object-cover"

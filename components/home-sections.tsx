@@ -170,10 +170,10 @@ export const HomeSections = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 px-2 max-w-[1800px] mx-auto">
           {[
-            "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.47 PM.jpeg",
-            "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.jpeg",
-            "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.27.26 PM.jpeg",
-            "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.27.35 PM.jpeg"
+            "/assets/new_assets_2/CAFE.jpeg",
+            "/assets/new_assets_2/HOTEL FRONT(2).jpeg",
+            "/assets/new_assets_2/President Suite 5500-6500.jpeg",
+            "/assets/new_assets_2/BANQUET AVAANI_S (1).jpeg"
           ].map((src, i) => (
             <motion.div
               key={i}
