@@ -14,7 +14,7 @@ export default function EventsContent() {
       {/* Events Hero */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.23.51 PM.jpeg"
+          src="/assets/new_assets_2/BANQUET AVAANI_S (2).jpeg"
           alt="Grand Events at Luxuria"
           fill
           className="object-cover brightness-[0.3]"
@@ -93,7 +93,7 @@ export default function EventsContent() {
               className="relative aspect-video lg:aspect-[4/5] overflow-hidden shadow-2xl"
             >
               <Image
-                src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.23.51 PM.jpeg"
+                src="/assets/new_assets_2/BANQUET AVAANI_S .jpeg"
                 alt="Banquet Hall"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

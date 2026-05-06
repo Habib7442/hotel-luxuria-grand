@@ -19,7 +19,7 @@ export default function DiningContent() {
           className="absolute inset-0"
         >
           <Image
-            src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.27.26 PM.jpeg"
+            src="/assets/new_assets_2/CAFE.jpeg"
             alt="Café Cove Ambiance"
             fill
             sizes="100vw"
@@ -122,7 +122,7 @@ export default function DiningContent() {
                   className="relative aspect-[4/5] rounded-none overflow-hidden border border-white/5 shadow-2xl"
                 >
                   <Image
-                    src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.25.07 PM.jpeg"
+                    src="/assets/new_assets_2/CAFE(1).jpeg"
                     alt="Cafe Area"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -154,7 +154,7 @@ export default function DiningContent() {
                 className="absolute -top-12 -right-12 w-1/2 aspect-square rounded-none overflow-hidden border border-white/10 shadow-2xl z-0 hidden lg:block"
               >
                 <Image
-                  src="/assets/new_assets/WhatsApp Image 2026-04-27 at 8.27.35 PM.jpeg"
+                  src="/assets/new_assets_2/BANQUET AVAANI_S .jpeg"
                   alt="Buffet Experience"
                   fill
                   sizes="25vw"
