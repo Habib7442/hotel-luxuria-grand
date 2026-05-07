@@ -158,11 +158,11 @@ export default function RoomsContent() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6">
                         <div className="flex flex-col">
                           <p className="text-ivory/40 text-[8px] uppercase tracking-widest font-bold mb-2">Single Occupancy</p>
-                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none whitespace-nowrap">{room.priceSingle}</p>
+                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-tight">{room.priceSingle}</p>
                         </div>
                         <div className="flex flex-col sm:items-end sm:text-right border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0 sm:pl-8">
                           <p className="text-ivory/40 text-[8px] uppercase tracking-widest font-bold mb-2">Double Occupancy</p>
-                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none whitespace-nowrap">{room.priceDouble}</p>
+                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-tight">{room.priceDouble}</p>
                         </div>
                       </div>
                       <div className="pt-4 border-t border-white/5 flex flex-col xs:flex-row justify-between items-center gap-3">
