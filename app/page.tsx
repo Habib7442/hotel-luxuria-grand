@@ -1,7 +1,4 @@
 import { Hero } from "@/components/hero";
-import { FeaturedRooms } from "@/components/featured-rooms";
-import { BrandStory } from "@/components/brand-story";
-import { HomeSections } from "@/components/home-sections";
 import { WelcomeStrip } from "@/components/welcome-strip";
 import { Metadata } from "next";
 import Preloader from "@/components/preloader";
@@ -12,6 +9,18 @@ const Testimonials = dynamic(() => import("@/components/testimonials").then(mod 
 });
 
 const ContactMap = dynamic(() => import("@/components/contact-map").then(mod => mod.ContactMap), { 
+  loading: () => <div className="h-96 bg-onyx animate-pulse" />
+});
+
+const FeaturedRooms = dynamic(() => import("@/components/featured-rooms").then(mod => mod.FeaturedRooms), { 
+  loading: () => <div className="h-96 bg-onyx animate-pulse" />
+});
+
+const BrandStory = dynamic(() => import("@/components/brand-story").then(mod => mod.BrandStory), { 
+  loading: () => <div className="h-96 bg-onyx animate-pulse" />
+});
+
+const HomeSections = dynamic(() => import("@/components/home-sections").then(mod => mod.HomeSections), { 
   loading: () => <div className="h-96 bg-onyx animate-pulse" />
 });
 
