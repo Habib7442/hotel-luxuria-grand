@@ -8,12 +8,10 @@ import Preloader from "@/components/preloader";
 import dynamic from "next/dynamic";
 
 const Testimonials = dynamic(() => import("@/components/testimonials").then(mod => mod.Testimonials), { 
-  ssr: false,
   loading: () => <div className="h-96 bg-onyx animate-pulse" />
 });
 
 const ContactMap = dynamic(() => import("@/components/contact-map").then(mod => mod.ContactMap), { 
-  ssr: false,
   loading: () => <div className="h-96 bg-onyx animate-pulse" />
 });
 
