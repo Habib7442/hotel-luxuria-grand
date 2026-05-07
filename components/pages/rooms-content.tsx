@@ -120,10 +120,10 @@ export default function RoomsContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="group flex flex-col md:flex-row gap-10 items-stretch bg-white/[0.02] border border-white/5 hover:border-champagne/30 transition-all duration-700"
+                className="group flex flex-col bg-white/[0.02] border border-white/5 hover:border-champagne/30 transition-all duration-700"
               >
                 {/* Image Side */}
-                <div className="w-full md:w-1/2 relative aspect-square md:aspect-auto overflow-hidden">
+                <div className="w-full relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={room.image}
                     alt={room.title}
@@ -132,50 +132,58 @@ export default function RoomsContent() {
                     className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
                   />
                   {/* Category Tag */}
-                  <div className="absolute top-6 left-6 bg-champagne text-black text-[8px] font-black uppercase tracking-widest px-4 py-2">
+                  <div className="absolute top-6 left-6 bg-champagne text-black text-[8px] font-black uppercase tracking-widest px-4 py-2 z-20">
                     {idx < 2 ? "Premium Suite" : "Luxury Room"}
                   </div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent opacity-60" />
                 </div>
 
                 {/* Content Side */}
-                <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                  <h2 className="text-2xl md:text-4xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-4 group-hover:text-champagne transition-colors">
-                    {room.title}
-                  </h2>
-                  <p className="text-ivory/60 text-sm leading-relaxed mb-8 font-jakarta">
+                <div className="w-full p-8 md:p-12 flex flex-col">
+                  <div className="mb-8">
+                    <h2 className="text-4xl md:text-6xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-4 group-hover:text-champagne transition-colors">
+                      {room.title}
+                    </h2>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+                      {room.features.map(f => (
+                        <span key={f} className="text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                          <span className="w-1 h-1 bg-champagne rounded-full" /> {f}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Full-width Pricing Box */}
+                    <div className="bg-white/5 border border-white/5 p-8 w-full max-w-xl">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-6">
+                        <div>
+                          <p className="text-ivory/40 text-[8px] uppercase tracking-widest font-bold mb-2">Single Occupancy</p>
+                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none">{room.priceSingle}</p>
+                        </div>
+                        <div className="hidden sm:block w-[1px] h-12 bg-white/10" />
+                        <div className="sm:text-right">
+                          <p className="text-ivory/40 text-[8px] uppercase tracking-widest font-bold mb-2">Double Occupancy</p>
+                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none">{room.priceDouble}</p>
+                        </div>
+                      </div>
+                      <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-2">
+                        <p className="text-ivory/20 text-[8px] uppercase tracking-widest font-bold">
+                          Per Night • Excl. Taxes
+                        </p>
+                        <p className="text-champagne/40 text-[8px] uppercase tracking-widest font-bold">
+                          + 12% GST Applicable
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-ivory/60 text-sm md:text-base leading-relaxed mb-10 font-jakarta max-w-2xl">
                     {room.description}
                   </p>
 
-                  {/* Features */}
-                  <div className="flex flex-wrap gap-4 mb-10">
-                    {room.features.map(f => (
-                      <span key={f} className="text-[9px] uppercase tracking-widest text-champagne font-bold border border-champagne/20 px-3 py-1.5">
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Pricing Badge Layout */}
-                  <div className="bg-onyx/40 border border-white/5 p-6 mb-10">
-                    <div className="flex justify-between items-center mb-4">
-                      <div>
-                        <p className="text-champagne font-jakarta font-black text-2xl">{room.priceSingle}</p>
-                        <p className="text-ivory/40 text-[8px] uppercase tracking-[0.2em] font-bold">Single Occupancy</p>
-                      </div>
-                      <div className="w-[1px] h-10 bg-white/10" />
-                      <div className="text-right">
-                        <p className="text-champagne font-jakarta font-black text-2xl">{room.priceDouble}</p>
-                        <p className="text-ivory/40 text-[8px] uppercase tracking-[0.2em] font-bold">Double Occupancy</p>
-                      </div>
-                    </div>
-                    <p className="text-ivory/20 text-[7px] uppercase tracking-widest text-center border-t border-white/5 pt-3 font-bold">
-                      + 12% GST as applicable
-                    </p>
-                  </div>
-
-                  <Button asChild className="bg-champagne text-black hover:bg-brass rounded-none py-6 text-[10px] uppercase tracking-[0.3em] font-bold h-auto shadow-2xl transition-all duration-500">
+                  <Button asChild className="bg-champagne text-black hover:bg-brass rounded-none py-8 text-[10px] uppercase tracking-[0.3em] font-bold h-auto shadow-2xl transition-all duration-500 w-full md:w-fit px-12">
                     <Link href={`/book?room=${encodeURIComponent(room.title)}`} className="flex items-center justify-center gap-4">
-                      Book This Room <MoveRight className="w-4 h-4" />
+                      Reserve This Room <MoveRight className="w-4 h-4" />
                     </Link>
                   </Button>
                 </div>
