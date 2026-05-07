@@ -17,6 +17,8 @@ export default function EventsContent() {
           src="/assets/new_assets_2/BANQUET AVAANI_S (2).jpeg"
           alt="Grand Events at Luxuria"
           fill
+          sizes="100vw"
+          quality={80}
           className="object-cover brightness-[0.3]"
           priority
         />

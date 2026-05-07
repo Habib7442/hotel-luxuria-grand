@@ -77,6 +77,7 @@ export default function RoomsContent() {
           alt="Luxury Accommodations"
           fill
           sizes="100vw"
+          quality={80}
           className="object-cover brightness-[0.3]"
           priority
         />
