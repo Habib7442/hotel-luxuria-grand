@@ -154,19 +154,18 @@ export default function RoomsContent() {
                     </div>
                     
                     {/* Full-width Pricing Box */}
-                    <div className="bg-white/5 border border-white/5 p-8 w-full max-w-xl">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-6">
-                        <div>
+                    <div className="bg-white/5 border border-white/5 p-6 md:p-8 w-full max-w-xl">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6">
+                        <div className="flex flex-col">
                           <p className="text-ivory/40 text-[8px] uppercase tracking-widest font-bold mb-2">Single Occupancy</p>
-                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none">{room.priceSingle}</p>
+                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none whitespace-nowrap">{room.priceSingle}</p>
                         </div>
-                        <div className="hidden sm:block w-[1px] h-12 bg-white/10" />
-                        <div className="sm:text-right">
+                        <div className="flex flex-col sm:items-end sm:text-right border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0 sm:pl-8">
                           <p className="text-ivory/40 text-[8px] uppercase tracking-widest font-bold mb-2">Double Occupancy</p>
-                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none">{room.priceDouble}</p>
+                          <p className="text-champagne font-jakarta font-black text-3xl md:text-4xl leading-none whitespace-nowrap">{room.priceDouble}</p>
                         </div>
                       </div>
-                      <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-2">
+                      <div className="pt-4 border-t border-white/5 flex flex-col xs:flex-row justify-between items-center gap-3">
                         <p className="text-ivory/20 text-[8px] uppercase tracking-widest font-bold">
                           Per Night • Excl. Taxes
                         </p>

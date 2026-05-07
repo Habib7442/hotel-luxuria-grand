@@ -184,20 +184,20 @@ export const FeaturedRooms = () => {
                       />
                       {/* Price Badge */}
                       <div className="absolute top-4 right-4 z-20">
-                        <div className="bg-champagne px-4 py-3 rounded-none shadow-2xl flex flex-col items-center border border-white/20">
-                          <div className="flex gap-3 items-baseline">
+                        <div className="bg-champagne px-3 py-2 md:px-4 md:py-3 rounded-none shadow-2xl flex flex-col items-center border border-white/20">
+                          <div className="flex gap-2 md:gap-3 items-center">
                             <div className="text-center">
-                              <p className="text-[#2E0249] font-jakarta font-black text-base">{room.priceSingle}</p>
-                              <p className="text-[#2E0249]/60 text-[7px] uppercase tracking-widest font-black">Single</p>
+                              <p className="text-[#2E0249] font-jakarta font-black text-sm md:text-base leading-tight">{room.priceSingle}</p>
+                              <p className="text-[#2E0249]/60 text-[6px] md:text-[7px] uppercase tracking-widest font-black">Single</p>
                             </div>
-                            <div className="w-[1px] h-4 bg-[#2E0249]/10" />
+                            <div className="w-[1px] h-4 bg-[#2E0249]/20" />
                             <div className="text-center">
-                              <p className="text-[#2E0249] font-jakarta font-black text-base">{room.priceDouble}</p>
-                              <p className="text-[#2E0249]/60 text-[7px] uppercase tracking-widest font-black">Double</p>
+                              <p className="text-[#2E0249] font-jakarta font-black text-sm md:text-base leading-tight">{room.priceDouble}</p>
+                              <p className="text-[#2E0249]/60 text-[6px] md:text-[7px] uppercase tracking-widest font-black">Double</p>
                             </div>
                           </div>
-                          <p className="text-[#2E0249]/40 text-[6px] uppercase tracking-widest mt-2 border-t border-[#2E0249]/5 pt-1 w-full text-center font-bold">
-                            + Govt. Tax as applicable
+                          <p className="text-[#2E0249]/40 text-[5px] md:text-[6px] uppercase tracking-widest mt-1 border-t border-[#2E0249]/10 pt-1 w-full text-center font-bold whitespace-nowrap">
+                            + GST as applicable
                           </p>
                         </div>
                       </div>
