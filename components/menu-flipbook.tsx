@@ -70,7 +70,7 @@ export function MenuFlipbook() {
           minHeight={420}
           maxHeight={1333}
           maxShadowOpacity={0.6}
-          showCover={true}
+          showCover={false}
           mobileScrollSupport={true}
           onFlip={onFlip}
           className="menu-book"
