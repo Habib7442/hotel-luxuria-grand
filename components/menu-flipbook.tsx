@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Maximize2, Download } from "lucide-react";
@@ -39,6 +39,16 @@ Page.displayName = "Page";
 export function MenuFlipbook() {
   const book = useRef<any>(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [usePortrait, setUsePortrait] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setUsePortrait(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const onFlip = useCallback((e: any) => {
     setCurrentPage(e.data);
@@ -46,7 +56,10 @@ export function MenuFlipbook() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto py-12 px-4">
-      <div className="relative w-full aspect-[1.4/1] flex items-center justify-center bg-black/20 rounded-xl p-4 md:p-8 backdrop-blur-sm border border-white/5">
+      <div className="relative w-full min-h-[500px] md:min-h-[700px] flex items-center justify-center bg-black/40 rounded-3xl p-4 md:p-12 backdrop-blur-xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+        {/* Decorative Inner Glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.03)_0%,transparent_70%)] pointer-events-none" />
+
         {/* @ts-ignore */}
         <HTMLFlipBook
           width={550}
@@ -56,13 +69,23 @@ export function MenuFlipbook() {
           maxWidth={1000}
           minHeight={420}
           maxHeight={1333}
-          maxShadowOpacity={0.5}
+          maxShadowOpacity={0.6}
           showCover={true}
           mobileScrollSupport={true}
           onFlip={onFlip}
-          className="menu-book shadow-2xl"
+          className="menu-book"
           ref={book}
-          style={{ margin: "0 auto" }}
+          style={{ margin: "0 auto", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
+          drawShadow={true}
+          flippingTime={1000}
+          usePortrait={usePortrait}
+          startZIndex={0}
+          autoSize={true}
+          clickEventForward={true}
+          useMouseEvents={true}
+          swipeDistance={30}
+          showPageCorners={true}
+          disableFlipByClick={false}
         >
           {menuPages.map((page, index) => (
             <Page key={index} src={page} number={index + 1} />
