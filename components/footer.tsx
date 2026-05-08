@@ -120,11 +120,7 @@ export const Footer = () => {
 
         {/* Digital Visiting Card Row */}
         <div className="pt-16 border-t border-white/5 mb-16">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="max-w-md">
-               <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em] mb-4">Official Digital Card</h4>
-              <p className="text-champagne/40 text-sm font-jakarta">Scan or save our official contact details for quick access to our premium concierge services.</p>
-            </div>
+          <div className="flex flex-col items-center justify-center">
             <div className="relative group overflow-hidden rounded-md border border-white/10 shadow-2xl max-w-xl w-full">
               <Image 
                 src="/assets/visiting_card.png" 
@@ -137,7 +133,6 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-white/20 text-[10px] font-jakarta uppercase tracking-[0.2em]">
