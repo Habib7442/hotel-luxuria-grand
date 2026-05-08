@@ -26,6 +26,7 @@ const Page = React.forwardRef<HTMLDivElement, { src: string; number: number }>((
           src={props.src}
           alt={`Menu Page ${props.number}`}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-contain"
           priority={props.number <= 2}
         />
