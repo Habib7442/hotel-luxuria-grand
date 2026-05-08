@@ -47,14 +47,14 @@ const rooms = [
   {
     title: "Deluxe",
     description: "Refined space and essential luxuries designed for a comfortable and restorative experience.",
-    image: "/assets/new_assets_2/HOTEL ENTERANCE.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.27 PM.jpeg",
     priceSingle: "₹2,500",
     priceDouble: "₹3,500",
   },
   {
     title: "Standard",
     description: "Comfortable and essential accommodation, ideal for solo travelers or short business trips.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.06 PM.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.41 PM.jpeg",
     priceSingle: "₹2,200",
     priceDouble: "₹3,200",
   },
