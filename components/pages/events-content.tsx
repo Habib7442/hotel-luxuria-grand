@@ -18,7 +18,7 @@ export default function EventsContent() {
           alt="Grand Events at Luxuria"
           fill
           sizes="100vw"
-          quality={80}
+          quality={75}
           className="object-cover brightness-[0.3]"
           priority
         />
