@@ -5,6 +5,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { MoveRight, Utensils, Coffee, Wine, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
+
+const MenuFlipbook = dynamic(() => import("@/components/menu-flipbook").then(mod => mod.MenuFlipbook), {
+  ssr: false,
+  loading: () => <div className="h-[600px] flex items-center justify-center text-champagne uppercase tracking-widest text-xs">Loading Menu...</div>
+});
 
 export default function DiningContent() {
   return (
@@ -232,6 +238,20 @@ export default function DiningContent() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Interactive Menu Section */}
+      <section className="py-24 md:py-40 relative">
+        <div className="container mx-auto px-6 mb-16">
+          <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-6">
+            The Digital Experience
+          </p>
+          <h2 className="text-5xl md:text-8xl font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter">
+            Flip Through <br />
+            <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal block mt-4">Our Menu</span>
+          </h2>
+        </div>
+        <MenuFlipbook />
       </section>
 
       {/* Call to Action - Reservations */}
