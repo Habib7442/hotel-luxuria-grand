@@ -8,6 +8,10 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Disable smooth scroll on Smart TVs to prevent performance issues and scroll glitches
+    const isTV = /SmartTV|Tizen|Web0S|Viera|BRAVIA|PlayStation|Xbox/i.test(navigator.userAgent);
+    if (isTV) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
