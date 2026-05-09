@@ -178,6 +178,7 @@ export const Navbar = () => {
                 width={140}
                 height={70}
                 priority
+                loading="eager"
                 className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-all duration-500"
               />
               <p className={cn(

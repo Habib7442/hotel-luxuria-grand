@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { WhatsAppChat } from "@/components/whatsapp-chat";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -116,6 +117,7 @@ export default function RootLayout({
           </div>
           <Footer />
         </SmoothScroll>
+        <WhatsAppChat />
         <Analytics />
         <SpeedInsights />
       </body>
