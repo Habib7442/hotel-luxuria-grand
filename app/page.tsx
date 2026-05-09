@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <>
       <Preloader />
-      <main className="flex-1 bg-onyx">
+      <main className="flex-1 bg-onyx relative z-0">
       <Hero />
       <VideoShowcase />
       

@@ -1,13 +1,21 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const timeout = setTimeout(() => setMounted(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     // Disable smooth scroll on Smart TVs to prevent performance issues and scroll glitches
     const isTV = /SmartTV|Tizen|Web0S|Viera|BRAVIA|PlayStation|Xbox/i.test(navigator.userAgent);
     if (isTV) return;

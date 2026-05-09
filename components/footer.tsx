@@ -128,6 +128,7 @@ export const Footer = () => {
                 width={600} 
                 height={320} 
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                priority
               />
               <div className="absolute inset-0 bg-onyx/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>

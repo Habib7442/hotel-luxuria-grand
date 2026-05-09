@@ -73,20 +73,20 @@ export function VideoShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative aspect-video bg-black rounded-sm overflow-hidden border border-white/5 shadow-2xl"
+              className="group relative aspect-video bg-black rounded-sm overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-champagne/50 transition-all duration-500"
             >
               <video
                 ref={(el) => { videoRefs.current[idx] = el; }}
                 src={video.src}
-                className="w-full h-full object-cover brightness-[0.7] group-hover:brightness-100 transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-[2s] group-hover:scale-105"
                 loop
                 muted
                 playsInline
                 preload="metadata"
               />
               
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 flex flex-col justify-end">
+              {/* Refined Glass Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-champagne text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block">

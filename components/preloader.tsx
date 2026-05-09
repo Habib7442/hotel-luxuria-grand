@@ -5,14 +5,22 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const timeout = setTimeout(() => setMounted(true), 100);
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000); // Optimized cinematic duration
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(timer);
+    };
   }, []);
+
+  if (!mounted) return null;
+
 
   return (
     <AnimatePresence>

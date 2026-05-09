@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MoveRight, Utensils, Coffee, Wine, Star } from "lucide-react";
+import { MoveRight, Utensils, Coffee, Wine, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 
@@ -14,7 +14,7 @@ const MenuFlipbook = dynamic(() => import("@/components/menu-flipbook").then(mod
 
 export default function DiningContent() {
   return (
-    <main className="min-h-screen bg-onyx overflow-hidden">
+    <main className="min-h-screen bg-onyx overflow-hidden relative z-0">
 
       {/* Cinematic Dining Hero */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
@@ -192,20 +192,20 @@ export default function DiningContent() {
             {[
               { 
                 title: "Exotic Platters", 
-                desc: "A fusion of local spices and international techniques.", 
-                img: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).jpeg",
+                desc: "A fusion of local spices and international techniques featuring our signature Tandoori specialties.", 
+                img: "/assets/food/tandoori_platter.png",
                 tag: "Gourmet"
               },
               { 
                 title: "The Grand Feast", 
-                desc: "Lavish buffet spreads celebrating diverse world cuisines.", 
-                img: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.23.51 PM.jpeg",
+                desc: "Lavish buffet spreads and our legendary Grand Chicken Biryani, celebrating diverse world cuisines.", 
+                img: "/assets/food/grand_biryani.png",
                 tag: "Signature"
               },
               { 
                 title: "Artisanal Brews", 
-                desc: "Refreshing beverages designed to delight the senses.", 
-                img: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.51 PM.jpeg",
+                desc: "Premium roasted coffees and refreshing beverages designed to delight the senses at Café Cove.", 
+                img: "/assets/food/premium_coffee.png",
                 tag: "Cafe Cove"
               }
             ].map((item, idx) => (
@@ -222,7 +222,7 @@ export default function DiningContent() {
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-[2s] grayscale group-hover:grayscale-0 brightness-[0.7] group-hover:brightness-100"
+                  className="object-cover group-hover:scale-110 transition-transform duration-[2s] lg:grayscale group-hover:grayscale-0 lg:brightness-[0.7] group-hover:brightness-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/20 to-transparent p-10 flex flex-col justify-end">
                   <span className="text-champagne font-jakarta font-bold text-[8px] uppercase tracking-[0.3em] mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -240,8 +240,82 @@ export default function DiningContent() {
         </div>
       </section>
 
+      {/* Horizontal Scroll Chef Recommendations */}
+      <section className="py-24 md:py-40 bg-onyx relative overflow-hidden group/main">
+        <div className="container mx-auto px-6 mb-16">
+          <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-6">
+            Chef's Recommendations
+          </p>
+          <h2 className="text-5xl md:text-8xl font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter">
+            Must <br />
+            <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal block mt-4">Try Dishes</span>
+          </h2>
+        </div>
+
+        <div className="relative px-6">
+          {/* Navigation Arrows - Side Positioned */}
+          <div className="absolute top-1/2 -left-4 md:left-10 -translate-y-1/2 z-40 hidden md:block">
+            <Button
+              variant="outline"
+              size="icon"
+              className="w-16 h-16 rounded-full border-white/10 bg-black/40 backdrop-blur-xl text-champagne hover:bg-champagne hover:text-black transition-all duration-500 shadow-2xl"
+              onClick={() => {
+                const container = document.getElementById('chef-scroll-container');
+                if (container) container.scrollBy({ left: -450, behavior: 'smooth' });
+              }}
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </Button>
+          </div>
+
+          <div className="absolute top-1/2 -right-4 md:right-10 -translate-y-1/2 z-40 hidden md:block">
+            <Button
+              variant="outline"
+              size="icon"
+              className="w-16 h-16 rounded-full border-white/10 bg-black/40 backdrop-blur-xl text-champagne hover:bg-champagne hover:text-black transition-all duration-500 shadow-2xl"
+              onClick={() => {
+                const container = document.getElementById('chef-scroll-container');
+                if (container) container.scrollBy({ left: 450, behavior: 'smooth' });
+              }}
+            >
+              <ChevronRight className="w-8 h-8" />
+            </Button>
+          </div>
+
+          <div 
+            id="chef-scroll-container"
+            className="flex overflow-x-auto pb-12 gap-6 no-scrollbar snap-x snap-mandatory scroll-smooth"
+          >
+          {[
+            { title: "Masala Dosa", img: "/assets/food/masala_dosa.png", tag: "South Indian" },
+            { title: "Tandoori Platter", img: "/assets/food/tandoori_platter.png", tag: "Tandoor" },
+            { title: "Grand Biryani", img: "/assets/food/grand_biryani.png", tag: "Main Course" },
+            { title: "Premium Coffee", img: "/assets/food/premium_coffee.png", tag: "Beverage" },
+            { title: "Paneer Tikka", img: "/assets/food/paneer_tikka.png", tag: "Appetizer" },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              className="min-w-[300px] md:min-w-[450px] aspect-[4/5] relative snap-center group overflow-hidden border border-white/5 shadow-2xl"
+            >
+              <Image
+                src={item.img}
+                alt={item.title}
+                fill
+                sizes="(max-width: 768px) 300px, 450px"
+                className="object-cover group-hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-transparent p-10 flex flex-col justify-end">
+                <span className="text-champagne text-[10px] uppercase tracking-[0.3em] font-bold mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">{item.tag}</span>
+                <h3 className="text-white text-3xl md:text-4xl font-jakarta font-bold uppercase tracking-tighter transition-all duration-500 group-hover:text-champagne">{item.title}</h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
       {/* Interactive Menu Section */}
-      <section className="py-24 md:py-40 relative">
+      <section className="pt-24 md:pt-40 pb-12 relative">
         <div className="container mx-auto px-6 mb-16">
           <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-6">
             The Digital Experience
@@ -255,7 +329,7 @@ export default function DiningContent() {
       </section>
 
       {/* Call to Action - Reservations */}
-      <section className="py-24 md:py-48 relative overflow-hidden">
+      <section className="pt-12 md:pt-20 pb-24 md:pb-48 relative overflow-hidden">
         {/* Background Decorative Text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-jakarta font-black text-white/[0.01] uppercase pointer-events-none select-none whitespace-nowrap">
           Gourmet

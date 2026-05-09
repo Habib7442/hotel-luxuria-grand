@@ -16,6 +16,10 @@ const galleryItems = [
   { src: "/assets/new_assets_2/video cafe entry.mov", category: "Videos", title: "Café Cove Ambiance", type: "video" },
   { src: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg", category: "Rooms", title: "Executive Luxury", type: "image" },
   { src: "/assets/new_assets_2/video of recption .mov", category: "Videos", title: "Grand Reception", type: "video" },
+  { src: "/assets/food/masala_dosa.png", category: "Dining", title: "Crisp Masala Dosa", type: "image" },
+  { src: "/assets/food/tandoori_platter.png", category: "Dining", title: "Signature Tandoori", type: "image" },
+  { src: "/assets/food/grand_biryani.png", category: "Dining", title: "Grand Feast Biryani", type: "image" },
+  { src: "/assets/food/premium_coffee.png", category: "Dining", title: "Artisan Coffee", type: "image" },
   { src: "/assets/new_assets_2/CAFE.jpeg", category: "Dining", title: "Café Cove", type: "image" },
   { src: "/assets/new_assets_2/video bathroom.mov", category: "Videos", title: "Bathroom Luxury", type: "video" },
   { src: "/assets/new_assets_2/BANQUET AVAANI_S .jpeg", category: "General", title: "Banquet Avaani", type: "image" },
@@ -98,12 +102,12 @@ export default function GalleryContent() {
                   <div className="w-full h-full relative">
                     <video 
                       src={item.src} 
-                      className="w-full h-full object-cover brightness-[0.7] group-hover:scale-110 transition-transform duration-[2s]"
+                      className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                       muted
                       playsInline
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-champagne/80 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-champagne/80 flex items-center justify-center shadow-2xl">
                         <Play className="w-5 h-5 text-black fill-current translate-x-0.5" />
                       </div>
                     </div>
@@ -114,7 +118,7 @@ export default function GalleryContent() {
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-[2s] brightness-[0.8] group-hover:brightness-100"
+                    className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
                   />
                 )}
                 

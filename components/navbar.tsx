@@ -14,7 +14,10 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    const timeout = setTimeout(() => setMounted(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,12 +151,20 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-700",
-        isScrolled
-          ? "bg-onyx/80 backdrop-blur-2xl border-b border-white/5 py-4"
-          : "bg-transparent py-8"
-      )}>
+      <nav 
+        className={cn(
+          "fixed top-0 left-0 right-0 z-[100] transition-all duration-700",
+          isScrolled
+            ? "bg-onyx/80 backdrop-blur-2xl border-b border-white/5 py-4"
+            : "bg-transparent py-8"
+        )}
+        style={{ 
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+          isolation: "isolate"
+        }}
+      >
         <div className="container mx-auto px-6 flex items-center justify-between">
           {/* Left Side: Hotel Name/Logo */}
           <div className="flex items-center">

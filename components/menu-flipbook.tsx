@@ -20,8 +20,12 @@ const menuPages = [
 
 const Page = React.forwardRef<HTMLDivElement, { src: string; number: number }>((props, ref) => {
   return (
-    <div className="bg-onyx flex items-center justify-center overflow-hidden shadow-2xl" ref={ref}>
-      <div className="relative w-full h-full">
+    <div 
+      className="bg-onyx flex items-center justify-center overflow-hidden shadow-2xl w-full h-full" 
+      ref={ref} 
+      style={{ willChange: "transform" }}
+    >
+      <div className="relative w-full h-full aspect-[550/733]">
         <Image
           src={props.src}
           alt={`Menu Page ${props.number}`}
@@ -56,8 +60,8 @@ export function MenuFlipbook() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto py-12 px-4">
-      <div className="relative w-full min-h-[500px] md:min-h-[700px] flex items-center justify-center bg-black/40 rounded-3xl p-4 md:p-12 backdrop-blur-xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+    <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto pt-12 pb-4 px-4" style={{ isolation: "isolate" }}>
+      <div className="relative w-full min-h-[500px] md:min-h-[700px] flex items-center justify-center bg-black/40 rounded-3xl p-4 md:p-12 backdrop-blur-xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden">
         {/* Decorative Inner Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.03)_0%,transparent_70%)] pointer-events-none" />
 
@@ -70,7 +74,7 @@ export function MenuFlipbook() {
           maxWidth={1000}
           minHeight={420}
           maxHeight={1333}
-          maxShadowOpacity={0.6}
+          maxShadowOpacity={0.4}
           showCover={false}
           mobileScrollSupport={true}
           onFlip={onFlip}
@@ -78,9 +82,9 @@ export function MenuFlipbook() {
           ref={book}
           style={{ margin: "0 auto", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
           drawShadow={true}
-          flippingTime={1000}
+          flippingTime={1500}
           usePortrait={usePortrait}
-          startZIndex={0}
+          startZIndex={1}
           autoSize={true}
           clickEventForward={true}
           useMouseEvents={true}
