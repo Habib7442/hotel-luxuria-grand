@@ -12,49 +12,49 @@ const rooms = [
   {
     title: "President Suite",
     description: "Our grandest accommodation, offering unmatched luxury, expansive living spaces, and royal treatment in the heart of Silchar.",
-    image: "/assets/new_assets_2/President Suite 5500-6500.jpeg",
+    image: "/assets/new_assets_2/President Suite 5500-6500.webp",
     priceSingle: "₹5,500",
     priceDouble: "₹6,500",
   },
   {
     title: "Executive Suite",
     description: "The pinnacle of Barak Valley luxury with premium services, bespoke interiors, and sophisticated design.",
-    image: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg",
+    image: "/assets/new_assets_2/Executive suite @ 5000-6000.webp",
     priceSingle: "₹5,000",
     priceDouble: "₹6,000",
   },
   {
     title: "Suite",
     description: "A spacious haven featuring a separate living area, perfect for families and extended stays.",
-    image: "/assets/new_assets_2/President Suite 5500-6500(1).jpeg",
+    image: "/assets/new_assets_2/President Suite 5500-6500(1).webp",
     priceSingle: "₹4,500",
     priceDouble: "₹5,500",
   },
   {
     title: "Executive",
     description: "Tailored for the discerning professional, offering a perfect blend of modern utility and refined comfort.",
-    image: "/assets/new_assets_2/Exective room @ 3500-4500.jpeg",
+    image: "/assets/new_assets_2/Exective room @ 3500-4500.webp",
     priceSingle: "₹3,500",
     priceDouble: "₹4,500",
   },
   {
     title: "Super Deluxe",
     description: "Premium comfort with elegant furnishings, modern amenities, and a welcoming ambiance.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.30 PM.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.30 PM.webp",
     priceSingle: "₹3,000",
     priceDouble: "₹4,000",
   },
   {
     title: "Deluxe",
     description: "Refined space and essential luxuries designed for a comfortable and restorative experience.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.27 PM.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.27 PM.webp",
     priceSingle: "₹2,500",
     priceDouble: "₹3,500",
   },
   {
     title: "Standard",
     description: "Comfortable and essential accommodation, ideal for solo travelers or short business trips.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.41 PM.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.41 PM.webp",
     priceSingle: "₹2,200",
     priceDouble: "₹3,200",
   },
@@ -262,3 +262,4 @@ export const FeaturedRooms = () => {
     </section>
   );
 };
+

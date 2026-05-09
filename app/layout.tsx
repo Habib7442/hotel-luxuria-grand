@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Hotel Luxuria Grand",
     images: [
       {
-        url: "/og_image.png",
+        url: "/og_image.webp",
         width: 1200,
         height: 630,
         alt: "Hotel Luxuria Grand Silchar",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
     description: "Experience the art of grand living in the heart of Silchar.",
-    images: ["/og_image.png"],
+    images: ["/og_image.webp"],
   },
 };
 
@@ -68,7 +68,7 @@ const jsonLd = {
   "@type": "Hotel",
   "name": "Hotel Luxuria Grand",
   "description": "An upscale hotel in Silchar, Assam offering refined accommodations across seven categories, with banquet, dining, and event facilities.",
-  "image": "https://www.hotelluxuriagrand.com/og_image.png",
+  "image": "https://www.hotelluxuriagrand.com/og_image.webp",
   "url": "https://www.hotelluxuriagrand.com",
   "telephone": "+919181043994",
   "priceRange": "₹2200-₹6500",
@@ -119,3 +119,4 @@ export default function RootLayout({
     </html>
   );
 }
+

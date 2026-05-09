@@ -19,7 +19,7 @@ export const Footer = () => {
           <div className="space-y-8">
             <Link href="/" className="group block w-fit">
               <Image 
-                src="/assets/logo.png" 
+                src="/assets/logo.webp" 
                 alt="Hotel Luxuria Grand" 
                 width={180} 
                 height={90} 
@@ -35,11 +35,11 @@ export const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               {[
-                { name: "instagram", icon: "/social-icons/instagram.png", href: "https://www.instagram.com/luxuria_grand/" },
-                { name: "facebook", icon: "/social-icons/facebook.png", href: "#" },
-                { name: "whatsapp", icon: "/social-icons/whatsapp.png", href: "https://wa.me/919181043994" },
-                { name: "linkedin", icon: "/social-icons/linkedin.png", href: "#" },
-                { name: "X", icon: "/social-icons/X.png", href: "#" },
+                { name: "instagram", icon: "/social-icons/instagram.webp", href: "https://www.instagram.com/luxuria_grand/" },
+                { name: "facebook", icon: "/social-icons/facebook.webp", href: "#" },
+                { name: "whatsapp", icon: "/social-icons/whatsapp.webp", href: "https://wa.me/919181043994" },
+                { name: "linkedin", icon: "/social-icons/linkedin.webp", href: "#" },
+                { name: "X", icon: "/social-icons/X.webp", href: "#" },
               ].map((social) => (
                 <a 
                   key={social.name} 
@@ -123,7 +123,7 @@ export const Footer = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="relative group overflow-hidden rounded-md border border-white/10 shadow-2xl max-w-xl w-full">
               <Image 
-                src="/assets/visiting_card.png" 
+                src="/assets/visiting_card.webp" 
                 alt="Hotel Luxuria Grand Visiting Card" 
                 width={600} 
                 height={320} 
@@ -160,3 +160,4 @@ export const Footer = () => {
     </footer>
   );
 };
+

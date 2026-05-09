@@ -11,7 +11,7 @@ const rooms = [
   {
     title: "President Suite",
     description: "Our grandest accommodation, offering unmatched luxury, expansive living spaces, and royal treatment in the heart of Silchar.",
-    image: "/assets/new_assets_2/President Suite 5500-6500.jpeg",
+    image: "/assets/new_assets_2/President Suite 5500-6500.webp",
     priceSingle: "₹5,500",
     priceDouble: "₹6,500",
     features: ["Private Lounge", "Premium View", "Bespoke Decor"]
@@ -19,7 +19,7 @@ const rooms = [
   {
     title: "Executive Suite",
     description: "The pinnacle of Barak Valley luxury with premium services, bespoke interiors, and sophisticated design.",
-    image: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg",
+    image: "/assets/new_assets_2/Executive suite @ 5000-6000.webp",
     priceSingle: "₹5,000",
     priceDouble: "₹6,000",
     features: ["Workstation", "Mini Bar", "Designer Lighting"]
@@ -27,7 +27,7 @@ const rooms = [
   {
     title: "Suite",
     description: "A spacious haven featuring a separate living area, perfect for families and extended stays.",
-    image: "/assets/new_assets_2/President Suite 5500-6500(1).jpeg",
+    image: "/assets/new_assets_2/President Suite 5500-6500(1).webp",
     priceSingle: "₹4,500",
     priceDouble: "₹5,500",
     features: ["Living Area", "Kitchenette", "Premium Bedding"]
@@ -35,7 +35,7 @@ const rooms = [
   {
     title: "Executive",
     description: "Tailored for the discerning professional, offering a perfect blend of modern utility and refined comfort.",
-    image: "/assets/new_assets_2/Exective room @ 3500-4500.jpeg",
+    image: "/assets/new_assets_2/Exective room @ 3500-4500.webp",
     priceSingle: "₹3,500",
     priceDouble: "₹4,500",
     features: ["High-speed Wifi", "Work Desk", "Modern Bath"]
@@ -43,7 +43,7 @@ const rooms = [
   {
     title: "Super Deluxe",
     description: "Premium comfort with elegant furnishings, modern amenities, and a welcoming ambiance.",
-    image: "/assets/new_assets_2/Super Deluxe room.jpeg",
+    image: "/assets/new_assets_2/Super Deluxe room.webp",
     priceSingle: "₹3,000",
     priceDouble: "₹4,000",
     features: ["Climate Control", "Smart TV", "Coffee Maker"]
@@ -51,7 +51,7 @@ const rooms = [
   {
     title: "Deluxe",
     description: "Refined space and essential luxuries designed for a comfortable and restorative experience.",
-    image: "/assets/new_assets_2/Standard room(2).jpeg",
+    image: "/assets/new_assets_2/Standard room(2).webp",
     priceSingle: "₹2,500",
     priceDouble: "₹3,500",
     features: ["Ambient Lighting", "Luxury Linen", "Spacious Bath"]
@@ -59,7 +59,7 @@ const rooms = [
   {
     title: "Standard",
     description: "Comfortable and essential accommodation, ideal for solo travelers or short business trips.",
-    image: "/assets/new_assets_2/Standard room.jpeg",
+    image: "/assets/new_assets_2/Standard room.webp",
     priceSingle: "₹2,200",
     priceDouble: "₹3,200",
     features: ["Comfort Bed", "Essential Amenities", "Wifi Access"]
@@ -73,7 +73,7 @@ export default function RoomsContent() {
       {/* Rooms Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/new_assets_2/EXTERIOR(1).jpeg"
+          src="/assets/new_assets_2/EXTERIOR(1).webp"
           alt="Luxury Accommodations"
           fill
           sizes="100vw"
@@ -241,3 +241,4 @@ const Shield = ({ className }: { className?: string }) => (
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
   </svg>
 );
+

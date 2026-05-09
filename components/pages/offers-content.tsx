@@ -12,7 +12,7 @@ const offers = [
     id: "1",
     title: "The Weekend Escape",
     description: "Enjoy a luxury staycation with 15% off on our Deluxe and Super Deluxe rooms. Includes complimentary breakfast and early check-in.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.webp",
     validTill: "Valid through June 2026",
     code: "WEEKEND15",
     link: "/book?type=room"
@@ -21,7 +21,7 @@ const offers = [
     id: "2",
     title: "Dining Celebration Deal",
     description: "Book a table for 6 or more at Café Cove and receive a complimentary signature dessert platter for the group.",
-    image: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).jpeg",
+    image: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).webp",
     validTill: "Limited time offer",
     code: "CELEBRATE",
     link: "/book?type=dining"
@@ -30,7 +30,7 @@ const offers = [
     id: "3",
     title: "Corporate Excellence",
     description: "Specially curated rates for business travelers. Includes high-speed wifi, laundry service, and 10% off on business dining.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.34 PM.jpeg",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.34 PM.webp",
     validTill: "Year-round offer",
     code: "CORPORATE",
     link: "/book?type=room"
@@ -116,3 +116,4 @@ export default function OffersContent() {
     </main>
   );
 }
+

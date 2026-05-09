@@ -14,7 +14,7 @@ export default function EventsContent() {
       {/* Events Hero */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/new_assets_2/BANQUET AVAANI_S (2).jpeg"
+          src="/assets/new_assets_2/BANQUET AVAANI_S (2).webp"
           alt="Grand Events at Luxuria"
           fill
           sizes="100vw"
@@ -95,7 +95,7 @@ export default function EventsContent() {
               className="relative aspect-video lg:aspect-[4/5] overflow-hidden shadow-2xl"
             >
               <Image
-                src="/assets/new_assets_2/BANQUET AVAANI_S .jpeg"
+                src="/assets/new_assets_2/BANQUET AVAANI_S .webp"
                 alt="Banquet Hall"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -173,3 +173,4 @@ export default function EventsContent() {
     </main>
   );
 }
+

@@ -66,7 +66,7 @@ export const HomeSections = () => {
                 className="relative aspect-[4/3] rounded-none overflow-hidden shadow-2xl border border-white/5"
               >
                 <Image
-                  src="/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).jpeg"
+                  src="/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).webp"
                   alt="Fine Dining at Hotel Luxuria Grand"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -91,7 +91,7 @@ export const HomeSections = () => {
                 className="relative aspect-[4/3] rounded-none overflow-hidden shadow-2xl border border-white/5"
               >
                 <Image
-                  src="/assets/new_assets_2/BANQUET AVAANI_S .jpeg"
+                  src="/assets/new_assets_2/BANQUET AVAANI_S .webp"
                   alt="Grand Banquet Hall"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -170,10 +170,10 @@ export const HomeSections = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 px-2 max-w-[1800px] mx-auto">
           {[
-            "/assets/new_assets_2/CAFE.jpeg",
-            "/assets/new_assets_2/HOTEL FRONT(2).jpeg",
-            "/assets/new_assets_2/President Suite 5500-6500.jpeg",
-            "/assets/new_assets_2/BANQUET AVAANI_S (1).jpeg"
+            "/assets/new_assets_2/CAFE.webp",
+            "/assets/new_assets_2/HOTEL FRONT(2).webp",
+            "/assets/new_assets_2/President Suite 5500-6500.webp",
+            "/assets/new_assets_2/BANQUET AVAANI_S (1).webp"
           ].map((src, i) => (
             <motion.div
               key={i}
@@ -202,3 +202,4 @@ export const HomeSections = () => {
     </div>
   );
 };
+

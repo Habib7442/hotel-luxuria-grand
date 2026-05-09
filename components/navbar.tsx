@@ -171,7 +171,7 @@ export const Navbar = () => {
           <div className="flex items-center">
             <Link href="/" className="group flex flex-col items-start relative z-50">
               <Image
-                src="/assets/logo.png"
+                src="/assets/logo.webp"
                 alt="Hotel Luxuria Grand"
                 width={140}
                 height={70}
@@ -230,3 +230,4 @@ export const Navbar = () => {
     </>
   );
 };
+

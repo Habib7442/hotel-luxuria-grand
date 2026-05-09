@@ -22,7 +22,7 @@ export const BrandStory = () => {
               className="relative aspect-[4/5] w-full md:w-[85%] rounded-none overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] z-10 border border-white/5"
             >
               <Image
-                src="/assets/new_assets_2/HOTEL FRONT.jpeg"
+                src="/assets/new_assets_2/HOTEL FRONT.webp"
                 alt="Hotel Luxuria Grand Exterior"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -38,7 +38,7 @@ export const BrandStory = () => {
               className="absolute -bottom-12 -right-4 md:-right-12 aspect-square w-[55%] rounded-none overflow-hidden shadow-2xl z-20 border-[8px] md:border-[16px] border-onyx"
             >
               <Image
-                src="/assets/new_assets_2/HOTEL ENTERANCE.jpeg"
+                src="/assets/new_assets_2/HOTEL ENTERANCE.webp"
                 alt="Grand Entrance"
                 fill
                 sizes="(max-width: 768px) 50vw, 30vw"
@@ -102,3 +102,4 @@ export const BrandStory = () => {
     </section>
   );
 };
+

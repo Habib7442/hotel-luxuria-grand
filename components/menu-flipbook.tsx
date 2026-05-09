@@ -7,15 +7,15 @@ import { ChevronLeft, ChevronRight, Maximize2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const menuPages = [
-  "/assets/menu/final menu 160426_compressed_page-0001.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0002.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0003.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0004.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0005.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0006.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0007.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0008.jpg",
-  "/assets/menu/final menu 160426_compressed_page-0009.jpg",
+  "/assets/menu/final menu 160426_compressed_page-0001.webp",
+  "/assets/menu/final menu 160426_compressed_page-0002.webp",
+  "/assets/menu/final menu 160426_compressed_page-0003.webp",
+  "/assets/menu/final menu 160426_compressed_page-0004.webp",
+  "/assets/menu/final menu 160426_compressed_page-0005.webp",
+  "/assets/menu/final menu 160426_compressed_page-0006.webp",
+  "/assets/menu/final menu 160426_compressed_page-0007.webp",
+  "/assets/menu/final menu 160426_compressed_page-0008.webp",
+  "/assets/menu/final menu 160426_compressed_page-0009.webp",
 ];
 
 const Page = React.forwardRef<HTMLDivElement, { src: string; number: number }>((props, ref) => {
@@ -143,3 +143,4 @@ export function MenuFlipbook() {
     </div>
   );
 }
+

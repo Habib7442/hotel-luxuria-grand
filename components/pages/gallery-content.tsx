@@ -8,29 +8,29 @@ import { Maximize2, X, Play } from "lucide-react";
 const categories = ["All", "Rooms", "Dining", "General", "Videos"];
 
 const galleryItems = [
-  { src: "/assets/new_assets_2/EXTERIOR(1).jpeg", category: "General", title: "The Grand Facade", type: "image" },
+  { src: "/assets/new_assets_2/EXTERIOR(1).webp", category: "General", title: "The Grand Facade", type: "image" },
   { src: "/assets/new_assets_2/video Hotel Entry Gate .mp4", category: "Videos", title: "Grand Entrance Preview", type: "video" },
-  { src: "/assets/new_assets_2/HOTEL RRONT(1).jpeg", category: "General", title: "Architecture", type: "image" },
+  { src: "/assets/new_assets_2/HOTEL RRONT(1).webp", category: "General", title: "Architecture", type: "image" },
   { src: "/assets/new_assets_2/video prezident suit.mp4", category: "Videos", title: "President Suite Tour", type: "video" },
-  { src: "/assets/new_assets_2/President Suite 5500-6500.jpeg", category: "Rooms", title: "Presidential Suite", type: "image" },
+  { src: "/assets/new_assets_2/President Suite 5500-6500.webp", category: "Rooms", title: "Presidential Suite", type: "image" },
   { src: "/assets/new_assets_2/video cafe entry.mp4", category: "Videos", title: "Café Cove Ambiance", type: "video" },
-  { src: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg", category: "Rooms", title: "Executive Luxury", type: "image" },
+  { src: "/assets/new_assets_2/Executive suite @ 5000-6000.webp", category: "Rooms", title: "Executive Luxury", type: "image" },
   { src: "/assets/new_assets_2/video of recption .mp4", category: "Videos", title: "Grand Reception", type: "video" },
-  { src: "/assets/food/masala_dosa.png", category: "Dining", title: "Crisp Masala Dosa", type: "image" },
-  { src: "/assets/food/tandoori_platter.png", category: "Dining", title: "Signature Tandoori", type: "image" },
-  { src: "/assets/food/grand_biryani.png", category: "Dining", title: "Grand Feast Biryani", type: "image" },
-  { src: "/assets/food/premium_coffee.png", category: "Dining", title: "Artisan Coffee", type: "image" },
-  { src: "/assets/new_assets_2/CAFE.jpeg", category: "Dining", title: "Café Cove", type: "image" },
+  { src: "/assets/food/masala_dosa.webp", category: "Dining", title: "Crisp Masala Dosa", type: "image" },
+  { src: "/assets/food/tandoori_platter.webp", category: "Dining", title: "Signature Tandoori", type: "image" },
+  { src: "/assets/food/grand_biryani.webp", category: "Dining", title: "Grand Feast Biryani", type: "image" },
+  { src: "/assets/food/premium_coffee.webp", category: "Dining", title: "Artisan Coffee", type: "image" },
+  { src: "/assets/new_assets_2/CAFE.webp", category: "Dining", title: "Café Cove", type: "image" },
   { src: "/assets/new_assets_2/video bathroom.mp4", category: "Videos", title: "Bathroom Luxury", type: "video" },
-  { src: "/assets/new_assets_2/BANQUET AVAANI_S .jpeg", category: "General", title: "Banquet Avaani", type: "image" },
-  { src: "/assets/new_assets_2/HOTEL ENTERANCE.jpeg", category: "General", title: "Grand Entrance", type: "image" },
-  { src: "/assets/new_assets_2/Exective room @ 3500-4500.jpeg", category: "Rooms", title: "Executive Room", type: "image" },
-  { src: "/assets/new_assets_2/Super Deluxe room.jpeg", category: "Rooms", title: "Super Deluxe Room", type: "image" },
-  { src: "/assets/new_assets_2/Standard room.jpeg", category: "Rooms", title: "Standard Room", type: "image" },
-  { src: "/assets/new_assets_2/Bath room (3).jpeg", category: "Rooms", title: "Suite Bathroom", type: "image" },
-  { src: "/assets/new_assets_2/CAFE(1).jpeg", category: "Dining", title: "Café Cove Interiors", type: "image" },
-  { src: "/assets/new_assets_2/BANQUET AVAANI_S (1).jpeg", category: "General", title: "Avaani Banquet Hall", type: "image" },
-  { src: "/assets/new_assets_2/HOTEL RRONT(3).jpeg", category: "General", title: "Modern Facade", type: "image" },
+  { src: "/assets/new_assets_2/BANQUET AVAANI_S .webp", category: "General", title: "Banquet Avaani", type: "image" },
+  { src: "/assets/new_assets_2/HOTEL ENTERANCE.webp", category: "General", title: "Grand Entrance", type: "image" },
+  { src: "/assets/new_assets_2/Exective room @ 3500-4500.webp", category: "Rooms", title: "Executive Room", type: "image" },
+  { src: "/assets/new_assets_2/Super Deluxe room.webp", category: "Rooms", title: "Super Deluxe Room", type: "image" },
+  { src: "/assets/new_assets_2/Standard room.webp", category: "Rooms", title: "Standard Room", type: "image" },
+  { src: "/assets/new_assets_2/Bath room (3).webp", category: "Rooms", title: "Suite Bathroom", type: "image" },
+  { src: "/assets/new_assets_2/CAFE(1).webp", category: "Dining", title: "Café Cove Interiors", type: "image" },
+  { src: "/assets/new_assets_2/BANQUET AVAANI_S (1).webp", category: "General", title: "Avaani Banquet Hall", type: "image" },
+  { src: "/assets/new_assets_2/HOTEL RRONT(3).webp", category: "General", title: "Modern Facade", type: "image" },
 ];
 
 export default function GalleryContent() {
@@ -187,3 +187,4 @@ export default function GalleryContent() {
     </main>
   );
 }
+

@@ -28,7 +28,7 @@ export const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/hero.jpeg"
+          src="/assets/hero.webp"
           alt="Hotel Luxuria Grand Exterior"
           fill
           sizes="100vw"
@@ -145,3 +145,4 @@ export const Hero = () => {
     </section>
   );
 };
+
