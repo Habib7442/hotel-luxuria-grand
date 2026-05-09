@@ -13,11 +13,11 @@ export const Hero = () => {
 
   useEffect(() => {
     setMounted(true);
-    // Generate droplets only on client side to avoid hydration mismatch
-    const newDroplets = [...Array(100)].map((_, i) => ({
+    // Generate fewer droplets and use hardware acceleration
+    const newDroplets = [...Array(40)].map((_, i) => ({
       left: `${Math.random() * 100}%`,
       height: `${15 + Math.random() * 20}px`,
-      duration: `${0.5 + Math.random() * 0.5}s`,
+      duration: `${0.6 + Math.random() * 0.6}s`,
       delay: `${Math.random() * 2}s`,
     }));
     setDroplets(newDroplets);
@@ -35,6 +35,7 @@ export const Hero = () => {
           quality={75}
           className="object-cover brightness-[0.5]"
           priority
+          fetchPriority="high"
         />
         
         {/* Golden Rain Effect - Only rendered on client */}
@@ -52,6 +53,7 @@ export const Hero = () => {
                   animation: `rain ${drop.duration} linear infinite`,
                   animationDelay: drop.delay,
                   boxShadow: `0 0 8px rgba(212, 175, 55, 0.3)`,
+                  willChange: "transform",
                 }}
               />
             ))}

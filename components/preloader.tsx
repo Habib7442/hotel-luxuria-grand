@@ -11,7 +11,7 @@ export default function Preloader() {
     const timeout = setTimeout(() => setMounted(true), 100);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Optimized cinematic duration
+    }, 1200); // Optimized cinematic duration to reveal content faster
 
     return () => {
       clearTimeout(timeout);
