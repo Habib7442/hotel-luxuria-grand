@@ -9,19 +9,18 @@ const categories = ["All", "Rooms", "Dining", "General", "Videos"];
 
 const galleryItems = [
   { src: "/assets/new_assets_2/EXTERIOR(1).webp", category: "General", title: "The Grand Facade", type: "image" },
-  { src: "/assets/new_assets_2/video Hotel Entry Gate .mp4", category: "Videos", title: "Grand Entrance Preview", type: "video" },
+  { youtubeId: "rE25_7Hd2uA", category: "Videos", title: "Grand Entrance Preview", type: "video" },
   { src: "/assets/new_assets_2/HOTEL RRONT(1).webp", category: "General", title: "Architecture", type: "image" },
-  { src: "/assets/new_assets_2/video prezident suit.mp4", category: "Videos", title: "President Suite Tour", type: "video" },
   { src: "/assets/new_assets_2/President Suite 5500-6500.webp", category: "Rooms", title: "Presidential Suite", type: "image" },
-  { src: "/assets/new_assets_2/video cafe entry.mp4", category: "Videos", title: "Café Cove Ambiance", type: "video" },
+  { youtubeId: "_lj-vd8THMg", category: "Videos", title: "Café Cove Ambiance", type: "video" },
   { src: "/assets/new_assets_2/Executive suite @ 5000-6000.webp", category: "Rooms", title: "Executive Luxury", type: "image" },
-  { src: "/assets/new_assets_2/video of recption .mp4", category: "Videos", title: "Grand Reception", type: "video" },
   { src: "/assets/food/masala_dosa.webp", category: "Dining", title: "Crisp Masala Dosa", type: "image" },
+  { youtubeId: "Gsq2o8V4qMM", category: "Videos", title: "Exclusive Suite Tour", type: "video" },
   { src: "/assets/food/tandoori_platter.webp", category: "Dining", title: "Signature Tandoori", type: "image" },
   { src: "/assets/food/grand_biryani.webp", category: "Dining", title: "Grand Feast Biryani", type: "image" },
+  { youtubeId: "8favX0EEnMs", category: "Videos", title: "Bathroom Luxury", type: "video" },
   { src: "/assets/food/premium_coffee.webp", category: "Dining", title: "Artisan Coffee", type: "image" },
   { src: "/assets/new_assets_2/CAFE.webp", category: "Dining", title: "Café Cove", type: "image" },
-  { src: "/assets/new_assets_2/video bathroom.mp4", category: "Videos", title: "Bathroom Luxury", type: "video" },
   { src: "/assets/new_assets_2/BANQUET AVAANI_S .webp", category: "General", title: "Banquet Avaani", type: "image" },
   { src: "/assets/new_assets_2/HOTEL ENTERANCE.webp", category: "General", title: "Grand Entrance", type: "image" },
   { src: "/assets/new_assets_2/Exective room @ 3500-4500.webp", category: "Rooms", title: "Executive Room", type: "image" },
@@ -35,7 +34,7 @@ const galleryItems = [
 
 export default function GalleryContent() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedItem, setSelectedItem] = useState<{src: string, type: string} | null>(null);
+  const [selectedItem, setSelectedItem] = useState<{src?: string, youtubeId?: string, type: string} | null>(null);
 
   const filteredItems = activeCategory === "All" 
     ? galleryItems 
@@ -89,22 +88,22 @@ export default function GalleryContent() {
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, idx) => (
               <motion.div
-                key={item.src + idx}
+                key={idx}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
                 className="group relative aspect-[4/5] overflow-hidden cursor-pointer bg-black/20"
-                onClick={() => setSelectedItem({ src: item.src, type: item.type })}
+                onClick={() => setSelectedItem(item)}
               >
                 {item.type === "video" ? (
                   <div className="w-full h-full relative">
-                    <video 
-                      src={item.src} 
-                      className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
-                      muted
-                      playsInline
+                    <Image 
+                      src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-[2s] group-hover:scale-105"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-12 h-12 rounded-full bg-champagne/80 flex items-center justify-center shadow-2xl">
@@ -114,7 +113,7 @@ export default function GalleryContent() {
                   </div>
                 ) : (
                   <Image
-                    src={item.src}
+                    src={item.src!}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -157,23 +156,26 @@ export default function GalleryContent() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl aspect-[4/5] md:aspect-video flex items-center justify-center"
+              className="relative w-full max-w-6xl aspect-video flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               {selectedItem.type === "video" ? (
-                <video 
-                  src={selectedItem.src} 
-                  controls 
-                  autoPlay 
-                  className="max-h-full max-w-full shadow-2xl"
+                <iframe
+                  src={`https://www.youtube.com/embed/${selectedItem.youtubeId}?autoplay=1&rel=0`}
+                  title="Video Preview"
+                  className="w-full h-full border-0 shadow-2xl"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               ) : (
-                <Image
-                  src={selectedItem.src}
-                  alt="Full Preview"
-                  fill
-                  className="object-contain"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={selectedItem.src!}
+                    alt="Full Preview"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               )}
             </motion.div>
           </motion.div>
@@ -187,4 +189,5 @@ export default function GalleryContent() {
     </main>
   );
 }
+
 
