@@ -197,7 +197,7 @@ export default function DiningContent() {
                 tag: "Gourmet"
               },
               { 
-                title: "The Grand Feast", 
+                title: "Anaaya's Restaurant", 
                 desc: "Lavish buffet spreads and our legendary Grand Chicken Biryani, celebrating diverse world cuisines.", 
                 img: "/assets/food/grand_biryani.webp",
                 tag: "Signature"
@@ -352,7 +352,7 @@ export default function DiningContent() {
             </h2>
             <p className="text-ivory/60 font-jakarta text-lg mb-16 max-w-xl mx-auto leading-relaxed">
               Indulge in a culinary escape that transcends the ordinary. Reserve your table at Café Cove or 
-              The Grand Feast for a tailored gastronomic experience.
+              Anaaya's Restaurant for a tailored gastronomic experience.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <Button asChild className="bg-champagne text-black hover:bg-brass transition-all duration-500 rounded-none px-12 py-8 text-[10px] font-bold uppercase tracking-[0.3em] h-auto shadow-2xl">

@@ -27,9 +27,8 @@ const occasions = [
 ];
 
 const venues = [
-  "Main Restaurant",
-  "The Gypsy House Cafe",
-  "Private Dining Room",
+  "Anaaya's Restaurant",
+  "Cafe Cove",
   "Banquet Hall"
 ];
 
@@ -52,7 +51,7 @@ export default function BookingContent() {
     time: "",
     occasion: "Casual Dining",
     guests: "2",
-    venue: "Main Restaurant",
+    venue: "Anaaya's Restaurant",
     message: ""
   });
 

@@ -16,9 +16,8 @@ const occasions = [
 ];
 
 const locations = [
-  "Main Restaurant",
-  "The Gypsy House Cafe",
-  "Private Dining Room",
+  "Anaaya's Restaurant",
+  "Cafe Cove",
   "Banquet Hall"
 ];
 
@@ -31,7 +30,7 @@ export default function DiningBookingContent() {
     time: "",
     occasion: preSelectedOccasion && occasions.includes(preSelectedOccasion) ? preSelectedOccasion : "Casual Dining",
     guests: "2",
-    location: "Main Restaurant",
+    location: "Anaaya's Restaurant",
     message: ""
   });
 
