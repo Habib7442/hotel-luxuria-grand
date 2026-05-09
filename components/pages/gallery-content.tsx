@@ -3,49 +3,39 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Maximize2, X } from "lucide-react";
+import { Maximize2, X, Play } from "lucide-react";
 
-const categories = ["All", "Rooms", "Dining", "General"];
+const categories = ["All", "Rooms", "Dining", "General", "Videos"];
 
-const galleryImages = [
-  { src: "/assets/new_assets_2/EXTERIOR.jpeg", category: "General", title: "The Grand Facade" },
-  { src: "/assets/new_assets_2/HOTEL RRONT(1).jpeg", category: "General", title: "Architecture" },
-  { src: "/assets/new_assets_2/President Suite 5500-6500.jpeg", category: "Rooms", title: "Presidential Suite" },
-  { src: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg", category: "Rooms", title: "Executive Luxury" },
-  { src: "/assets/new_assets_2/CAFE.jpeg", category: "Dining", title: "Café Cove" },
-  { src: "/assets/new_assets_2/BANQUET AVAANI_S .jpeg", category: "General", title: "Banquet Avaani" },
-  { src: "/assets/new_assets_2/HOTEL ENTERANCE.jpeg", category: "General", title: "Grand Entrance" },
-  { src: "/assets/new_assets_2/Exective room @ 3500-4500.jpeg", category: "Rooms", title: "Executive Room" },
-  { src: "/assets/new_assets_2/CAFE(1).jpeg", category: "Dining", title: "Café Cove Interiors" },
-  { src: "/assets/new_assets_2/CAFE(2).jpeg", category: "Dining", title: "Dining Ambiance" },
-  { src: "/assets/new_assets_2/BANQUET AVAANI_S (1).jpeg", category: "General", title: "Avaani Banquet Hall" },
-  { src: "/assets/new_assets_2/BANQUET AVAANI_S (2).jpeg", category: "General", title: "Event Spaces" },
-  { src: "/assets/new_assets_2/President Suite 5500-6500(1).jpeg", category: "Rooms", title: "Presidential Luxury" },
-  { src: "/assets/new_assets_2/EXTERIOR(1).jpeg", category: "General", title: "Night Illumination" },
-  { src: "/assets/new_assets_2/HOTEL FRONT.jpeg", category: "General", title: "Hotel Exterior" },
-  { src: "/assets/new_assets_2/HOTEL FRONT(2).jpeg", category: "General", title: "Exterior Architecture" },
-  { src: "/assets/new_assets_2/HOTEL RRONT(3).jpeg", category: "General", title: "Modern Facade" },
-  { src: "/assets/new_assets_2/Bath room .jpeg", category: "Rooms", title: "Bathroom Suite" },
-  { src: "/assets/new_assets_2/Bath room.jpeg", category: "Rooms", title: "Guest Bath" },
-  { src: "/assets/new_assets_2/Bath room (1).jpeg", category: "Rooms", title: "Ensuite Luxury" },
-  { src: "/assets/new_assets_2/Bath room (2).jpeg", category: "Rooms", title: "Modern Bathrooms" },
-  { src: "/assets/new_assets_2/Bath room (3).jpeg", category: "Rooms", title: "Premium Finishes" },
-  { src: "/assets/new_assets_2/Bath room (4).jpeg", category: "Rooms", title: "Suite Bathroom" },
-  { src: "/assets/new_assets_2/Bath room (5).jpeg", category: "Rooms", title: "Elegant Bath" },
-  { src: "/assets/new_assets_2/Bath room (6).jpeg", category: "Rooms", title: "Refined Details" },
-  { src: "/assets/new_assets_2/Bath room (7).jpeg", category: "Rooms", title: "Luxury Amenities" },
-  { src: "/assets/new_assets_2/Bath room (8).jpeg", category: "Rooms", title: "Executive Bath" },
-  { src: "/assets/new_assets_2/Bath room (9).jpeg", category: "Rooms", title: "Polished Design" },
-  { src: "/assets/new_assets_2/HOTEL FRONTpeg.jpg", category: "General", title: "Hotel Frontage" },
+const galleryItems = [
+  { src: "/assets/new_assets_2/EXTERIOR.jpeg", category: "General", title: "The Grand Facade", type: "image" },
+  { src: "/assets/new_assets_2/video Hotel Entry Gate .mov", category: "Videos", title: "Grand Entrance Preview", type: "video" },
+  { src: "/assets/new_assets_2/HOTEL RRONT(1).jpeg", category: "General", title: "Architecture", type: "image" },
+  { src: "/assets/new_assets_2/video prezident suit.mov", category: "Videos", title: "President Suite Tour", type: "video" },
+  { src: "/assets/new_assets_2/President Suite 5500-6500.jpeg", category: "Rooms", title: "Presidential Suite", type: "image" },
+  { src: "/assets/new_assets_2/video cafe entry.mov", category: "Videos", title: "Café Cove Ambiance", type: "video" },
+  { src: "/assets/new_assets_2/Executive suite @ 5000-6000.jpeg", category: "Rooms", title: "Executive Luxury", type: "image" },
+  { src: "/assets/new_assets_2/video of recption .mov", category: "Videos", title: "Grand Reception", type: "video" },
+  { src: "/assets/new_assets_2/CAFE.jpeg", category: "Dining", title: "Café Cove", type: "image" },
+  { src: "/assets/new_assets_2/video bathroom.mov", category: "Videos", title: "Bathroom Luxury", type: "video" },
+  { src: "/assets/new_assets_2/BANQUET AVAANI_S .jpeg", category: "General", title: "Banquet Avaani", type: "image" },
+  { src: "/assets/new_assets_2/HOTEL ENTERANCE.jpeg", category: "General", title: "Grand Entrance", type: "image" },
+  { src: "/assets/new_assets_2/Exective room @ 3500-4500.jpeg", category: "Rooms", title: "Executive Room", type: "image" },
+  { src: "/assets/new_assets_2/Super Deluxe room.jpeg", category: "Rooms", title: "Super Deluxe Room", type: "image" },
+  { src: "/assets/new_assets_2/Standard room.jpeg", category: "Rooms", title: "Standard Room", type: "image" },
+  { src: "/assets/new_assets_2/Bath room (3).jpeg", category: "Rooms", title: "Suite Bathroom", type: "image" },
+  { src: "/assets/new_assets_2/CAFE(1).jpeg", category: "Dining", title: "Café Cove Interiors", type: "image" },
+  { src: "/assets/new_assets_2/BANQUET AVAANI_S (1).jpeg", category: "General", title: "Avaani Banquet Hall", type: "image" },
+  { src: "/assets/new_assets_2/HOTEL RRONT(3).jpeg", category: "General", title: "Modern Facade", type: "image" },
 ];
 
 export default function GalleryContent() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<{src: string, type: string} | null>(null);
 
-  const filteredImages = activeCategory === "All" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeCategory);
+  const filteredItems = activeCategory === "All" 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === activeCategory);
 
   return (
     <main className="min-h-screen bg-onyx pt-32 pb-24 overflow-hidden">
@@ -93,29 +83,45 @@ export default function GalleryContent() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
         >
           <AnimatePresence mode="popLayout">
-            {filteredImages.map((image, idx) => (
+            {filteredItems.map((item, idx) => (
               <motion.div
-                key={image.src + idx}
+                key={item.src + idx}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
-                className="group relative aspect-[4/5] overflow-hidden cursor-pointer"
-                onClick={() => setSelectedImage(image.src)}
+                className="group relative aspect-[4/5] overflow-hidden cursor-pointer bg-black/20"
+                onClick={() => setSelectedItem({ src: item.src, type: item.type })}
               >
-                <Image
-                  src={image.src}
-                  alt={image.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-[2s] brightness-[0.8] group-hover:brightness-100"
-                />
+                {item.type === "video" ? (
+                  <div className="w-full h-full relative">
+                    <video 
+                      src={item.src} 
+                      className="w-full h-full object-cover brightness-[0.7] group-hover:scale-110 transition-transform duration-[2s]"
+                      muted
+                      playsInline
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-champagne/80 flex items-center justify-center">
+                        <Play className="w-5 h-5 text-black fill-current translate-x-0.5" />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-[2s] brightness-[0.8] group-hover:brightness-100"
+                  />
+                )}
                 
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-onyx/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <span className="text-champagne text-[10px] uppercase tracking-[0.3em] mb-2">{image.category}</span>
-                  <h3 className="text-ivory font-jakarta font-bold text-xl uppercase tracking-tighter">{image.title}</h3>
+                  <span className="text-champagne text-[10px] uppercase tracking-[0.3em] mb-2">{item.category}</span>
+                  <h3 className="text-ivory font-jakarta font-bold text-xl uppercase tracking-tighter">{item.title}</h3>
                   <div className="mt-4 w-8 h-[1px] bg-champagne group-hover:w-full transition-all duration-700" />
                   <div className="absolute top-8 right-8 w-10 h-10 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-champagne transition-colors duration-500">
                     <Maximize2 className="w-4 h-4 text-ivory group-hover:text-black" />
@@ -129,17 +135,17 @@ export default function GalleryContent() {
 
       {/* Lightbox */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedItem && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedItem(null)}
           >
             <button 
               className="absolute top-10 right-10 text-ivory hover:text-champagne transition-colors z-[110]"
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setSelectedItem(null)}
             >
               <X className="w-10 h-10" />
             </button>
@@ -147,15 +153,24 @@ export default function GalleryContent() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl aspect-[4/5] md:aspect-video"
+              className="relative w-full max-w-6xl aspect-[4/5] md:aspect-video flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
-                src={selectedImage}
-                alt="Full Preview"
-                fill
-                className="object-contain"
-              />
+              {selectedItem.type === "video" ? (
+                <video 
+                  src={selectedItem.src} 
+                  controls 
+                  autoPlay 
+                  className="max-h-full max-w-full shadow-2xl"
+                />
+              ) : (
+                <Image
+                  src={selectedItem.src}
+                  alt="Full Preview"
+                  fill
+                  className="object-contain"
+                />
+              )}
             </motion.div>
           </motion.div>
         )}

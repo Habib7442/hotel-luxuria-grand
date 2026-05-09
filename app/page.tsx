@@ -28,6 +28,10 @@ const MenuFlipbook = dynamic(() => import("@/components/home-menu-section").then
   loading: () => <div className="h-96 bg-onyx animate-pulse" />
 });
 
+const VideoShowcase = dynamic(() => import("@/components/video-showcase").then(mod => mod.VideoShowcase), {
+  loading: () => <div className="h-96 bg-onyx animate-pulse" />
+});
+
 export const metadata: Metadata = {
   title: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
   description: "Experience the pinnacle of luxury at Hotel Luxuria Grand, Silchar. Featuring elite suites, fine dining, and grand event spaces. Book your stay at the best hotel in Silchar today.",
@@ -40,6 +44,7 @@ export default function Home() {
       <Preloader />
       <main className="flex-1 bg-onyx">
       <Hero />
+      <VideoShowcase />
       
       <WelcomeStrip />
 
