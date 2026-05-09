@@ -195,7 +195,7 @@ export const HomeSections = () => {
         </div>
         <div className="mt-16 text-center">
           <Button asChild variant="outline" className="border-champagne/50 text-champagne hover:bg-champagne hover:text-black px-12 py-8 rounded-none text-[10px] uppercase tracking-[0.3em] font-bold h-auto transition-all duration-500">
-            <Link href="/#gallery">View Full Gallery</Link>
+            <Link href="/gallery">View Full Gallery</Link>
           </Button>
         </div>
       </section>
