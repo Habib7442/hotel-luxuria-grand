@@ -230,12 +230,14 @@ export const FeaturedRooms = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
+            aria-label="Previous Room"
             className="absolute left-2 md:-left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 flex items-center justify-center bg-black/60 backdrop-blur-xl border border-white/10 text-champagne rounded-full z-40 transition-all hover:bg-champagne hover:text-black shadow-2xl group/prev md:opacity-0 md:group-hover:opacity-100 md:-translate-x-4 md:group-hover:translate-x-0"
           >
             <ChevronLeft className="w-5 h-5 md:w-8 md:h-8" />
           </button>
           <button
             onClick={nextSlide}
+            aria-label="Next Room"
             className="absolute right-2 md:-right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 flex items-center justify-center bg-black/60 backdrop-blur-xl border border-white/10 text-champagne rounded-full z-40 transition-all hover:bg-champagne hover:text-black shadow-2xl group/next md:opacity-0 md:group-hover:opacity-100 md:translate-x-4 md:group-hover:translate-x-0"
           >
             <ChevronRight className="w-5 h-5 md:w-8 md:h-8" />
@@ -251,6 +253,8 @@ export const FeaturedRooms = () => {
                 setDirection(idx > currentIndex ? 1 : -1);
                 setCurrentIndex(idx);
               }}
+              aria-label={`Go to room ${idx + 1}`}
+              aria-current={currentIndex === idx}
               className={cn(
                 "h-1 transition-all duration-500",
                 currentIndex === idx ? "w-12 bg-champagne" : "w-6 bg-white/10 hover:bg-white/30"

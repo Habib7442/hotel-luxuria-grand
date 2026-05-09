@@ -63,6 +63,7 @@ export function VideoShowcase() {
                   className="absolute -top-[60px] left-0 w-full h-[calc(100%+120px)] border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading="lazy"
                 />
               </div>
               

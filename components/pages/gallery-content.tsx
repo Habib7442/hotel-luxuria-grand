@@ -69,6 +69,8 @@ export default function GalleryContent() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
+              aria-label={`Show ${cat} items`}
+              aria-pressed={activeCategory === cat}
               className={`font-jakarta text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold py-2 border-b-2 transition-all duration-500 ${
                 activeCategory === cat 
                   ? "text-champagne border-champagne" 
@@ -149,6 +151,7 @@ export default function GalleryContent() {
             <button 
               className="absolute top-10 right-10 text-ivory hover:text-champagne transition-colors z-[110]"
               onClick={() => setSelectedItem(null)}
+              aria-label="Close Lightbox"
             >
               <X className="w-10 h-10" />
             </button>
@@ -173,7 +176,7 @@ export default function GalleryContent() {
                 <div className="relative w-full h-full">
                   <Image
                     src={selectedItem.src!}
-                    alt="Full Preview"
+                    alt="Gallery item preview"
                     fill
                     className="object-contain"
                   />

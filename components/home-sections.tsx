@@ -170,11 +170,11 @@ export const HomeSections = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 px-2 max-w-[1800px] mx-auto">
           {[
-            "/assets/new_assets_2/CAFE.webp",
-            "/assets/new_assets_2/HOTEL FRONT(2).webp",
-            "/assets/new_assets_2/President Suite 5500-6500.webp",
-            "/assets/new_assets_2/BANQUET AVAANI_S (1).webp"
-          ].map((src, i) => (
+            { src: "/assets/new_assets_2/CAFE.webp", alt: "Luxuria Grand Café Cove" },
+            { src: "/assets/new_assets_2/HOTEL FRONT(2).webp", alt: "Hotel Entrance" },
+            { src: "/assets/new_assets_2/President Suite 5500-6500.webp", alt: "Presidential Suite View" },
+            { src: "/assets/new_assets_2/BANQUET AVAANI_S (1).webp", alt: "Banquet Hall Avaani" }
+          ].map((img, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -184,8 +184,8 @@ export const HomeSections = () => {
               className="relative aspect-square overflow-hidden group"
             >
               <Image
-                src={src}
-                alt={`Gallery ${i}`}
+                src={img.src}
+                alt={img.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover md:grayscale md:hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"

@@ -84,6 +84,7 @@ export const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(false)}
             className="absolute top-8 right-6 text-champagne p-2 transition-transform active:scale-90"
             style={{ zIndex: 100000 }}
+            aria-label="Close Menu"
           >
             <X size={32} />
           </button>
@@ -219,6 +220,8 @@ export const Navbar = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden text-champagne p-2 transition-transform active:scale-90"
+              aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>

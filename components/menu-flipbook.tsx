@@ -105,6 +105,7 @@ export function MenuFlipbook() {
             className="w-12 h-12 rounded-full bg-onyx/80 text-champagne border border-white/10 hover:bg-champagne/20 pointer-events-auto transition-all shadow-lg"
             onClick={() => book.current.pageFlip().flipPrev()}
             disabled={currentPage === 0}
+            aria-label="Previous Page"
           >
             <ChevronLeft className="w-6 h-6" />
           </Button>
@@ -116,6 +117,7 @@ export function MenuFlipbook() {
             className="w-12 h-12 rounded-full bg-onyx/80 text-champagne border border-white/10 hover:bg-champagne/20 pointer-events-auto transition-all shadow-lg"
             onClick={() => book.current.pageFlip().flipNext()}
             disabled={currentPage === menuPages.length - 1}
+            aria-label="Next Page"
           >
             <ChevronRight className="w-6 h-6" />
           </Button>

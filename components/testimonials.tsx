@@ -112,12 +112,14 @@ export const Testimonials = () => {
           <div className="flex justify-center mt-12 gap-6">
             <button
               onClick={prevSlide}
+              aria-label="Previous Review"
               className="w-12 h-12 flex items-center justify-center border border-champagne/30 text-champagne rounded-full hover:bg-champagne hover:text-black transition-all duration-500"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
+              aria-label="Next Review"
               className="w-12 h-12 flex items-center justify-center border border-champagne/30 text-champagne rounded-full hover:bg-champagne hover:text-black transition-all duration-500"
             >
               <ChevronRight className="w-5 h-5" />
