@@ -94,7 +94,7 @@ export default function GalleryContent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
-                className="group relative aspect-[4/5] overflow-hidden cursor-pointer bg-black/20"
+                className={`group relative overflow-hidden cursor-pointer bg-black/20 ${item.type === 'video' ? 'aspect-[9/16]' : 'aspect-[4/5]'}`}
                 onClick={() => setSelectedItem(item)}
               >
                 {item.type === "video" ? (
@@ -156,17 +156,19 @@ export default function GalleryContent() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl aspect-video flex items-center justify-center"
+              className={`relative w-full ${selectedItem.type === 'video' ? 'max-w-[450px] aspect-[9/16]' : 'max-w-6xl aspect-video'} flex items-center justify-center`}
               onClick={(e) => e.stopPropagation()}
             >
               {selectedItem.type === "video" ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${selectedItem.youtubeId}?autoplay=1&rel=0`}
-                  title="Video Preview"
-                  className="w-full h-full border-0 shadow-2xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                <div className="w-full h-full overflow-hidden relative">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${selectedItem.youtubeId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=0`}
+                    title="Video Preview"
+                    className="absolute -top-[60px] left-0 w-full h-[calc(100%+120px)] border-0 shadow-2xl"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               ) : (
                 <div className="relative w-full h-full">
                   <Image

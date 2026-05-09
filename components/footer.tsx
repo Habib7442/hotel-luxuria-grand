@@ -35,11 +35,11 @@ export const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               {[
-                { name: "instagram", icon: "/social-icons/instagram.webp", href: "https://www.instagram.com/luxuria_grand/" },
-                { name: "facebook", icon: "/social-icons/facebook.webp", href: "#" },
-                { name: "whatsapp", icon: "/social-icons/whatsapp.webp", href: "https://wa.me/919181043994" },
-                { name: "linkedin", icon: "/social-icons/linkedin.webp", href: "#" },
-                { name: "X", icon: "/social-icons/X.webp", href: "#" },
+                { name: "instagram", icon: "/social-icons/instagram.png", href: "https://www.instagram.com/luxuria_grand/" },
+                { name: "facebook", icon: "/social-icons/facebook.png", href: "#" },
+                { name: "whatsapp", icon: "/social-icons/whatsapp.png", href: "https://wa.me/919181043994" },
+                { name: "linkedin", icon: "/social-icons/linkedin.png", href: "#" },
+                { name: "X", icon: "/social-icons/X.png", href: "#" },
               ].map((social) => (
                 <a 
                   key={social.name} 

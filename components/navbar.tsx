@@ -42,6 +42,7 @@ export const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "Rooms", href: "/rooms" },
     { name: "Dining", href: "/dining" },
     { name: "About Us", href: "/about" },

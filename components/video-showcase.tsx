@@ -45,7 +45,7 @@ export function VideoShowcase() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {videoAssets.map((video, idx) => (
             <motion.div
               key={idx}
@@ -53,22 +53,25 @@ export function VideoShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative aspect-video bg-black rounded-sm overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-champagne/50 transition-all duration-500"
+              className="group relative aspect-[9/16] bg-black rounded-sm overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-champagne/50 transition-all duration-500 max-w-[350px] mx-auto w-full"
             >
-              <iframe
-                src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
-                title={video.title}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {/* Top-Crop Hack to hide YouTube Title Bar */}
+              <div className="absolute inset-0 overflow-hidden">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&controls=0&autoplay=0&mute=1`}
+                  title={video.title}
+                  className="absolute -top-[60px] left-0 w-full h-[calc(100%+120px)] border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
               
               {/* Refined Label (Top Left) */}
               <div className="absolute top-4 left-4 z-20 pointer-events-none">
                 <span className="text-champagne text-[10px] uppercase tracking-[0.3em] font-bold mb-1 block drop-shadow-lg">
                   {video.tag}
                 </span>
-                <h3 className="text-ivory font-jakarta font-bold text-lg uppercase tracking-tighter drop-shadow-lg">
+                <h3 className="text-ivory font-jakarta font-bold text-base uppercase tracking-tighter drop-shadow-lg">
                   {video.title}
                 </h3>
               </div>
