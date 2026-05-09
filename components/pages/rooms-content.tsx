@@ -73,7 +73,7 @@ export default function RoomsContent() {
       {/* Rooms Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/new_assets_2/EXTERIOR.jpeg"
+          src="/assets/new_assets_2/EXTERIOR(1).jpeg"
           alt="Luxury Accommodations"
           fill
           sizes="100vw"

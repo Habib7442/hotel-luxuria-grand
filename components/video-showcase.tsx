@@ -7,23 +7,33 @@ import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 const videoAssets = [
   {
     title: "Grand Entrance",
-    src: "/assets/new_assets_2/video Hotel Entry Gate .mov",
+    src: "/assets/new_assets_2/video Hotel Entry Gate .mp4",
     tag: "Welcome"
   },
   {
     title: "Cafe Cove",
-    src: "/assets/new_assets_2/video cafe entry.mov",
+    src: "/assets/new_assets_2/video cafe entry.mp4",
     tag: "Dining"
   },
   {
     title: "President Suite",
-    src: "/assets/new_assets_2/video prezident suit.mov",
+    src: "/assets/new_assets_2/video prezident suit.mp4",
     tag: "Luxury"
   },
   {
     title: "Grand Reception",
-    src: "/assets/new_assets_2/video of recption .mov",
+    src: "/assets/new_assets_2/video of recption .mp4",
     tag: "Hospitality"
+  },
+  {
+    title: "Exclusive Suite",
+    src: "/assets/new_assets_2/video Exclucive suit.mp4",
+    tag: "Elite"
+  },
+  {
+    title: "Luxury Bath",
+    src: "/assets/new_assets_2/video bathroom.mp4",
+    tag: "Amenities"
   }
 ];
 
@@ -65,7 +75,7 @@ export function VideoShowcase() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {videoAssets.map((video, idx) => (
             <motion.div
               key={idx}

@@ -44,6 +44,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: "Rooms", href: "/rooms" },
     { name: "Dining", href: "/dining" },
+    { name: "About Us", href: "/about" },
     { name: "Offers", href: "/offers" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
