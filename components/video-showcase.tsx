@@ -64,7 +64,7 @@ export function VideoShowcase() {
                   <iframe
                     src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&controls=1&autoplay=1`}
                     title={video.title}
-                    className="absolute -top-[60px] left-0 w-full h-[calc(100%+120px)] border-0"
+                    className="absolute -top-[100px] left-0 w-full h-[calc(100%+200px)] border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
