@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     default: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
     template: "%s — Hotel Luxuria Grand, Silchar",
   },
-  description: "Experience refined luxury on Ghungoor Kuarpar Road. The most glamorous hotel in Silchar, offering premium rooms, grand banquets, and signature dining at Luxuria Grand.",
-  keywords: ["hotels in Silchar", "luxury hotel Silchar", "Silchar wedding venue", "banquet hall Silchar", "best hotel in Silchar", "Hotel Luxuria Grand Silchar"],
+  description: "Experience refined luxury on Ghungoor Kuarpar Road. Silchar's No. 1 destination for premium rooms, grand banquets, and signature dining at Hotel Luxuria Grand.",
+  keywords: ["hotels in Silchar", "luxury hotel Silchar", "Silchar wedding venue", "banquet hall Silchar", "best hotel in Silchar", "Hotel Luxuria Grand Silchar", "luxuria grand silchar", "luxury grand hotel silchar", "silcoorie grant", "best hotel in silchar assam", "top luxury stay silchar", "hotel near NIT Silchar", "accommodation near NIT Silchar", "best place to stay near NIT Silchar"],
   metadataBase: new URL("https://www.hotelluxuriagrand.com"),
   openGraph: {
     title: "Hotel Luxuria Grand — Elite Luxury Hotel in Silchar",

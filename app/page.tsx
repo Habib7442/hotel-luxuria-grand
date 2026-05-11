@@ -33,8 +33,8 @@ const VideoShowcase = dynamic(() => import("@/components/video-showcase").then(m
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Luxuria Grand — Silchar's Premier Luxury Destination",
-  description: "Experience the pinnacle of luxury at Hotel Luxuria Grand, Silchar. Featuring elite suites, fine dining, and grand event spaces. Book your stay at the best hotel in Silchar today.",
+  title: "Hotel Luxuria Grand — Silchar's No. 1 Luxury Destination",
+  description: "Experience the pinnacle of luxury at Hotel Luxuria Grand, Silchar's premier hotel. Featuring elite suites, fine dining, and grand event spaces. Book your stay at the best hotel in Silchar today.",
   alternates: {
     canonical: "/",
   },
