@@ -32,7 +32,7 @@ export const Hero = () => {
           alt="Hotel Luxuria Grand Exterior"
           fill
           sizes="100vw"
-          quality={75}
+          quality={100}
           className="object-cover brightness-[0.5]"
           priority
           fetchPriority="high"
@@ -127,7 +127,7 @@ export const Hero = () => {
           <Button
             asChild
             variant="outline"
-            className="group flex items-center justify-center gap-4 py-6 md:py-8 border-champagne/50 text-champagne rounded-none transition-all duration-500 hover:bg-champagne hover:text-black cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-full md:w-[320px]"
+            className="group flex items-center justify-center gap-4 py-6 md:py-8 bg-white/5 backdrop-blur-md border-champagne/30 text-champagne rounded-none transition-all duration-500 hover:bg-champagne hover:text-black cursor-pointer text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold h-auto w-full md:w-[320px]"
           >
             <a href="tel:+919181043994" className="flex items-center gap-4">
               <Phone className="w-5 h-5" />

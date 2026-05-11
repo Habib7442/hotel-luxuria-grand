@@ -19,7 +19,7 @@
 - [x] Secured and encoded all WhatsApp booking links.
 - [x] Hidden "Offers" page from navigation until hotel consent is received.
 - [x] **Performance Pass**: Reduced Main-Thread "Other" work (3.2s) by optimizing:
-    - [x] **Hero**: Reduced rain particles and consolidated gradient overlays.
+    - [x] **Hero**: Reduced rain particles, consolidated gradient overlays, and increased image quality to 100%.
     - [x] **Navbar**: Converted scroll listeners to passive for better scrolling performance.
     - [x] **Preloader**: Simplified animations and shortened duration to reveal content faster.
     - [x] **FeaturedRooms**: Refined `sizes` attribute for optimized responsive image loading.
@@ -29,6 +29,7 @@
 - **Standardized Canonical**: Use `https://www.hotelluxuriagrand.com/` (with trailing slash).
 - **Conversion-First Mobile**: Prioritize action-oriented elements (Tabs + Form) above content-rich sections on mobile screens.
 - **Strict Validation**: All external URL parameters must be validated against allowed values to prevent state corruption.
+- **Visual Excellence**: Use 100% quality for critical Hero assets and glassmorphic backgrounds for secondary CTAs to maintain a premium feel.
 - **Performance-First Media**: Use interaction-triggered loading (Lite patterns) for heavy external assets like YouTube videos to protect the critical rendering path.
 
 ## Session Notes (May 11)
