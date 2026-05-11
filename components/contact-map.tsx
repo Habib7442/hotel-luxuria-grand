@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export const ContactMap = () => {
   return (
     <section id="contact" className="py-16 md:py-28 bg-onyx relative overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 md:px-16">
         <div className="flex flex-col lg:flex-row gap-16 items-stretch">
           {/* Contact Details */}
           <div className="w-full lg:w-1/3 space-y-12">

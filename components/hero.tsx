@@ -72,7 +72,7 @@ export const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-20 w-full max-w-5xl mx-auto px-6 text-center pt-20">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-16 text-center pt-20">
         <div className="space-y-6">
           <motion.p
             initial={{ opacity: 0, letterSpacing: "0.2em", y: 15 }}

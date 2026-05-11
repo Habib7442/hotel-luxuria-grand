@@ -103,7 +103,7 @@ export default function RoomsContent() {
 
       {/* Intro Subtext */}
       <section className="py-12 bg-black/40 border-y border-white/5">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 md:px-16 text-center">
           <p className="text-ivory/60 font-jakarta text-xs md:text-sm uppercase tracking-[0.3em] font-bold">
             All rates are per night • Single & Double Occupancy Options • Extra Person @ ₹800 + Taxes
           </p>
@@ -112,7 +112,7 @@ export default function RoomsContent() {
 
       {/* Rooms Grid */}
       <section className="py-24 md:py-40">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
             {rooms.map((room, idx) => (
               <motion.div
@@ -199,7 +199,7 @@ export default function RoomsContent() {
           Amenities
         </div>
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 md:px-16 relative z-10 text-center">
           <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.4em] mb-8">Standard in Every Room</p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12">
             {[

@@ -52,7 +52,7 @@ export const Testimonials = () => {
     <section id="testimonials" className="py-20 md:py-32 bg-onyx relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-champagne/5 rounded-full blur-[120px] pointer-events-none" />
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 md:px-16">
         <div className="text-center mb-16">
           <motion.p
             initial={{ opacity: 0, letterSpacing: "0.2em" }}

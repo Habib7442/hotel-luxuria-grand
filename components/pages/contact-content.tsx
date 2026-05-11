@@ -22,7 +22,7 @@ export default function ContactContent() {
 
   return (
     <main className="min-h-screen bg-onyx pt-32 pb-24 overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 md:px-16">
         
         {/* Header */}
         <div className="text-center mb-24">

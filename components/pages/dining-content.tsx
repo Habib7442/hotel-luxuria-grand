@@ -77,7 +77,7 @@ export default function DiningContent() {
           Taste
         </div>
 
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -177,7 +177,7 @@ export default function DiningContent() {
         {/* Subtle Texture Overlay */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 md:px-16 relative z-10">
           <div className="max-w-4xl mb-24">
             <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-6">
               Our Curated Menu
@@ -242,7 +242,7 @@ export default function DiningContent() {
 
       {/* Horizontal Scroll Chef Recommendations */}
       <section className="py-24 md:py-40 bg-onyx relative overflow-hidden group/main">
-        <div className="container mx-auto px-6 mb-16">
+        <div className="container mx-auto px-6 md:px-16 mb-16">
           <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-6">
             Chef's Recommendations
           </p>
@@ -316,7 +316,7 @@ export default function DiningContent() {
 
       {/* Interactive Menu Section */}
       <section className="pt-24 md:pt-40 pb-12 relative">
-        <div className="container mx-auto px-6 mb-16">
+        <div className="container mx-auto px-6 md:px-16 mb-16">
           <p className="font-jakarta text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-6">
             The Digital Experience
           </p>
@@ -335,7 +335,7 @@ export default function DiningContent() {
           Gourmet
         </div>
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 md:px-16 relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

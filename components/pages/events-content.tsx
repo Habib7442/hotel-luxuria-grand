@@ -45,7 +45,7 @@ export default function EventsContent() {
 
       {/* Intro Narrative */}
       <section className="py-24 md:py-40 relative">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-6xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-10">
               Host the <span className="text-champagne">Extraordinary</span>
@@ -86,7 +86,7 @@ export default function EventsContent() {
 
       {/* Banquet Showcase */}
       <section className="py-24 bg-black/40">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -141,7 +141,7 @@ export default function EventsContent() {
           Plan
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 md:px-16 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

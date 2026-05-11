@@ -12,7 +12,7 @@ export const HomeSections = () => {
     <div className="bg-onyx">
       {/* Section 1: Dining - Culinaria */}
       <section id="dining" className="py-20 md:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="w-full lg:w-1/2 order-2 lg:order-1">
               <motion.p
@@ -80,7 +80,7 @@ export const HomeSections = () => {
 
       {/* Section 2: Weddings & Events */}
       <section id="events" className="py-20 md:py-32 relative bg-ivory/[0.02]">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="w-full lg:w-1/2">
               <motion.div
@@ -148,7 +148,7 @@ export const HomeSections = () => {
 
       {/* Section 3: Gallery Teaser */}
       <section id="gallery" className="py-20 md:py-32">
-        <div className="container mx-auto px-6 text-center mb-16 md:mb-24">
+        <div className="container mx-auto px-6 md:px-16 text-center mb-16 md:mb-24">
           <motion.p
             initial={{ opacity: 0, letterSpacing: "0.2em" }}
             whileInView={{ opacity: 1, letterSpacing: "0.5em" }}
@@ -168,7 +168,7 @@ export const HomeSections = () => {
             <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">Moments</span>
           </motion.h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 px-2 max-w-[1800px] mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 px-6 md:px-16 max-w-7xl mx-auto">
           {[
             { src: "/assets/new_assets_2/CAFE.webp", alt: "Luxuria Grand Café Cove" },
             { src: "/assets/new_assets_2/HOTEL FRONT(2).webp", alt: "Hotel Entrance" },

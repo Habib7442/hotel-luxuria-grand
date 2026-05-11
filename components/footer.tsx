@@ -12,7 +12,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-onyx border-t border-white/5 pt-16 pb-12 overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-24">
           
           {/* Column 1: Brand Story */}

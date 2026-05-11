@@ -10,7 +10,7 @@ export const BrandStory = () => {
   return (
     <section id="about" className="py-20 md:py-32 bg-onyx overflow-hidden relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-champagne/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-16">
         <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
           {/* Image Stack */}
           <div className="relative w-full md:w-1/2">

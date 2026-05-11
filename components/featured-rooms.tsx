@@ -120,7 +120,7 @@ export const FeaturedRooms = () => {
       {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-6 md:px-16 relative">
         {/* Section Header */}
         <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
           <motion.p
@@ -169,7 +169,7 @@ export const FeaturedRooms = () => {
                     scale: { duration: 0.5 }
                   }}
                   className={cn(
-                    "relative w-full max-w-[400px] flex-shrink-0",
+                    "relative w-full max-w-[380px] flex-shrink-0",
                     cardsToShow === 1 ? "mx-auto" : ""
                   )}
                 >

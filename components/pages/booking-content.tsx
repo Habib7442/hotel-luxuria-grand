@@ -87,7 +87,7 @@ export default function BookingContent() {
     <main className="min-h-screen bg-onyx pt-32 pb-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px]" />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 md:px-16 relative z-10">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 items-start">

@@ -56,7 +56,7 @@ export default function AboutContent() {
 
       {/* The Narrative Section */}
       <section className="py-24 md:py-48 relative">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -125,7 +125,7 @@ export default function AboutContent() {
 
       {/* Core Values Section */}
       <section className="py-24 md:py-40 bg-black/40 relative border-y border-white/5">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 md:px-16">
           <div className="text-center max-w-3xl mx-auto mb-24">
             <p className="font-jakarta text-xs text-champagne uppercase font-bold tracking-[0.4em] mb-6">Our Philosophy</p>
             <h2 className="text-4xl md:text-7xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter">
@@ -161,7 +161,7 @@ export default function AboutContent() {
 
       {/* Mission & Vision Showcase */}
       <section className="py-24 md:py-48 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 md:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-stretch">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
@@ -198,8 +198,8 @@ export default function AboutContent() {
 
       {/* Final CTA */}
       <section className="py-24 text-center border-t border-white/5">
-        <div className="container mx-auto px-6">
-          <Link href="/#rooms" className="group inline-flex items-center gap-6">
+        <div className="container mx-auto px-6 md:px-16">
+          <Link href="/rooms" className="group inline-flex items-center gap-6">
             <span className="text-champagne text-xs uppercase font-bold tracking-[0.5em]">Explore Our Rooms</span>
             <div className="w-12 h-12 rounded-full border border-champagne/30 flex items-center justify-center group-hover:bg-champagne group-hover:border-champagne transition-all duration-500">
               <MoveRight className="w-5 h-5 text-champagne group-hover:text-black transition-colors" />

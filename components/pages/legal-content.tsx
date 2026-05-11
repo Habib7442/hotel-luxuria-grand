@@ -22,7 +22,7 @@ export default function LegalContent({ title, lastUpdated, content, icon }: Lega
   const Icon = ICON_MAP[icon] || Shield;
   return (
     <main className="min-h-screen bg-onyx pt-32 pb-24 overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 md:px-16">
         
         {/* Header */}
         <div className="max-w-4xl mx-auto mb-20 text-center lg:text-left">
