@@ -16,9 +16,9 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/x-icon',
       },
       {
-        src: '/og_image.png',
+        src: '/og_image.webp',
         sizes: '1200x630',
-        type: 'image/png',
+        type: 'image/webp',
       }
     ],
   }
