@@ -100,7 +100,7 @@ export const Testimonials = () => {
                   <h4 className="text-ivory font-jakarta font-bold uppercase tracking-[0.2em] text-sm mb-1">
                     {reviews[currentIndex].name}
                   </h4>
-                  <p className="text-champagne/60 font-jakarta text-[10px] uppercase font-bold tracking-widest">
+                  <p className="text-champagne/80 font-jakarta text-[10px] uppercase font-bold tracking-widest">
                     Verified Guest • {reviews[currentIndex].time}
                   </p>
                 </div>

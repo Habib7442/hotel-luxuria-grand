@@ -188,15 +188,15 @@ export const FeaturedRooms = () => {
                           <div className="flex gap-2 md:gap-3 items-center">
                             <div className="text-center">
                               <p className="text-[#2E0249] font-jakarta font-black text-sm md:text-base leading-tight">{room.priceSingle}</p>
-                              <p className="text-[#2E0249]/60 text-[6px] md:text-[7px] uppercase tracking-widest font-black">Single</p>
+                              <p className="text-[#2E0249] text-[6px] md:text-[7px] uppercase tracking-widest font-black">Single</p>
                             </div>
                             <div className="w-[1px] h-4 bg-[#2E0249]/20" />
                             <div className="text-center">
                               <p className="text-[#2E0249] font-jakarta font-black text-sm md:text-base leading-tight">{room.priceDouble}</p>
-                              <p className="text-[#2E0249]/60 text-[6px] md:text-[7px] uppercase tracking-widest font-black">Double</p>
+                              <p className="text-[#2E0249] text-[6px] md:text-[7px] uppercase tracking-widest font-black">Double</p>
                             </div>
                           </div>
-                          <p className="text-[#2E0249]/40 text-[5px] md:text-[6px] uppercase tracking-widest mt-1 border-t border-[#2E0249]/10 pt-1 w-full text-center font-bold whitespace-nowrap">
+                          <p className="text-[#2E0249]/80 text-[5px] md:text-[6px] uppercase tracking-widest mt-1 border-t border-[#2E0249]/10 pt-1 w-full text-center font-bold whitespace-nowrap">
                             + GST as applicable
                           </p>
                         </div>

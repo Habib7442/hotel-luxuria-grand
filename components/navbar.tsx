@@ -147,7 +147,7 @@ export const Navbar = () => {
               transition={{ delay: 0.7 }}
               className="pt-10"
             >
-              <p className="text-white/20 text-[10px] uppercase tracking-[0.3em] font-bold text-center">Hotel Luxuria Grand, Silchar</p>
+              <p className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold text-center">Hotel Luxuria Grand, Silchar</p>
             </motion.div>
           </div>
         </motion.div>
@@ -205,7 +205,7 @@ export const Navbar = () => {
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={cn(
                     "text-[10px] font-jakarta font-bold uppercase tracking-[0.2em] transition-all duration-300",
-                    isScrolled ? "text-champagne/70 hover:text-brass" : "text-white/60 hover:text-white"
+                    isScrolled ? "text-champagne/90 hover:text-brass" : "text-white/80 hover:text-white"
                   )}
                 >
                   {link.name}

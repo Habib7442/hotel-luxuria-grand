@@ -25,11 +25,11 @@ export const Footer = () => {
                 height={90} 
                 className="h-14 w-auto object-contain"
               />
-              <p className="text-xs font-jakarta font-bold tracking-[0.4em] uppercase text-white/40 mt-3">
+              <p className="text-xs font-jakarta font-bold tracking-[0.4em] uppercase text-white/60 mt-3">
                 Silchar
               </p>
             </Link>
-            <p className="text-champagne/50 font-jakarta text-sm leading-relaxed max-w-sm">
+            <p className="text-champagne/80 font-jakarta text-sm leading-relaxed max-w-sm">
               The pinnacle of luxury in Silchar. Our hotel combines modern elegance with 
               timeless hospitality to create an unforgettable sanctuary for every guest.
             </p>
@@ -77,7 +77,7 @@ export const Footer = () => {
                 { name: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-champagne/60 hover:text-white transition-colors text-sm font-jakarta uppercase tracking-widest font-bold">
+                  <Link href={item.href} className="text-champagne/80 hover:text-white transition-colors text-sm font-jakarta uppercase tracking-widest font-bold">
                     {item.name}
                   </Link>
                 </li>
@@ -91,7 +91,7 @@ export const Footer = () => {
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <MapPin size={20} className="text-champagne mt-1 shrink-0" />
-                <p className="text-champagne/60 text-sm font-jakarta leading-relaxed">
+                <p className="text-champagne/80 text-sm font-jakarta leading-relaxed">
                   Ghungoor Kuarpar Road, <br />
                   Near Saint Capitanio School, <br />
                   Silchar-788015, Assam
@@ -100,17 +100,17 @@ export const Footer = () => {
               <div className="flex items-start space-x-4">
                 <Phone size={20} className="text-champagne mt-1 shrink-0" />
                 <div className="flex flex-col space-y-1">
-                  <a href="tel:+919181043994" className="text-champagne/60 hover:text-champagne text-sm font-jakarta font-bold transition-colors">
+                  <a href="tel:+919181043994" className="text-champagne/80 hover:text-champagne text-sm font-jakarta font-bold transition-colors">
                     +91 91810 43994
                   </a>
-                  <a href="tel:+919181099018" className="text-champagne/60 hover:text-champagne text-sm font-jakarta font-bold transition-colors">
+                  <a href="tel:+919181099018" className="text-champagne/80 hover:text-champagne text-sm font-jakarta font-bold transition-colors">
                     +91 91810 99018
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Mail size={20} className="text-champagne mt-1 shrink-0" />
-                <a href="mailto:luxuriagrand2025@gmail.com" className="text-champagne/60 hover:text-champagne text-sm font-jakarta uppercase font-bold transition-colors">
+                <a href="mailto:luxuriagrand2025@gmail.com" className="text-champagne/80 hover:text-champagne text-sm font-jakarta uppercase font-bold transition-colors">
                   luxuriagrand2025@gmail.com
                 </a>
               </div>
@@ -136,7 +136,7 @@ export const Footer = () => {
         </div>
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-white/20 text-[10px] font-jakarta uppercase tracking-[0.2em]">
+          <p className="text-white/40 text-[10px] font-jakarta uppercase tracking-[0.2em]">
             &copy; {currentYear} Hotel Luxuria Grand. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
@@ -149,7 +149,7 @@ export const Footer = () => {
               <Link 
                 key={link.name} 
                 href={link.href} 
-                className="text-white/20 hover:text-champagne transition-colors text-[9px] uppercase tracking-widest font-bold"
+                className="text-white/40 hover:text-champagne transition-colors text-[9px] uppercase tracking-widest font-bold"
               >
                 {link.name}
               </Link>

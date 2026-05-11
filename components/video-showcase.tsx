@@ -32,8 +32,11 @@ export function VideoShowcase() {
 
   return (
     <section className="py-24 bg-onyx relative overflow-hidden">
-      {/* Decorative Background Text */}
-      <div className="absolute top-10 left-0 text-[15vw] font-jakarta font-black text-white/[0.02] uppercase leading-none pointer-events-none select-none">
+      {/* Decorative Background Text - Aria Hidden */}
+      <div 
+        aria-hidden="true"
+        className="absolute top-10 left-0 text-[15vw] font-jakarta font-black text-white/[0.04] uppercase leading-none pointer-events-none select-none"
+      >
         Experience
       </div>
 

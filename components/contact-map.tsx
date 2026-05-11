@@ -37,7 +37,7 @@ export const ContactMap = () => {
                   <MapPin className="w-5 h-5 text-champagne" />
                 </div>
                 <div>
-                  <p className="font-jakarta font-bold text-[10px] uppercase tracking-widest text-champagne/60 mb-1">Address</p>
+                  <p className="font-jakarta font-bold text-[10px] uppercase tracking-widest text-champagne/90 mb-1">Address</p>
                   <p className="text-ivory font-medium leading-relaxed">
                     Ghungoor Kuarpar Road, Near Saint Capitanio School, <br />
                     Silchar-788015, Assam
@@ -50,7 +50,7 @@ export const ContactMap = () => {
                   <Phone className="w-5 h-5 text-champagne" />
                 </div>
                 <div>
-                  <p className="font-jakarta font-bold text-[10px] uppercase tracking-widest text-champagne/60 mb-1">Inquiries</p>
+                  <p className="font-jakarta font-bold text-[10px] uppercase tracking-widest text-champagne/90 mb-1">Inquiries</p>
                   <a href="tel:+919181043994" className="text-ivory font-medium hover:text-champagne transition-colors block">+91 91810 43994</a>
                   <a href="tel:+919181099018" className="text-ivory font-medium hover:text-champagne transition-colors block">+91 91810 99018</a>
                 </div>
@@ -61,7 +61,7 @@ export const ContactMap = () => {
                   <Clock className="w-5 h-5 text-champagne" />
                 </div>
                 <div>
-                  <p className="font-jakarta font-bold text-[10px] uppercase tracking-widest text-champagne/60 mb-1">Check-in / Out</p>
+                  <p className="font-jakarta font-bold text-[10px] uppercase tracking-widest text-champagne/90 mb-1">Check-in / Out</p>
                   <p className="text-ivory font-medium">12:00 PM / 11:00 AM</p>
                 </div>
               </div>
