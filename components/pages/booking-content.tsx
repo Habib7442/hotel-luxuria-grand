@@ -35,7 +35,8 @@ const venues = [
 export default function BookingContent() {
   const searchParams = useSearchParams();
   const preSelectedRoom = searchParams.get("room");
-  const preSelectedType = searchParams.get("type") as "room" | "dining" || "room";
+  const typeParam = searchParams.get("type");
+  const preSelectedType: "room" | "dining" = (typeParam === "dining" || typeParam === "event") ? "dining" : "room";
 
   const [activeTab, setActiveTab] = useState<"room" | "dining">(preSelectedType);
   const [roomData, setRoomData] = useState({
@@ -58,15 +59,28 @@ export default function BookingContent() {
   const handleRoomWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const phoneNumber = "919181043994";
-    const text = `*New Room Reservation*%0A%0A*Room:* ${roomData.roomType}%0A*Check-in:* ${roomData.checkIn}%0A*Check-out:* ${roomData.checkOut}%0A*Guests:* ${roomData.guests}${roomData.message ? `%0A*Message:* ${roomData.message}` : ""}`;
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+    const message = `*New Room Reservation*
+
+*Room:* ${roomData.roomType}
+*Check-in:* ${roomData.checkIn}
+*Check-out:* ${roomData.checkOut}
+*Guests:* ${roomData.guests}${roomData.message ? `
+*Message:* ${roomData.message}` : ""}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleDiningWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const phoneNumber = "919181043994";
-    const text = `*New Dining/Event Reservation*%0A%0A*Occasion:* ${diningData.occasion}%0A*Venue:* ${diningData.venue}%0A*Date:* ${diningData.date}%0A*Time:* ${diningData.time}%0A*Guests:* ${diningData.guests}${diningData.message ? `%0A*Requests:* ${diningData.message}` : ""}`;
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+    const message = `*New Dining/Event Reservation*
+
+*Occasion:* ${diningData.occasion}
+*Venue:* ${diningData.venue}
+*Date:* ${diningData.date}
+*Time:* ${diningData.time}
+*Guests:* ${diningData.guests}${diningData.message ? `
+*Requests:* ${diningData.message}` : ""}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
@@ -92,10 +106,10 @@ export default function BookingContent() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-jakarta font-extrabold text-ivory uppercase leading-[0.9] tracking-tighter mb-10"
               >
-                Reservations <br />
-                <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">& Bookings</span>
+                Book Your Stay at <br />
+                <span className="text-champagne font-cormorant font-normal lowercase italic tracking-normal">Hotel Luxuria Grand</span>
               </motion.h1>
-              
+
               {/* Tab Toggles */}
               <div className="flex flex-col space-y-4 mt-12">
                 <button 
@@ -127,9 +141,9 @@ export default function BookingContent() {
                 </button>
               </div>
 
-              <div className="mt-12 p-8 border border-white/5">
+              <div className="mt-8 p-8 border border-white/5">
                 <p className="text-ivory/40 text-[10px] uppercase tracking-widest font-jakarta italic leading-loose">
-                  Select your service type to proceed with your reservation. All bookings are finalized via our premium WhatsApp concierge.
+                  Select your service type to proceed. All bookings are finalized via our premium WhatsApp concierge.
                 </p>
               </div>
             </div>
@@ -148,23 +162,27 @@ export default function BookingContent() {
                 <form onSubmit={handleRoomWhatsApp} className="space-y-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="check-in" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Calendar className="w-3 h-3 text-white" /> Check-in
                       </label>
                       <input 
+                        id="check-in"
                         type="date"
                         required
+                        value={roomData.checkIn}
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setRoomData({...roomData, checkIn: e.target.value})}
                       />
                     </div>
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="check-out" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Calendar className="w-3 h-3 text-white" /> Check-out
                       </label>
                       <input 
+                        id="check-out"
                         type="date"
                         required
+                        value={roomData.checkOut}
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setRoomData({...roomData, checkOut: e.target.value})}
                       />
@@ -173,11 +191,12 @@ export default function BookingContent() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="room-type" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Home className="w-3 h-3 text-white" /> Room Type
                       </label>
                       <div className="relative group/select">
                         <select 
+                          id="room-type"
                           className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
                           value={roomData.roomType}
                           onChange={(e) => setRoomData({...roomData, roomType: e.target.value})}
@@ -190,11 +209,12 @@ export default function BookingContent() {
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="guests" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Users className="w-3 h-3 text-white" /> Guests
                       </label>
                       <div className="relative group/select">
                         <select 
+                          id="guests"
                           className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
                           value={roomData.guests}
                           onChange={(e) => setRoomData({...roomData, guests: e.target.value})}
@@ -209,12 +229,14 @@ export default function BookingContent() {
                   </div>
 
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="room-requests" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <MessageSquare className="w-3 h-3 text-white" /> Special Requests
                     </label>
                     <textarea 
+                      id="room-requests"
                       rows={3}
                       placeholder="Special requests..."
+                      value={roomData.message}
                       className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta resize-none"
                       onChange={(e) => setRoomData({...roomData, message: e.target.value})}
                     ></textarea>
@@ -228,11 +250,12 @@ export default function BookingContent() {
                 <form onSubmit={handleDiningWhatsApp} className="space-y-10">
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="occasion" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <PartyPopper className="w-3 h-3 text-white" /> Occasion
                       </label>
                       <div className="relative group/select">
                         <select 
+                          id="occasion"
                           className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
                           value={diningData.occasion}
                           onChange={(e) => setDiningData({...diningData, occasion: e.target.value})}
@@ -245,11 +268,12 @@ export default function BookingContent() {
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="venue" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Utensils className="w-3 h-3 text-white" /> Venue
                       </label>
                       <div className="relative group/select">
                         <select 
+                          id="venue"
                           className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
                           value={diningData.venue}
                           onChange={(e) => setDiningData({...diningData, venue: e.target.value})}
@@ -265,23 +289,27 @@ export default function BookingContent() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="dining-date" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Calendar className="w-3 h-3 text-white" /> Date
                       </label>
                       <input 
+                        id="dining-date"
                         type="date"
                         required
+                        value={diningData.date}
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setDiningData({...diningData, date: e.target.value})}
                       />
                     </div>
                     <div className="space-y-4">
-                      <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                      <label htmlFor="dining-time" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                         <Clock className="w-3 h-3 text-white" /> Time
                       </label>
                       <input 
+                        id="dining-time"
                         type="time"
                         required
+                        value={diningData.time}
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-10 text-ivory focus:border-champagne outline-none transition-colors font-jakarta block [color-scheme:dark]"
                         onChange={(e) => setDiningData({...diningData, time: e.target.value})}
                       />
@@ -289,11 +317,12 @@ export default function BookingContent() {
                   </div>
 
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="dining-guests" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <Users className="w-3 h-3 text-white" /> Guests
                     </label>
                     <div className="relative group/select">
                       <select 
+                        id="dining-guests"
                         className="w-full bg-transparent border-b border-white/20 py-4 pr-8 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer block"
                         value={diningData.guests}
                         onChange={(e) => setDiningData({...diningData, guests: e.target.value})}
@@ -307,12 +336,14 @@ export default function BookingContent() {
                   </div>
 
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="dining-requests" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <MessageSquare className="w-3 h-3 text-white" /> Message
                     </label>
                     <textarea 
+                      id="dining-requests"
                       rows={3}
                       placeholder="Special requests..."
+                      value={diningData.message}
                       className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta resize-none"
                       onChange={(e) => setDiningData({...diningData, message: e.target.value})}
                     ></textarea>
@@ -328,7 +359,52 @@ export default function BookingContent() {
                 Immediate Confirmation via WhatsApp Concierge
               </p>
             </motion.div>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16 pt-16 border-t border-white/5">
+                <section>
+                  <h2 className="text-ivory font-jakarta font-bold uppercase text-sm tracking-[0.3em] mb-6 flex items-center gap-3">
+                    <span className="w-8 h-[1px] bg-champagne"></span> Direct Benefits
+                  </h2>
+                  <div className="space-y-4">
+                    {[
+                      "Best Price Guarantee",
+                      "Priority Suite Upgrades",
+                      "Early Check-in",
+                      "Free High-Speed Wi-Fi",
+                      "Direct Concierge Support",
+                    ].map((benefit, i) => (
+                      <div key={i} className="flex items-center gap-3 text-ivory/60 text-[10px] uppercase tracking-widest font-medium">
+                        <MoveRight className="w-3 h-3 text-champagne" /> {benefit}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h2 className="text-ivory font-jakarta font-bold uppercase text-sm tracking-[0.3em] mb-6 flex items-center gap-3">
+                    <span className="w-8 h-[1px] bg-champagne"></span> Why WhatsApp?
+                  </h2>
+                  <p className="text-ivory/50 text-[10px] leading-relaxed font-jakarta uppercase tracking-wider">
+                    Our premium WhatsApp concierge provides a personalized booking experience. Speak directly with our reservation team to secure specific room requests, arrange transport, or customize your stay in real-time.
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-ivory font-jakarta font-bold uppercase text-sm tracking-[0.3em] mb-6 flex items-center gap-3">
+                    <span className="w-8 h-[1px] bg-champagne"></span> Stay FAQ
+                  </h2>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-champagne text-[9px] font-bold uppercase tracking-widest mb-1">Check-in / Out</h3>
+                      <p className="text-ivory/40 text-[9px] leading-relaxed uppercase">12:00 PM / 11:00 AM</p>
+                    </div>
+                    <div>
+                      <h3 className="text-champagne text-[9px] font-bold uppercase tracking-widest mb-1">Cancellations</h3>
+                      <p className="text-ivory/40 text-[9px] leading-relaxed uppercase">Flexible up to 24 hours before arrival.</p>
+                    </div>
+                  </div>
+                </section>
           </div>
 
         </div>

@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Book Your Stay",
-  description: "Secure your luxury experience at Hotel Luxuria Grand, Silchar. Use our seamless WhatsApp reservation system to book your suite directly and enjoy exclusive direct-booking benefits.",
+  description: "Secure your luxury stay in Silchar. Use our seamless WhatsApp concierge to book your suite directly and enjoy exclusive direct-booking benefits.",
   keywords: ["hotel booking Silchar", "reserve room Luxuria Grand", "direct booking benefits Silchar", "whatsapp reservation hotel"],
   alternates: {
     canonical: "/book",

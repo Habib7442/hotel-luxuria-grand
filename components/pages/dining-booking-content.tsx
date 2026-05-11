@@ -37,8 +37,15 @@ export default function DiningBookingContent() {
   const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const phoneNumber = "919181043994";
-    const text = `*New Dining/Event Reservation*%0A%0A*Occasion:* ${formData.occasion}%0A*Location:* ${formData.location}%0A*Date:* ${formData.date}%0A*Time:* ${formData.time}%0A*Guests:* ${formData.guests}${formData.message ? `%0A*Requests:* ${formData.message}` : ""}`;
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+    const message = `*New Dining/Event Reservation*
+
+*Occasion:* ${formData.occasion}
+*Location:* ${formData.location}
+*Date:* ${formData.date}
+*Time:* ${formData.time}
+*Guests:* ${formData.guests}${formData.message ? `
+*Requests:* ${formData.message}` : ""}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
@@ -97,10 +104,11 @@ export default function DiningBookingContent() {
                 {/* Occasion & Location */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="occasion-select" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <PartyPopper className="w-3 h-3" /> The Occasion
                     </label>
                     <select 
+                      id="occasion-select"
                       className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
                       value={formData.occasion}
                       onChange={(e) => setFormData({...formData, occasion: e.target.value})}
@@ -111,10 +119,11 @@ export default function DiningBookingContent() {
                     </select>
                   </div>
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="venue-select" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <Utensils className="w-3 h-3" /> Preferred Venue
                     </label>
                     <select 
+                      id="venue-select"
                       className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
                       value={formData.location}
                       onChange={(e) => setFormData({...formData, location: e.target.value})}
@@ -129,24 +138,28 @@ export default function DiningBookingContent() {
                 {/* Date & Time */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="dining-date" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <Calendar className="w-3 h-3" /> Reservation Date
                     </label>
                     <input 
+                      id="dining-date"
                       type="date"
                       required
-                      className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none"
+                      value={formData.date}
+                      className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none [color-scheme:dark]"
                       onChange={(e) => setFormData({...formData, date: e.target.value})}
                     />
                   </div>
                   <div className="space-y-4">
-                    <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                    <label htmlFor="dining-time" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                       <Clock className="w-3 h-3" /> Preferred Time
                     </label>
                     <input 
+                      id="dining-time"
                       type="time"
                       required
-                      className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none"
+                      value={formData.time}
+                      className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none [color-scheme:dark]"
                       onChange={(e) => setFormData({...formData, time: e.target.value})}
                     />
                   </div>
@@ -154,10 +167,11 @@ export default function DiningBookingContent() {
 
                 {/* Guests */}
                 <div className="space-y-4">
-                  <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                  <label htmlFor="dining-guests" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                     <Users className="w-3 h-3" /> Number of Guests
                   </label>
                   <select 
+                    id="dining-guests"
                     className="w-full bg-onyx border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta appearance-none cursor-pointer"
                     value={formData.guests}
                     onChange={(e) => setFormData({...formData, guests: e.target.value})}
@@ -170,12 +184,14 @@ export default function DiningBookingContent() {
 
                 {/* Requests */}
                 <div className="space-y-4">
-                  <label className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2">
+                  <label htmlFor="dining-requests" className="block text-[10px] uppercase tracking-widest text-champagne font-bold flex items-center gap-2 cursor-pointer">
                     <MessageSquare className="w-3 h-3" /> Special Requests / Dietary Notes
                   </label>
                   <textarea 
+                    id="dining-requests"
                     rows={3}
                     placeholder="E.g. Cake for anniversary, corner table, high chair, window seat..."
+                    value={formData.message}
                     className="w-full bg-transparent border-b border-white/20 py-4 text-ivory focus:border-champagne outline-none transition-colors font-jakarta resize-none placeholder:text-white/10"
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                   ></textarea>

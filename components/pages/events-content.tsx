@@ -158,7 +158,7 @@ export default function EventsContent() {
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Button asChild className="bg-champagne text-black hover:bg-brass rounded-none py-8 text-[10px] font-bold uppercase tracking-[0.3em] h-auto w-full md:w-[280px] shadow-2xl transition-all duration-500">
-                <Link href="/book?type=dining" className="flex items-center justify-center gap-4">
+                <Link href="/book?type=event" className="flex items-center justify-center gap-4">
                   Inquire Now <MoveRight className="w-4 h-4" />
                 </Link>
               </Button>

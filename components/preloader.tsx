@@ -32,6 +32,9 @@ export default function Preloader() {
             transition: { duration: 1, ease: [0.76, 0, 0.24, 1] }
           }}
           className="fixed inset-0 z-[9999] bg-onyx flex items-center justify-center overflow-hidden"
+          role="status"
+          aria-live="polite"
+          aria-label="Loading Luxuria Grand"
         >
           {/* Subtle Background Pattern */}
           <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px]" />

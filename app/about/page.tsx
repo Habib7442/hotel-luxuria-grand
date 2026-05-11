@@ -3,7 +3,7 @@ import AboutContent from "@/components/pages/about-content";
 
 export const metadata: Metadata = {
   title: "The Legacy of Grandeur",
-  description: "Learn about Hotel Luxuria Grand, Silchar's newest landmark of hospitality. Discover our story, our commitment to excellence, and our vision for luxury in the Barak Valley.",
+  description: "Discover the heritage of luxury at Hotel Luxuria Grand. Located in Silchar, we redefine hospitality with signature service and elite accommodations.",
   keywords: ["about Luxuria Grand", "best hotel Silchar story", "luxury hospitality Assam", "Hotel Luxuria Grand address"],
   alternates: {
     canonical: "/about",

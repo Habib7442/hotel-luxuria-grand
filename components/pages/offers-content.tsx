@@ -34,6 +34,15 @@ const offers = [
     validTill: "Year-round offer",
     code: "CORPORATE",
     link: "/book?type=room"
+  },
+  {
+    id: "4",
+    title: "NIT Silchar Parent Special",
+    description: "Exclusive 10% discount for parents visiting NIT Silchar. Includes flexible check-in and complimentary airport/station shuttle service.",
+    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.34 PM.webp",
+    validTill: "Academic Year 2026",
+    code: "NITPARENT",
+    link: "/book?type=room"
   }
 ];
 
@@ -76,28 +85,47 @@ export default function OffersContent() {
           ))}
         </div>
 
-        {/* Coming Soon Message */}
-        <div className="max-w-4xl mx-auto py-32 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white/[0.02] border border-white/5 p-16 md:p-24 relative group"
-          >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-12 bg-champagne" />
-            <h2 className="text-4xl md:text-6xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-8">
-              New Curated <br />
-              <span className="text-champagne font-cormorant italic lowercase tracking-normal">Experiences</span> Coming Soon
-            </h2>
-            <p className="text-ivory/40 font-jakarta text-sm uppercase tracking-[0.3em] leading-relaxed max-w-md mx-auto">
-              We are currently designing exclusive new packages and seasonal retreats for your next stay.
-            </p>
-            <div className="mt-16 flex flex-col items-center gap-6">
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center animate-pulse">
-                <Gift className="w-5 h-5 text-champagne/40" />
+        {/* Offers Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {offers.map((offer, index) => (
+            <motion.div
+              key={offer.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white/[0.03] border border-white/5 overflow-hidden group hover:border-champagne/30 transition-all duration-500 flex flex-col h-full"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={offer.image}
+                  alt={offer.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent opacity-60" />
+                <div className="absolute bottom-6 left-6">
+                  <div className="bg-champagne/90 backdrop-blur-md px-3 py-1 rounded-none text-[8px] font-black uppercase tracking-[0.2em] text-black">
+                    Promo: {offer.code}
+                  </div>
+                </div>
               </div>
-              <p className="text-[10px] text-champagne/40 uppercase font-black tracking-[0.4em]">Check back shortly</p>
-            </div>
-          </motion.div>
+              
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-[10px] text-champagne uppercase font-bold tracking-[0.3em] mb-4">{offer.validTill}</p>
+                <h2 className="text-2xl font-jakarta font-extrabold text-ivory uppercase tracking-tighter mb-6 group-hover:text-champagne transition-colors">
+                  {offer.title}
+                </h2>
+                <p className="text-ivory/50 text-xs leading-relaxed font-jakarta mb-8 flex-grow">
+                  {offer.description}
+                </p>
+                <Button asChild className="w-full bg-white/5 hover:bg-champagne text-ivory hover:text-black border border-white/10 hover:border-champagne rounded-none py-6 text-[10px] font-bold uppercase tracking-[0.3em] h-auto transition-all">
+                  <Link href={offer.link} className="flex items-center justify-center gap-3">
+                    Claim Offer <MoveRight className="w-3 h-3" />
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Custom Inquiry */}

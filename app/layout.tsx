@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   description: "Experience refined luxury on Ghungoor Kuarpar Road. Silchar's No. 1 destination for premium rooms, grand banquets, and signature dining at Hotel Luxuria Grand.",
   keywords: ["hotels in Silchar", "luxury hotel Silchar", "Silchar wedding venue", "banquet hall Silchar", "best hotel in Silchar", "Hotel Luxuria Grand Silchar", "luxuria grand silchar", "luxury grand hotel silchar", "silcoorie grant", "best hotel in silchar assam", "top luxury stay silchar", "hotel near NIT Silchar", "accommodation near NIT Silchar", "best place to stay near NIT Silchar"],
-  metadataBase: new URL("https://www.hotelluxuriagrand.com"),
+  metadataBase: new URL("https://www.hotelluxuriagrand.com/"),
   openGraph: {
     title: "Hotel Luxuria Grand — Elite Luxury Hotel in Silchar",
     description: "Discover Silchar's most refined sanctuary. Premium suites, signature dining, and unforgettable events at Hotel Luxuria Grand.",
@@ -82,6 +82,24 @@ const jsonLd = {
     "@type": "Rating",
     "ratingValue": "4"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 24.802,
+    "longitude": 92.798
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Hotel+Luxuria+Grand+Silchar",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Banquet Hall", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Room Service", "value": true }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/hotelluxuriagrand",
+    "https://www.instagram.com/hotelluxuriagrand"
+  ],
   "checkinTime": "12:00",
   "checkoutTime": "11:00"
 };

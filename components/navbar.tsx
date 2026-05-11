@@ -46,7 +46,6 @@ export const Navbar = () => {
     { name: "Rooms", href: "/rooms" },
     { name: "Dining", href: "/dining" },
     { name: "About Us", href: "/about" },
-    { name: "Offers", href: "/offers" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
     { name: "Reviews", href: "https://www.google.com/search?q=Luxuria+Grand+Reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcFxboClSYhUlfcnk14JnFGbuxCDrgBszO1QuUIE3mECRZcYvsx5sjVqFS7lF4P9nA8qNhxPm7PGZ-JjN2wsBCdKJF1V" },
@@ -127,7 +126,7 @@ export const Navbar = () => {
             >
               <Button asChild className="bg-champagne text-black w-full py-8 rounded-full text-sm font-bold uppercase tracking-widest shadow-xl hover:bg-brass transition-colors">
                 <Link href="/book" onClick={() => setIsMobileMenuOpen(false)}>
-                  Reserve Now
+                  Book Now
                 </Link>
               </Button>
               <a href="tel:+919181043994" className="w-full">
@@ -213,7 +212,7 @@ export const Navbar = () => {
             {/* Reserve Button (Desktop) */}
             <div className="hidden md:block">
               <Button asChild className="bg-champagne text-black hover:bg-brass transition-all duration-500 rounded-full px-8 py-6 text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(201,169,110,0.2)]">
-                <Link href="/book">Reserve Now</Link>
+                <Link href="/book">Book Now</Link>
               </Button>
             </div>
 

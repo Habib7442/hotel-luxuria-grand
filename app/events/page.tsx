@@ -3,10 +3,14 @@ import EventsContent from "@/components/pages/events-content";
 
 export const metadata: Metadata = {
   title: "Weddings & Grand Events",
-  description: "Host your most memorable moments at Silchar's premier event destination. From grand weddings to sophisticated corporate gatherings, our banquet halls offer the perfect backdrop.",
+  description: "Silchar's premier event venue. From grand weddings to elite corporate gatherings, host your most memorable moments at Hotel Luxuria Grand's banquet hall.",
   keywords: ["wedding venue Silchar", "banquet hall Silchar", "best place for marriage in Silchar", "corporate events Silchar"],
   alternates: {
     canonical: "/events",
+  },
+  openGraph: {
+    title: "Weddings & Grand Events — Hotel Luxuria Grand",
+    description: "Silchar's premier event venue. From grand weddings to elite corporate gatherings at our banquet hall.",
   },
 };
 

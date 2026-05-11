@@ -40,7 +40,7 @@ export const Footer = () => {
                 { name: "whatsapp", icon: "/social-icons/whatsapp.png", href: "https://wa.me/919181043994" },
                 { name: "linkedin", icon: "/social-icons/linkedin.png", href: "#" },
                 { name: "X", icon: "/social-icons/X.png", href: "#" },
-              ].map((social) => (
+              ].filter((social) => social.href !== "#").map((social) => (
                 <a 
                   key={social.name} 
                   href={social.href}
@@ -71,7 +71,6 @@ export const Footer = () => {
               {[
                 { name: "Rooms", href: "/rooms" },
                 { name: "Dining", href: "/dining" },
-                { name: "Exclusive Offers", href: "/offers" },
                 { name: "Book Now", href: "/book" },
                 { name: "About Us", href: "/about" },
                 { name: "Write a Review", href: "https://www.google.com/search?q=Luxuria+Grand+Reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcFxboClSYhUlfcnk14JnFGbuxCDrgBszO1QuUIE3mECRZcYvsx5sjVqFS7lF4P9nA8qNhxPm7PGZ-JjN2wsBCdKJF1V" },

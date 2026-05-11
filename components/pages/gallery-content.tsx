@@ -40,6 +40,21 @@ export default function GalleryContent() {
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeCategory);
 
+  React.useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedItem(null);
+    };
+    if (selectedItem) {
+      document.addEventListener('keydown', handleEsc);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.removeEventListener('keydown', handleEsc);
+        document.body.style.overflow = '';
+      };
+    }
+  }, [selectedItem]);
+
   return (
     <main className="min-h-screen bg-onyx pt-32 pb-24 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -147,6 +162,9 @@ export default function GalleryContent() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6 backdrop-blur-sm"
             onClick={() => setSelectedItem(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Media Preview"
           >
             <button 
               className="absolute top-10 right-10 text-ivory hover:text-champagne transition-colors z-[110]"

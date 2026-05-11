@@ -217,7 +217,7 @@ export const FeaturedRooms = () => {
                     <div className="p-8 pt-0">
                       <Button asChild className="w-full bg-champagne text-black hover:bg-brass rounded-none py-6 text-[10px] uppercase tracking-[0.3em] font-bold h-auto transition-all duration-500">
                         <a href="tel:+919181043994" className="flex items-center justify-center gap-4">
-                          Reserve Now <MoveRight className="w-4 h-4" />
+                          Book Now <MoveRight className="w-4 h-4" />
                         </a>
                       </Button>
                     </div>

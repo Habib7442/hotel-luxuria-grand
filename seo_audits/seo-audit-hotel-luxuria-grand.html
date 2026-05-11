@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Audit — Hotel Luxuria Grand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f1;
+    --paper: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-muted: #7a7a7a;
+    --rule: #e6e2db;
+    --accent: #8b1a1a;
+    --critical: #b91c1c;
+    --high: #c2410c;
+    --medium: #a16207;
+    --low: #15803d;
+    --ok: #15803d;
+    --warn: #c2410c;
+    --bad: #b91c1c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 0 6%; }
+
+  /* MASTHEAD */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding: 28px 0 18px;
+    margin-bottom: 60px;
+    background: var(--bg);
+  }
+  .masthead-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pub {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .pub-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+  }
+
+  /* HERO */
+  .hero {
+    margin-bottom: 80px;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .standfirst {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 2.2vw, 24px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 720px;
+    margin-bottom: 36px;
+  }
+  .byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+  }
+  .byline a { color: var(--accent); text-decoration: none; }
+
+  /* SCORECARD */
+  .scorecard {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 40px;
+    margin-bottom: 80px;
+  }
+  .scorecard h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 32px;
+  }
+  .grade-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .big-grade {
+    font-family: 'Fraunces', serif;
+    font-size: 96px;
+    line-height: 0.9;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .grade-detail {
+    flex: 1;
+    min-width: 280px;
+  }
+  .grade-detail .score-line {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .grade-detail .score-sub {
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .dim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    margin-top: 32px;
+  }
+  .dim {
+    padding: 20px 24px 20px 0;
+    border-right: 1px solid var(--rule);
+  }
+  .dim:last-child { border-right: none; padding-right: 0; }
+  .dim-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+  }
+  .dim-score {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .bar {
+    height: 4px;
+    background: var(--rule);
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; }
+  .bar-fill.good { background: var(--ok); }
+  .bar-fill.ok { background: var(--medium); }
+  .bar-fill.weak { background: var(--high); }
+  .bar-fill.bad { background: var(--bad); }
+
+  /* SECTIONS */
+  section {
+    margin-bottom: 80px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  h2.sec-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sec-summary {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 24px 0 36px;
+    font-weight: 300;
+  }
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 36px 0 12px;
+    letter-spacing: -0.01em;
+  }
+  p { margin: 0 0 18px; }
+
+  /* FINDINGS */
+  .findings { margin: 28px 0; }
+  .finding {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+    align-items: start;
+  }
+  .finding:last-child { border-bottom: 1px solid var(--rule); }
+  .severity {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 0;
+    text-align: left;
+  }
+  .severity.critical { color: var(--critical); }
+  .severity.high { color: var(--high); }
+  .severity.medium { color: var(--medium); }
+  .severity.low { color: var(--low); }
+  .severity.ok { color: var(--ok); }
+  .finding-body { font-size: 16px; }
+  .finding-title {
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .finding-detail {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .finding-detail code {
+    background: #f0ebe2;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
+  .data-table th, .data-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .data-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+    background: #faf8f4;
+    border-bottom: 2px solid var(--ink);
+  }
+  .data-table td.code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+  .status-good { color: var(--ok); font-weight: 600; }
+  .status-warn { color: var(--warn); font-weight: 600; }
+  .status-bad { color: var(--bad); font-weight: 600; }
+
+  /* PULL QUOTE */
+  .pullquote {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.3;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding: 8px 0 8px 28px;
+    margin: 40px 0;
+    max-width: 700px;
+  }
+
+  /* CODE BLOCK */
+  pre.code {
+    background: #1a1a1a;
+    color: #f5f0e6;
+    padding: 24px;
+    overflow-x: auto;
+    border-radius: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 24px 0;
+    border-left: 3px solid var(--accent);
+  }
+  pre.code .com { color: #8a8377; }
+  pre.code .key { color: #e8c882; }
+  pre.code .str { color: #c0d9a8; }
+
+  /* ACTION PLAN */
+  .action-grid {
+    display: grid;
+    gap: 0;
+    margin: 32px 0;
+    border-top: 1px solid var(--ink);
+  }
+  .action {
+    display: grid;
+    grid-template-columns: 60px 1fr 130px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    gap: 16px;
+    align-items: start;
+  }
+  .action-num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  .action-text { font-size: 16px; }
+  .action-text strong { font-weight: 600; }
+  .action-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: right;
+  }
+  .action-meta .effort {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* COMPETITOR */
+  .comp-row {
+    display: grid;
+    grid-template-columns: 1fr 90px 90px 90px;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: center;
+    font-size: 15px;
+  }
+  .comp-row.header {
+    border-top: 1px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .comp-name strong { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; }
+  .comp-name .url { font-size: 12px; color: var(--ink-muted); font-family: 'JetBrains Mono', monospace; }
+
+  /* FOOTER */
+  footer {
+    border-top: 2px solid var(--ink);
+    padding: 40px 0;
+    margin-top: 60px;
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    .finding { grid-template-columns: 1fr; gap: 6px; }
+    .action { grid-template-columns: 40px 1fr; }
+    .action-meta { grid-column: 2; text-align: left; margin-top: 6px; }
+    .comp-row { grid-template-columns: 1fr 60px; gap: 8px; font-size: 13px; }
+    .comp-row > *:nth-child(3), .comp-row > *:nth-child(4) { display: none; }
+    .scorecard { padding: 24px; }
+    .big-grade { font-size: 72px; }
+  }
+</style>
+<style>
+.ha-img-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;background:#f4f4f5;border:1px dashed #d4d4d8;border-radius:8px;color:#71717a;font-size:12px;font-family:system-ui,sans-serif;min-height:80px;padding:16px;box-sizing:border-box;animation:ha-img-pulse 1.5s ease-in-out infinite}
+.ha-img-placeholder.ha-failed{animation:none;opacity:.7}
+@keyframes ha-img-pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@media(prefers-color-scheme:dark){.ha-img-placeholder{background:#27272a;border-color:#3f3f46;color:#a1a1aa}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-inner">
+      <div class="pub">SEO Audit Report</div>
+      <div class="pub-meta">Vol. 01 · 11 May 2026 · Confidential</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="kicker">Technical · On-Page · Local · Off-Page</div>
+    <h1>A polished façade,<br><em>a foundation in need of finishing.</em></h1>
+    <p class="standfirst">Hotel Luxuria Grand presents itself with editorial restraint and a fast, modern build. Yet beneath the surface, the property is barely discoverable on the channels where Silchar travellers actually search — a fixable, high-leverage gap.</p>
+    <div class="byline">
+      Subject — <a href="https://www.hotelluxuriagrand.com/" target="_blank" rel="noopener noreferrer">hotelluxuriagrand.com</a> &nbsp;·&nbsp; Scope — 13 indexed URLs &nbsp;·&nbsp; Methodology — Manual crawl + structured-data inspection + competitive benchmarking
+    </div>
+  </div>
+
+  <!-- SCORECARD -->
+  <div class="scorecard">
+    <h2>The Verdict</h2>
+    <div class="grade-row">
+      <div class="big-grade">72<span style="font-size:36px; color:var(--ink-muted);">/100</span></div>
+      <div class="grade-detail">
+        <div class="score-line">Solid technical fundamentals, weak distribution.</div>
+        <div class="score-sub">A well-built, fast Next.js site with clean on-page markup. The biggest gains sit off the website — in schema enrichment, local listings, and content depth, not in fixing what is already there.</div>
+      </div>
+    </div>
+    <div class="dim-grid">
+      <div class="dim">
+        <div class="dim-label">Technical</div>
+        <div class="dim-score">88</div>
+        <div class="bar"><div class="bar-fill good" style="width: 88%"></div></div>
+      </div>
+      <div class="dim">
+        <div class="dim-label">On-Page</div>
+        <div class="dim-score">78</div>
+        <div class="bar"><div class="bar-fill good" style="width: 78%"></div></div>
+      </div>
+      <div class="dim">
+        <div class="dim-label">Content</div>
+        <div class="dim-score">62</div>
+        <div class="bar"><div class="bar-fill ok" style="width: 62%"></div></div>
+      </div>
+      <div class="dim">
+        <div class="dim-label">Schema</div>
+        <div class="dim-score">55</div>
+        <div class="bar"><div class="bar-fill weak" style="width: 55%"></div></div>
+      </div>
+      <div class="dim">
+        <div class="dim-label">Local SEO</div>
+        <div class="dim-score">48</div>
+        <div class="bar"><div class="bar-fill weak" style="width: 48%"></div></div>
+      </div>
+      <div class="dim">
+        <div class="dim-label">Off-Page</div>
+        <div class="dim-score">35</div>
+        <div class="bar"><div class="bar-fill bad" style="width: 35%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section>
+    <div class="section-num">§ 01 — Executive Summary</div>
+    <h2 class="sec-title">What we found, in one paragraph</h2>
+    <p class="sec-summary">Hotel Luxuria Grand has done the engineering work — clean Next.js build on Vercel, HTTPS with HSTS preload, 54 ms TTFB, valid sitemap, complete alt text on every image. What it has not done is the <em>distribution</em> work: it is essentially invisible on Booking.com, MakeMyTrip, and the "best hotels in Silchar" lists where travellers begin their journey. The schema markup is present but minimal. The /book and /offers pages are thin. And the same Open Graph card ships on every page. Fix those — and seed half a dozen authoritative local citations — and this site can comfortably out-rank the older incumbents in the Barak Valley.</p>
+
+    <h3>Three things to fix first</h3>
+    <p><strong>1. Claim and complete Google Business Profile.</strong> List on Booking.com, MakeMyTrip, Agoda. This is your largest off-site leak — the property currently appears in zero third-party "best of Silchar" aggregations.</p>
+    <p><strong>2. Enrich Hotel schema.</strong> Add <code>geo</code>, <code>aggregateRating</code>, <code>amenityFeature</code>, <code>hasMap</code>, and <code>sameAs</code> for social profiles. Add <code>LodgingBusiness</code> + per-room <code>Product</code>/<code>Offer</code> markup. This alone can earn rich-result eligibility in SERPs.</p>
+    <p><strong>3. Build out the /book and /offers pages.</strong> Currently 93 and 159 words respectively, with /book carrying zero headings. These are the conversion pages — they need to be substantial.</p>
+
+    <div class="pullquote">"The site is built well. It just isn't <em>found</em> well."</div>
+  </section>
+
+  <!-- TECHNICAL SEO -->
+  <section>
+    <div class="section-num">§ 02 — Technical SEO</div>
+    <h2 class="sec-title">Foundations</h2>
+    <p class="sec-summary">This is the strongest dimension. The site runs on Next.js behind Vercel's edge network with appropriate security headers, valid sitemap, and well-handled redirects. A handful of small inconsistencies remain.</p>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="severity ok">✓ Pass</div>
+        <div class="finding-body">
+          <div class="finding-title">HTTPS, HSTS preload, and secure headers</div>
+          <div class="finding-detail">Server returns <code>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code>, plus <code>X-Content-Type-Options: nosniff</code>, <code>X-Frame-Options: DENY</code>, and a sensible <code>Permissions-Policy</code>. Best-in-class.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity ok">✓ Pass</div>
+        <div class="finding-body">
+          <div class="finding-title">Non-www → www redirect (301, single hop)</div>
+          <div class="finding-detail"><code>hotelluxuriagrand.com</code> correctly issues a 301 to <code>https://www.hotelluxuriagrand.com/</code>. No redirect chains observed.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity ok">✓ Pass</div>
+        <div class="finding-body">
+          <div class="finding-title">robots.txt and sitemap.xml are valid</div>
+          <div class="finding-detail">robots.txt allows all crawlers, blocks only <code>/private/</code>, and points to the sitemap. sitemap.xml is a well-formed urlset with all 13 site pages and ISO lastmod timestamps.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">Canonical URL is inconsistent with internal linking</div>
+          <div class="finding-detail">The homepage canonical is <code>https://www.hotelluxuriagrand.com</code> (no trailing slash), but every internal navigation link points to <code>/</code> and the page itself serves from <code>/</code>. Pick one form and use it everywhere. Recommended: <code>https://www.hotelluxuriagrand.com/</code>.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>&lt;meta name="robots"&gt;</code> directives</div>
+          <div class="finding-detail">Pages default to <code>index, follow</code>, which is fine. Add an explicit <code>&lt;meta name="robots" content="index, follow, max-image-preview:large"&gt;</code> to encourage Google to use large images in SERP previews — important for hotel imagery.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">Custom 404 page returns 36 KB and HTTP 404</div>
+          <div class="finding-detail">A missing URL like <code>/sitemap_index.xml</code> returns a styled 404 page weighing ~36 KB. The HTTP status is correct, but the page is heavier than necessary. A leaner 404 (under 10 KB, with helpful navigation back to /rooms, /offers, /book) is cheaper and converts lost visitors better.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">Deprecated <code>meta keywords</code> tag is present</div>
+          <div class="finding-detail">No SEO value (Google has ignored this tag since 2009), but harmless. Consider removing for cleaner head and to avoid signalling outdated practices to auditors.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ON-PAGE -->
+  <section>
+    <div class="section-num">§ 03 — On-Page SEO</div>
+    <h2 class="sec-title">Titles, descriptions, headings</h2>
+    <p class="sec-summary">Unique titles and descriptions on every page, strong heading hierarchy, complete alt text. A handful of pages overshoot the SERP truncation window and one page is unforgivably bare.</p>
+
+    <h3>Title & meta description audit</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width:18%">Page</th>
+          <th style="width:9%">Title Len</th>
+          <th style="width:9%">Desc Len</th>
+          <th style="width:8%">H1</th>
+          <th style="width:11%">Words</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="code">/</td>
+          <td>61 <span class="status-good">✓</span></td>
+          <td>199 <span class="status-warn">⚠</span></td>
+          <td>1 ✓</td>
+          <td>483 ✓</td>
+          <td>Description will truncate in SERPs (cap ~155 chars)</td>
+        </tr>
+        <tr>
+          <td class="code">/rooms</td>
+          <td>49 ✓</td>
+          <td>187 <span class="status-warn">⚠</span></td>
+          <td>1 ✓</td>
+          <td>414 ✓</td>
+          <td>Trim description to under 160 chars</td>
+        </tr>
+        <tr>
+          <td class="code">/dining</td>
+          <td>66 ✓</td>
+          <td>194 <span class="status-warn">⚠</span></td>
+          <td>1 ✓</td>
+          <td>273</td>
+          <td>Could use more content; menu fly-flip is good UX, weak for crawl</td>
+        </tr>
+        <tr>
+          <td class="code">/about</td>
+          <td>53 ✓</td>
+          <td>176 <span class="status-warn">⚠</span></td>
+          <td>1 ✓</td>
+          <td>300</td>
+          <td>Solid</td>
+        </tr>
+        <tr>
+          <td class="code">/contact</td>
+          <td>80 <span class="status-bad">✗</span></td>
+          <td>156 ✓</td>
+          <td>1 ✓</td>
+          <td>170</td>
+          <td>Title will truncate; recommend "Contact — Hotel Luxuria Grand, Silchar"</td>
+        </tr>
+        <tr>
+          <td class="code">/events</td>
+          <td>58 ✓</td>
+          <td>182 <span class="status-warn">⚠</span></td>
+          <td>1 ✓</td>
+          <td>249</td>
+          <td>Strong; add wedding venue + banquet schema</td>
+        </tr>
+        <tr>
+          <td class="code">/gallery</td>
+          <td>47 ✓</td>
+          <td>171 <span class="status-warn">⚠</span></td>
+          <td>1 ✓</td>
+          <td>174</td>
+          <td>22 H3s but zero H2s — heading hierarchy skipped</td>
+        </tr>
+        <tr>
+          <td class="code">/offers</td>
+          <td>77 <span class="status-bad">✗</span></td>
+          <td>140 ✓</td>
+          <td>1 ✓</td>
+          <td>159</td>
+          <td>"Coming Soon" content — thin; risk of soft-404 perception</td>
+        </tr>
+        <tr>
+          <td class="code">/book</td>
+          <td>45 ✓</td>
+          <td>180 <span class="status-warn">⚠</span></td>
+          <td><span class="status-bad">0 ✗</span></td>
+          <td><span class="status-bad">93 ✗</span></td>
+          <td><strong>No headings at all.</strong> 93 words. Highest-intent page on the site.</td>
+        </tr>
+        <tr>
+          <td class="code">/legal/privacy</td>
+          <td>67 ✓</td>
+          <td>145 ✓</td>
+          <td>1 ✓</td>
+          <td>220</td>
+          <td>Fine; add <code>noindex</code> optional</td>
+        </tr>
+        <tr>
+          <td class="code">/legal/terms</td>
+          <td>75 <span class="status-warn">⚠</span></td>
+          <td>153 ✓</td>
+          <td>1 ✓</td>
+          <td>202</td>
+          <td>Slight title truncation risk</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="severity ok">✓ Pass</div>
+        <div class="finding-body">
+          <div class="finding-title">All images carry alt attributes</div>
+          <div class="finding-detail">160 images across 11 audited pages, all with descriptive alt text. Genuinely uncommon — well done.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity critical">Critical</div>
+        <div class="finding-body">
+          <div class="finding-title">/book page has zero headings and 93 words of content</div>
+          <div class="finding-detail">This is the highest-intent page on the site (booking) and the SEO weakest. No H1, no H2, no H3. Almost no on-page text. Add a clear H1 ("Book Your Stay at Hotel Luxuria Grand"), an H2 hierarchy covering: WhatsApp booking, direct-booking benefits, cancellation policy summary, room availability snapshot, and an FAQ.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity high">High</div>
+        <div class="finding-body">
+          <div class="finding-title">/offers shows "Coming Soon" — risks soft-404 treatment</div>
+          <div class="finding-detail">Google can demote pages it perceives as empty or placeholder. Either populate /offers with current packages (BAR + value-adds, season-specific bundles, NIT Silchar parent package, wedding inquiry deals) or noindex it temporarily.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">Six pages have meta descriptions over 160 characters</div>
+          <div class="finding-detail">Homepage (199), /dining (194), /rooms (187), /events (182), /book (180), /about (176), /gallery (171). All will truncate with ellipsis in mobile SERPs. Aim for 140–155 chars with the most compelling 60 characters at the front.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">Two pages have titles likely to truncate</div>
+          <div class="finding-detail">/contact at 80 chars and /offers at 77 chars exceed the typical 50–60 char SERP window. Shorten to "Page Topic — Hotel Luxuria Grand, Silchar".</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">Open Graph & Twitter cards are identical on every page</div>
+          <div class="finding-detail">Every page ships the same <code>og:title</code> ("Hotel Luxuria Grand — Elite Luxury Hotel in Silchar") and og:description. Social shares of /rooms, /dining, /events, /offers all preview identically. Set per-page og/twitter tags so a shared link to /dining shows "Fine Dining at Hotel Luxuria Grand" with a dining hero image.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">/gallery has 22 H3s but no H2</div>
+          <div class="finding-detail">Heading hierarchy should not skip levels. Group images by category (Suites, Dining, Banquet, Exterior) using H2s, with H3s nested below.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUCTURED DATA -->
+  <section>
+    <div class="section-num">§ 04 — Structured Data</div>
+    <h2 class="sec-title">Schema markup</h2>
+    <p class="sec-summary">A single <code>Hotel</code> JSON-LD block ships on every page. It is valid and covers the basics — name, address, telephone, price range, star rating. It is also conspicuously missing the half-dozen properties that earn rich results.</p>
+
+    <h3>What is there</h3>
+    <pre class="code"><span class="com">// /  (homepage and every other page)</span>
+{
+  <span class="key">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="str">"Hotel"</span>,
+  <span class="key">"name"</span>: <span class="str">"Hotel Luxuria Grand"</span>,
+  <span class="key">"description"</span>: <span class="str">"An upscale hotel in Silchar, Assam..."</span>,
+  <span class="key">"image"</span>: <span class="str">"https://.../og_image.webp"</span>,
+  <span class="key">"url"</span>: <span class="str">"https://www.hotelluxuriagrand.com"</span>,
+  <span class="key">"telephone"</span>: <span class="str">"+919181043994"</span>,
+  <span class="key">"priceRange"</span>: <span class="str">"₹2200-₹6500"</span>,
+  <span class="key">"address"</span>: { <span class="com">/* full PostalAddress */</span> },
+  <span class="key">"starRating"</span>: { <span class="key">"@type"</span>: <span class="str">"Rating"</span>, <span class="key">"ratingValue"</span>: <span class="str">"4"</span> },
+  <span class="key">"checkinTime"</span>: <span class="str">"12:00"</span>,
+  <span class="key">"checkoutTime"</span>: <span class="str">"11:00"</span>
+}</pre>
+
+    <h3>What is missing</h3>
+    <div class="findings">
+      <div class="finding">
+        <div class="severity critical">Critical</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>geo</code> coordinates</div>
+          <div class="finding-detail">For a hotel, latitude/longitude is among the strongest local-SEO signals. Add <code>"geo": { "@type": "GeoCoordinates", "latitude": 24.802, "longitude": 92.798 }</code> (use your actual address coordinates).</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity high">High</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>aggregateRating</code> or <code>review</code></div>
+          <div class="finding-detail">The footer links to Google reviews but the schema doesn't surface them. Once you have 5+ reviews on GBP, mirror the aggregate (rating + reviewCount) into your Hotel schema. This unlocks star-rating snippets in Google SERPs.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity high">High</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>amenityFeature</code> array</div>
+          <div class="finding-detail">List every amenity (Wi-Fi, parking, restaurant, banquet hall, room service, AC, elevator, etc.) as <code>LocationFeatureSpecification</code> entries. This is what Google uses to match queries like "hotel in Silchar with banquet hall".</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity high">High</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>sameAs</code> linking to social/business profiles</div>
+          <div class="finding-detail">Tell Google these are the same entity: <code>sameAs: ["https://www.instagram.com/luxuria_grand/", "https://www.facebook.com/...", "https://g.co/kgs/your-knowledge-panel-id"]</code>. This is how knowledge panels merge.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">No per-room <code>Product</code> or <code>Offer</code> markup</div>
+          <div class="finding-detail">On /rooms, each of the seven suite categories should ship as a <code>Product</code> with <code>offers</code> (price, currency, availability). Currently the suite list is invisible to structured-data crawlers.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>Restaurant</code> schema for Anaaya's / Café Cove</div>
+          <div class="finding-detail">Add separate <code>Restaurant</code> blocks for each F&B outlet with menu URL, servesCuisine, priceRange, and opening hours. This drives visibility for "restaurants in Silchar" queries independent of hotel queries.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>BreadcrumbList</code></div>
+          <div class="finding-detail">Add a breadcrumb schema to every non-homepage page. Earns breadcrumb display in SERPs in place of raw URL.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>FAQPage</code> markup</div>
+          <div class="finding-detail">Add an FAQ section to /about or /contact answering: check-in/out times, parking, distance to NIT Silchar, distance to airport, pet policy, kid policy, banquet capacity. Mark up with FAQPage schema to earn featured-snippet eligibility.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">Single <code>image</code> instead of an array</div>
+          <div class="finding-detail">Google's hotel rich results prefer multiple images. Change <code>image</code> to an array of 4–6 high-quality photos (exterior, lobby, suite, dining, banquet, pool/gym if applicable).</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Recommended enriched schema</h3>
+    <pre class="code">{
+  <span class="key">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="str">"Hotel"</span>,
+  <span class="key">"@id"</span>: <span class="str">"https://www.hotelluxuriagrand.com/#hotel"</span>,
+  <span class="key">"name"</span>: <span class="str">"Hotel Luxuria Grand"</span>,
+  <span class="key">"image"</span>: [<span class="str">".../hero.webp"</span>, <span class="str">".../suite.webp"</span>, <span class="str">".../dining.webp"</span>, ...],
+  <span class="key">"telephone"</span>: <span class="str">"+919181043994"</span>,
+  <span class="key">"priceRange"</span>: <span class="str">"₹2200-₹6500"</span>,
+  <span class="key">"address"</span>: { <span class="com">/* PostalAddress */</span> },
+  <span class="key">"geo"</span>: {
+    <span class="key">"@type"</span>: <span class="str">"GeoCoordinates"</span>,
+    <span class="key">"latitude"</span>: <span class="str">"24.802"</span>,
+    <span class="key">"longitude"</span>: <span class="str">"92.798"</span>
+  },
+  <span class="key">"hasMap"</span>: <span class="str">"https://maps.google.com/?cid=YOUR_CID"</span>,
+  <span class="key">"sameAs"</span>: [
+    <span class="str">"https://www.instagram.com/luxuria_grand/"</span>,
+    <span class="str">"https://www.facebook.com/hotelluxuriagrand"</span>,
+    <span class="str">"https://g.co/kgs/YOUR_KNOWLEDGE_ID"</span>
+  ],
+  <span class="key">"aggregateRating"</span>: {
+    <span class="key">"@type"</span>: <span class="str">"AggregateRating"</span>,
+    <span class="key">"ratingValue"</span>: <span class="str">"4.6"</span>,
+    <span class="key">"reviewCount"</span>: <span class="str">"47"</span>
+  },
+  <span class="key">"amenityFeature"</span>: [
+    { <span class="key">"@type"</span>: <span class="str">"LocationFeatureSpecification"</span>, <span class="key">"name"</span>: <span class="str">"Free Wi-Fi"</span>, <span class="key">"value"</span>: true },
+    { <span class="key">"@type"</span>: <span class="str">"LocationFeatureSpecification"</span>, <span class="key">"name"</span>: <span class="str">"Banquet Hall"</span>, <span class="key">"value"</span>: true },
+    { <span class="key">"@type"</span>: <span class="str">"LocationFeatureSpecification"</span>, <span class="key">"name"</span>: <span class="str">"Restaurant"</span>, <span class="key">"value"</span>: true },
+    { <span class="key">"@type"</span>: <span class="str">"LocationFeatureSpecification"</span>, <span class="key">"name"</span>: <span class="str">"Parking"</span>, <span class="key">"value"</span>: true }
+  ],
+  <span class="key">"checkinTime"</span>: <span class="str">"12:00"</span>,
+  <span class="key">"checkoutTime"</span>: <span class="str">"11:00"</span>,
+  <span class="key">"petsAllowed"</span>: false,
+  <span class="key">"smokingAllowed"</span>: false,
+  <span class="key">"paymentAccepted"</span>: <span class="str">"Cash, UPI, Visa, Mastercard, RuPay"</span>,
+  <span class="key">"currenciesAccepted"</span>: <span class="str">"INR"</span>
+}</pre>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section>
+    <div class="section-num">§ 05 — Performance & Core Web Vitals</div>
+    <h2 class="sec-title">Speed</h2>
+    <p class="sec-summary">The Next.js + Vercel stack delivers excellent server-side performance. TTFB is 54 ms, total response 96 ms for a 100 KB HTML payload. The remaining wins are in image weight and request waterfall optimisation.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Metric</th><th>Observed</th><th>Target</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Time to First Byte (TTFB)</td><td class="code">54 ms</td><td class="code">&lt; 200 ms</td><td><span class="status-good">Excellent</span></td></tr>
+        <tr><td>Total response time (HTML)</td><td class="code">96 ms</td><td class="code">&lt; 500 ms</td><td><span class="status-good">Excellent</span></td></tr>
+        <tr><td>HTML payload size</td><td class="code">100 KB</td><td class="code">&lt; 150 KB</td><td><span class="status-good">Good</span></td></tr>
+        <tr><td>Cache strategy (HTML)</td><td class="code">CDN HIT (Vercel edge)</td><td>—</td><td><span class="status-good">Good</span></td></tr>
+        <tr><td>Image format</td><td class="code">WebP, Next.js optimised</td><td>WebP / AVIF</td><td><span class="status-good">Good</span></td></tr>
+        <tr><td>HSTS preload</td><td class="code">Yes</td><td>Yes</td><td><span class="status-good">Excellent</span></td></tr>
+        <tr><td>Hero image preload hint</td><td class="code">Not set</td><td>Set</td><td><span class="status-warn">Improve</span></td></tr>
+        <tr><td>Hero image request width</td><td class="code">w=3840 (4K)</td><td>Match viewport</td><td><span class="status-warn">Improve</span></td></tr>
+        <tr><td>Google Fonts preconnect</td><td class="code">Not detected</td><td>Set</td><td><span class="status-warn">Improve</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">Hero image is requested at 4K width</div>
+          <div class="finding-detail">The homepage hero image is fetched at <code>w=3840&amp;q=75</code>. For most users on mobile and laptop screens, this is 2–3× more pixels than displayed. Use <code>next/image</code> <code>sizes</code> attribute to match viewport — meaningful LCP improvement on mobile.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">No <code>&lt;link rel="preload"&gt;</code> for the hero image</div>
+          <div class="finding-detail">The LCP element on the homepage is the hero image. Preloading it (or using next/image <code>priority</code> prop) shaves 200–500 ms off LCP on slow connections — meaningful for Indian mobile traffic.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">No font preconnect</div>
+          <div class="finding-detail">If Google Fonts are in use, add <code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</code> and <code>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</code> in <code>&lt;head&gt;</code>.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity low">Low</div>
+        <div class="finding-body">
+          <div class="finding-title">HTML carries <code>Cache-Control: max-age=0, must-revalidate</code></div>
+          <div class="finding-detail">This is appropriate for SSR/ISR'd Next.js pages and is mitigated by Vercel's edge cache. Keep as-is unless you move to a different host.</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--ink-muted);"><em>Note: Lab-grade Core Web Vitals (LCP / INP / CLS) cannot be measured without a real browser. The TTFB and payload data above are strongly positive predictors; we recommend running PageSpeed Insights and CrUX on production to confirm.</em></p>
+  </section>
+
+  <!-- LOCAL SEO -->
+  <section>
+    <div class="section-num">§ 06 — Local SEO</div>
+    <h2 class="sec-title">The Silchar problem</h2>
+    <p class="sec-summary">For a hotel, local SEO <em>is</em> SEO. This is where Hotel Luxuria Grand is weakest. NAP information is consistent on-site, but the property is barely visible on the channels travellers actually use to find Silchar accommodation.</p>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="severity ok">✓ Pass</div>
+        <div class="finding-body">
+          <div class="finding-title">NAP consistency on the website</div>
+          <div class="finding-detail">Name, address, and phone are identical across the JSON-LD schema, footer, and /contact page. Good hygiene.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity ok">✓ Pass</div>
+        <div class="finding-body">
+          <div class="finding-title">Strong local-intent keyword targeting</div>
+          <div class="finding-detail">Meta keywords and on-page copy target <code>hotels in Silchar</code>, <code>luxury hotel Silchar</code>, <code>Silchar wedding venue</code>, <code>banquet hall Silchar</code>, <code>hotel near NIT Silchar</code>. The "near NIT Silchar" targeting is particularly smart — parent traffic is a real and underserved segment.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity critical">Critical</div>
+        <div class="finding-body">
+          <div class="finding-title">Invisible on third-party "best hotels in Silchar" lists</div>
+          <div class="finding-detail">In our search across Booking.com (22 hotels listed), Timbu.in (18 hotels), and ResortsNearMe (multiple Silchar entries), <strong>Hotel Luxuria Grand does not appear in any aggregation</strong>. Competitors like Borail View Regency, Hotel Cachar Club, Hotel Sudakshina, and The Bishal Hotels each appear on multiple listings. This is the single biggest acquisition gap.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity critical">Critical</div>
+        <div class="finding-body">
+          <div class="finding-title">Google Business Profile linkage not surfaced in schema</div>
+          <div class="finding-detail">The footer links to a Google reviews search URL (suggesting a GBP exists), but neither the URL nor a CID is referenced in <code>sameAs</code> or <code>hasMap</code>. If a GBP exists, link it; if not, claim and verify one — it's free and is the single highest-ROI local-SEO action.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity high">High</div>
+        <div class="finding-body">
+          <div class="finding-title">No listings on OTAs</div>
+          <div class="finding-detail">No visibility on Booking.com, MakeMyTrip, Agoda, Goibibo, or Yatra. Even if direct bookings are preferred, OTAs drive brand-name search volume and provide critical backlinks. List the property on Booking.com and MakeMyTrip at minimum — set rates with parity to direct.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity high">High</div>
+        <div class="finding-body">
+          <div class="finding-title">No directory citations</div>
+          <div class="finding-detail">Submit consistent NAP to: Justdial, Sulekha, TripAdvisor, India.com, IndiaMART (relevant for B2B/wedding inquiries), and the Assam Tourism directory. Each citation reinforces local relevance.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">Only one verified social profile linked</div>
+          <div class="finding-detail">Instagram (<code>@luxuria_grand</code>) and WhatsApp are linked; footer references Facebook and LinkedIn icons but verifying actual profile URLs is required. Active Facebook and LinkedIn business pages provide additional citation signals.</div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="severity medium">Medium</div>
+        <div class="finding-body">
+          <div class="finding-title">No location landing pages for sub-queries</div>
+          <div class="finding-detail">High-intent long-tails like "hotel near Silchar airport", "hotel near NIT Silchar", "wedding venue Silchar with parking" can be captured with dedicated thin landing pages or anchor sections on /events and /contact. The keyword meta already targets these — the on-page content does not.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITORS -->
+  <section>
+    <div class="section-num">§ 07 — Competitive Snapshot</div>
+    <h2 class="sec-title">The Silchar set</h2>
+    <p class="sec-summary">Silchar's competitive hotel market is unusually fragmented. The incumbents are older, lower-rated, and weakly digitised — leaving genuine room for a well-executed digital strategy to leapfrog them.</p>
+
+    <div class="comp-row header">
+      <div>Property</div>
+      <div>Star</div>
+      <div>Booking Score</div>
+      <div>Digital</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-name"><strong>Hotel Luxuria Grand</strong><br><span class="url">hotelluxuriagrand.com</span></div>
+      <div>4★</div>
+      <div>n/a</div>
+      <div><span class="status-good">Strong site</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-name"><strong>Borail View Regency</strong><br><span class="url">borailviewregency.com</span></div>
+      <div>4★</div>
+      <div>8.2</div>
+      <div><span class="status-warn">Dated WP site</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-name"><strong>Hotel Cachar Club</strong><br><span class="url">hotelcacharclub.com</span></div>
+      <div>3★</div>
+      <div>7.4</div>
+      <div><span class="status-warn">Strong legacy, weak SEO</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-name"><strong>The Bishal</strong><br><span class="url">thebishalhotels.com</span></div>
+      <div>—</div>
+      <div>n/a</div>
+      <div><span class="status-warn">Multi-property, generic copy</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-name"><strong>Hotel Sudakshina</strong><br><span class="url">listed only on aggregators</span></div>
+      <div>3★</div>
+      <div>3.7/5</div>
+      <div><span class="status-bad">No website</span></div>
+    </div>
+
+    <h3>What this means</h3>
+    <p>Luxuria Grand has the <strong>best website by a margin</strong> — modern build, clean schema, fast, well-typeset. Hotel Cachar Club has a 127-year legacy and the most third-party reviews. Borail View Regency has the strongest Booking.com presence. The path to the top of "luxury hotel Silchar" runs through: (a) closing the OTA visibility gap, (b) accumulating 50+ Google reviews, (c) and seeding the 6–10 directory citations that competitors already enjoy.</p>
+  </section>
+
+  <!-- OFF-PAGE -->
+  <section>
+    <div class="section-num">§ 08 — Off-Page & Backlinks</div>
+    <h2 class="sec-title">Authority signals</h2>
+    <p class="sec-summary">Authoritative backlink data requires a paid tool (Ahrefs / Semrush) which we cannot query here. From qualitative signals, the property's external authority is in early-stage condition.</p>
+
+    <p><strong>What we can see:</strong></p>
+    <p>The domain does not appear in our search index for "best luxury hotels in Silchar Assam" — top results return six different competitor properties. The property does not show up in OTA aggregations, tourism directories, or "things to do" content. There is no visible press coverage, blogger reviews, or wedding-venue review aggregation. The Instagram account exists, but visibility there does not translate to backlink authority.</p>
+
+    <p><strong>Recommendations:</strong></p>
+    <p>Run an actual backlink audit via Ahrefs Free Site Explorer or Moz Link Explorer to establish baseline. Then pursue, in priority order: OTA listings (Booking, MMT, Agoda — high-DA backlinks), Assam Tourism + Cachar district listings, regional wedding-vendor directories (WedMeGood, ShaadiSaga), university partner pages (NIT Silchar parent-hospitality resources), and press releases in regional outlets at the time of any new launch (banquet expansion, restaurant openings, packages).</p>
+  </section>
+
+  <!-- ACTION PLAN -->
+  <section>
+    <div class="section-num">§ 09 — Action Plan</div>
+    <h2 class="sec-title">Prioritised next 90 days</h2>
+    <p class="sec-summary">Twelve actions, ordered by impact × effort. The first four are <em>high impact, low effort</em> and should ship within two weeks.</p>
+
+    <div class="action-grid">
+      <div class="action">
+        <div class="action-num">01</div>
+        <div class="action-text"><strong>Claim and complete Google Business Profile.</strong> Add full address, hours, photos (exterior, suites, dining, banquet), amenities checklist, and the booking URL. Solicit first wave of 10–15 guest reviews. Add the GBP CID URL to <code>sameAs</code> and <code>hasMap</code> in your Hotel schema.</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · CRITICAL</div>
+      </div>
+      <div class="action">
+        <div class="action-num">02</div>
+        <div class="action-text"><strong>List on Booking.com and MakeMyTrip.</strong> Even with direct-booking preference, OTA listings drive brand search and provide high-authority citation backlinks. Set rate parity, lean into "Genius" / "MMT Black" inclusion eligibility once eligible.</div>
+        <div class="action-meta"><span class="effort">EFFORT · MED</span>IMPACT · CRITICAL</div>
+      </div>
+      <div class="action">
+        <div class="action-num">03</div>
+        <div class="action-text"><strong>Rebuild /book.</strong> Add H1, full content (300+ words), WhatsApp booking explainer, direct-booking benefits, cancellation summary, FAQ block with FAQPage schema. This is your highest-intent page.</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · HIGH</div>
+      </div>
+      <div class="action">
+        <div class="action-num">04</div>
+        <div class="action-text"><strong>Enrich Hotel schema</strong> with <code>geo</code>, <code>aggregateRating</code> (once you have reviews), <code>amenityFeature</code> array, <code>sameAs</code>, <code>image[]</code>, <code>petsAllowed</code>, <code>smokingAllowed</code>, <code>paymentAccepted</code>, <code>currenciesAccepted</code>. Test in Google's Rich Results Test.</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · HIGH</div>
+      </div>
+      <div class="action">
+        <div class="action-num">05</div>
+        <div class="action-text"><strong>Populate /offers</strong> with three real packages (NIT Silchar Parent Stay, Wedding Inquiry Bundle, Weekend Getaway) or <code>noindex</code> it until ready. "Coming Soon" pages train Google to demote your site.</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · HIGH</div>
+      </div>
+      <div class="action">
+        <div class="action-num">06</div>
+        <div class="action-text"><strong>Set per-page Open Graph and Twitter tags.</strong> Currently every share preview looks identical. Per-page og:title, og:description, and og:image will meaningfully lift social CTR.</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · MED</div>
+      </div>
+      <div class="action">
+        <div class="action-num">07</div>
+        <div class="action-text"><strong>Tighten meta descriptions to under 160 chars</strong> on six pages currently over. Lead with the most compelling 60 characters. Trim two titles (/contact, /offers).</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · MED</div>
+      </div>
+      <div class="action">
+        <div class="action-num">08</div>
+        <div class="action-text"><strong>Add per-room <code>Product</code>/<code>Offer</code> markup</strong> to /rooms — seven schema blocks, one per suite category. Captures hotel-room rich results.</div>
+        <div class="action-meta"><span class="effort">EFFORT · MED</span>IMPACT · MED</div>
+      </div>
+      <div class="action">
+        <div class="action-num">09</div>
+        <div class="action-text"><strong>Add <code>Restaurant</code> schema</strong> for Anaaya's and Café Cove. Lets the F&B outlets rank independently on "restaurants in Silchar".</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · MED</div>
+      </div>
+      <div class="action">
+        <div class="action-num">10</div>
+        <div class="action-text"><strong>Add <code>BreadcrumbList</code> to every non-home page.</strong> Earns breadcrumb display in SERPs and clarifies hierarchy.</div>
+        <div class="action-meta"><span class="effort">EFFORT · LOW</span>IMPACT · LOW</div>
+      </div>
+      <div class="action">
+        <div class="action-num">11</div>
+        <div class="action-text"><strong>Launch a Stories / Insights section</strong> with 4–6 long-tail articles: "Wedding Venues in Silchar Compared", "Things to do near NIT Silchar", "Banquet Hall Pricing Guide". This is the durable, long-tail content moat competitors don't have.</div>
+        <div class="action-meta"><span class="effort">EFFORT · HIGH</span>IMPACT · HIGH</div>
+      </div>
+      <div class="action">
+        <div class="action-num">12</div>
+        <div class="action-text"><strong>Submit consistent NAP citations</strong> to: Justdial, Sulekha, TripAdvisor, Assam Tourism, WedMeGood, ShaadiSaga, IndiaMART, and the Cachar district business directory. Track in a citation tracker.</div>
+        <div class="action-meta"><span class="effort">EFFORT · MED</span>IMPACT · HIGH</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section>
+    <div class="section-num">§ 10 — Methodology</div>
+    <h2 class="sec-title">How we audited</h2>
+    <p>Eleven URLs from the sitemap were fetched and parsed for title, meta description, canonical, robots directives, Open Graph, Twitter card, hreflang, heading hierarchy, image alt coverage, internal link inventory, JSON-LD blocks, and visible word count. HTTP headers were inspected on www, non-www, and HTTP variants to verify redirect behaviour and security posture. robots.txt and sitemap.xml were validated. Performance was measured via cold-cache curl timings to TTFB and total response. Competitive positioning was assessed via semantic search across Booking.com, Timbu.in, and ResortsNearMe; backlink data was qualitative due to absence of paid-tool access.</p>
+    <p><strong>What this audit could not do:</strong> Lab-grade Core Web Vitals (would need Lighthouse on a real browser), full backlink audit (would need Ahrefs / Semrush), mobile UX walkthrough (would need a device emulator), keyword rank tracking (would need a rank-tracking subscription), or GSC console data (would need owner access to Search Console).</p>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div>SEO Audit · Hotel Luxuria Grand · Vol. 01</div>
+    <div>Prepared 11 May 2026</div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && window.parent !== window) {
+    window.parent.postMessage({ type: 'close-fullscreen' }, '*');
+  }
+});
+</script>
+<!-- broken-img-handler -->
+<script>
+(function(){
+  if(window.__brokenImgHandler)return;
+  window.__brokenImgHandler=true;
+  var MAX=5,DELAYS=[2000,4000,8000,16000,32000];
+  document.addEventListener('error',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    var liveSrc=img.getAttribute('src');
+    var src=img.dataset.haOriginalSrc||liveSrc;
+    if(!src)return;
+    if(img.dataset.haOriginalSrc&&liveSrc&&liveSrc!==img.dataset.haOriginalSrc&&liveSrc.indexOf('_r=')<0){src=liveSrc;img.dataset.haOriginalSrc=src;img.dataset.haRetryCount='0'}
+    else if(!img.dataset.haOriginalSrc){img.dataset.haOriginalSrc=src}
+    var attempt=parseInt(img.dataset.haRetryCount||'0',10);
+    if(img.dataset.haPhId){var old=document.getElementById(img.dataset.haPhId);if(old)old.remove()}
+    var ph=document.createElement('div');
+    ph.className='ha-img-placeholder'+(attempt>=MAX?' ha-failed':'');
+    ph.id='ha-ph-'+Math.random().toString(36).slice(2,9);
+    var w=img.getAttribute('width');var h=img.getAttribute('height');
+    if(w)ph.style.width=w+(isNaN(Number(w))?'':'px');
+    else if(img.style.width)ph.style.width=img.style.width;
+    else if(img.width>1)ph.style.width=img.width+'px';
+    if(h)ph.style.height=h+(isNaN(Number(h))?'':'px');
+    else if(img.style.height)ph.style.height=img.style.height;
+    else if(img.height>1)ph.style.height=img.height+'px';
+    ph.textContent=attempt>=MAX?'Image unavailable':'Loading image\u2026';
+    img.dataset.haPhId=ph.id;
+    if(img.dataset.haOrigDisplay==null)img.dataset.haOrigDisplay=img.style.display||'';
+    img.style.display='none';
+    img.insertAdjacentElement('afterend',ph);
+    if(attempt<MAX){
+      img.dataset.haRetryCount=String(attempt+1);
+      setTimeout(function(){
+        if(!img.isConnected)return;
+        if(img.dataset.haOriginalSrc!==src)return;
+        if(img.complete&&img.naturalWidth>0)return;
+        var curSrc=img.getAttribute('src');
+        if(curSrc&&curSrc.indexOf(src)!==0)return;
+        var fresh=src+(src.indexOf('?')>=0?'&':'?')+'_r='+(attempt+1)+'_'+Date.now();
+        img.src=fresh;
+      },DELAYS[attempt]);
+    }
+  },true);
+  document.addEventListener('load',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    if(img.dataset.haPhId){
+      var ph=document.getElementById(img.dataset.haPhId);
+      if(ph)ph.remove();
+      delete img.dataset.haPhId;
+      img.style.display=img.dataset.haOrigDisplay||'';
+      delete img.dataset.haOrigDisplay;
+      delete img.dataset.haOriginalSrc;
+      delete img.dataset.haRetryCount;
+    }
+  },true);
+})();
+</script>
+</body>
+</html>
