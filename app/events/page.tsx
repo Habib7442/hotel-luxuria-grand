@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Weddings & Grand Events",
   description: "Host your most memorable moments at Silchar's premier event destination. From grand weddings to sophisticated corporate gatherings, our banquet halls offer the perfect backdrop.",
   keywords: ["wedding venue Silchar", "banquet hall Silchar", "best place for marriage in Silchar", "corporate events Silchar"],
+  alternates: {
+    canonical: "/events",
+  },
 };
 
 export default function EventsPage() {

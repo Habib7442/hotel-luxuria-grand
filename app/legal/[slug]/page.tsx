@@ -70,6 +70,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${page.title} — Hotel Luxuria Grand`,
     description: `Official ${page.title} of Hotel Luxuria Grand, Silchar. Understand our commitments, terms, and policies for a secure and transparent experience.`,
+    alternates: {
+      canonical: `/legal/${slug}`,
+    },
   };
 }
 
