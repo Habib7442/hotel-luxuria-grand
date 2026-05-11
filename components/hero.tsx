@@ -13,11 +13,11 @@ export const Hero = () => {
 
   useEffect(() => {
     setMounted(true);
-    // Generate fewer droplets and use hardware acceleration
-    const newDroplets = [...Array(40)].map((_, i) => ({
+    // Generate fewer droplets for performance
+    const newDroplets = [...Array(20)].map((_, i) => ({
       left: `${Math.random() * 100}%`,
       height: `${15 + Math.random() * 20}px`,
-      duration: `${0.6 + Math.random() * 0.6}s`,
+      duration: `${0.8 + Math.random() * 0.8}s`,
       delay: `${Math.random() * 2}s`,
     }));
     setDroplets(newDroplets);
@@ -25,7 +25,7 @@ export const Hero = () => {
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden bg-onyx">
-      {/* Background Image */}
+      {/* Background Image & Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/assets/hero.webp"
@@ -38,22 +38,25 @@ export const Hero = () => {
           fetchPriority="high"
         />
         
-        {/* Golden Rain Effect - Only rendered on client */}
+        {/* Optimized Combined Overlay */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/90 via-black/40 to-onyx bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.03)_0%,transparent_100%)]" />
+        
+        {/* Golden Rain Effect - Deferred and hardware accelerated */}
         {mounted && (
-          <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden opacity-40">
+          <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden opacity-30">
             {droplets.map((drop, i) => (
               <div
                 key={i}
-                className="absolute bg-royal-gold/40 rounded-full"
+                className="absolute bg-royal-gold/30 rounded-full"
                 style={{
                   left: drop.left,
-                  top: `-20px`,
-                  width: `1.5px`,
+                  top: `-40px`,
+                  width: `1px`,
                   height: drop.height,
                   animation: `rain ${drop.duration} linear infinite`,
                   animationDelay: drop.delay,
-                  boxShadow: `0 0 8px rgba(212, 175, 55, 0.3)`,
                   willChange: "transform",
+                  transform: "translateZ(0)",
                 }}
               />
             ))}
@@ -62,21 +65,10 @@ export const Hero = () => {
 
         <style jsx>{`
           @keyframes rain {
-            0% {
-              transform: translateY(-100px);
-            }
-            100% {
-              transform: translateY(100vh);
-            }
+            0% { transform: translateY(-100px) translateZ(0); }
+            100% { transform: translateY(110vh) translateZ(0); }
           }
         `}</style>
-
-        {/* Main Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-onyx z-10" />
-        
-        {/* Subtle Luxury Glows */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.05)_0%,transparent_70%)] z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(13,2,2,0.1)_0%,transparent_50%)] z-10" />
       </div>
 
       {/* Hero Content */}

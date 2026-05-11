@@ -28,6 +28,8 @@ const videoAssets = [
 ];
 
 export function VideoShowcase() {
+  const [playingId, setPlayingId] = useState<string | null>(null);
+
   return (
     <section className="py-24 bg-onyx relative overflow-hidden">
       {/* Decorative Background Text */}
@@ -53,18 +55,34 @@ export function VideoShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative aspect-[9/16] bg-black rounded-sm overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-champagne/50 transition-all duration-500 max-w-[350px] mx-auto w-full"
+              className="group relative aspect-[9/16] bg-black rounded-sm overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-champagne/50 transition-all duration-500 max-w-[350px] mx-auto w-full cursor-pointer"
+              onClick={() => setPlayingId(video.id)}
             >
               {/* Top-Crop Hack to hide YouTube Title Bar */}
               <div className="absolute inset-0 overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&controls=0&autoplay=0&mute=1`}
-                  title={video.title}
-                  className="absolute -top-[60px] left-0 w-full h-[calc(100%+120px)] border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
+                {playingId === video.id ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&controls=1&autoplay=1`}
+                    title={video.title}
+                    className="absolute -top-[60px] left-0 w-full h-[calc(100%+120px)] border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className="relative w-full h-full group">
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover brightness-50 group-hover:brightness-75 transition-all duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-champagne/20 border border-champagne/40 flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-champagne transition-all duration-500">
+                        <Play className="w-6 h-6 text-champagne group-hover:text-black transition-colors ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
               
               {/* Refined Label (Top Left) */}

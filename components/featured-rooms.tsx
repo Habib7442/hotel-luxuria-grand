@@ -179,7 +179,7 @@ export const FeaturedRooms = () => {
                         src={room.image}
                         alt={room.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover group-hover/card:scale-105 transition-transform duration-1000"
                       />
                       {/* Price Badge */}

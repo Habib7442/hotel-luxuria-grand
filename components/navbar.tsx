@@ -21,9 +21,13 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Use window.scrollY for performance
+      const scrolled = window.scrollY > 20;
+      setIsScrolled(scrolled);
     };
-    window.addEventListener("scroll", handleScroll);
+    
+    // Use passive listener for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
