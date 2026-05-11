@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
         hostname: 'img.youtube.com',
       }
     ],
+    qualities: [75, 100],
   },
   async headers() {
     return [
