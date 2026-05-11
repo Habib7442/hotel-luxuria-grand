@@ -181,7 +181,7 @@ export default function RoomsContent() {
                     {room.description}
                   </p>
 
-                  <Button asChild className="bg-champagne text-black hover:bg-brass rounded-none py-8 text-[10px] uppercase tracking-[0.3em] font-bold h-auto shadow-2xl transition-all duration-500 w-full md:w-fit px-12">
+                  <Button asChild className="bg-champagne text-black hover:bg-brass rounded-none py-8 text-[10px] uppercase tracking-[0.3em] font-bold h-auto shadow-2xl transition-all duration-500 w-full max-w-xl">
                     <Link href={`/book?room=${encodeURIComponent(room.title)}`} className="flex items-center justify-center gap-4">
                       Reserve This Room <MoveRight className="w-4 h-4" />
                     </Link>

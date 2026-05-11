@@ -120,6 +120,7 @@ export default function GalleryContent() {
                       src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-[2s] group-hover:scale-105"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -196,6 +197,7 @@ export default function GalleryContent() {
                     src={selectedItem.src!}
                     alt="Gallery item preview"
                     fill
+                    sizes="100vw"
                     className="object-contain"
                   />
                 </div>
