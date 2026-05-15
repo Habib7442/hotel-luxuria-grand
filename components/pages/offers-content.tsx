@@ -9,41 +9,29 @@ import { Button } from "@/components/ui/button";
 
 const offers = [
   {
-    id: "1",
-    title: "The Weekend Escape",
-    description: "Enjoy a luxury staycation with 15% off on our Deluxe and Super Deluxe rooms. Includes complimentary breakfast and early check-in.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.32 PM.webp",
-    validTill: "Valid through June 2026",
-    code: "WEEKEND15",
-    link: "/book?type=room"
-  },
-  {
-    id: "2",
-    title: "Dining Celebration Deal",
-    description: "Book a table for 6 or more at Café Cove and receive a complimentary signature dessert platter for the group.",
-    image: "/assets/food/WhatsApp Image 2026-04-27 at 8.28.32 PM (1).webp",
+    id: "offer-1",
+    title: "Sweet Indulgence",
+    description: "Indulge your sweet side at Café Cove. Experience handcrafted desserts where every bite feels like a little celebration in our premium coffee lounge.",
+    image: "/assets/offers/cafe-cove-dessert.jpg",
     validTill: "Limited time offer",
-    code: "CELEBRATE",
     link: "/book?type=dining"
   },
   {
-    id: "3",
-    title: "Corporate Excellence",
-    description: "Specially curated rates for business travelers. Includes high-speed wifi, laundry service, and 10% off on business dining.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.34 PM.webp",
-    validTill: "Year-round offer",
-    code: "CORPORATE",
-    link: "/book?type=room"
+    id: "offer-2",
+    title: "Weekday Luxury Special",
+    description: "Weekends are cool, but weekdays just got better. Exclusive weekday packages starting from 18th May for the perfect business or leisure stay.",
+    image: "/assets/offers/weekday-special.jpg",
+    validTill: "Starts 18th May",
+    link: "/book?type=dining"
   },
   {
-    id: "4",
-    title: "NIT Silchar Parent Special",
-    description: "Exclusive 10% discount for parents visiting NIT Silchar. Includes flexible check-in and complimentary airport/station shuttle service.",
-    image: "/assets/new_assets/WhatsApp Image 2026-04-27 at 8.24.34 PM.webp",
-    validTill: "Academic Year 2026",
-    code: "NITPARENT",
-    link: "/book?type=room"
-  }
+    id: "offer-3",
+    title: "Grand Combo Feast",
+    description: "When one dish isn't enough, go for the Grand Combo Feast at Anaaya's. A massive spread of our signature delicacies starting from 18th May.",
+    image: "/assets/offers/grand-combo-feast.jpg",
+    validTill: "Starts 18th May",
+    link: "/book?type=dining"
+  },
 ];
 
 export default function OffersContent() {
@@ -95,20 +83,15 @@ export default function OffersContent() {
               transition={{ delay: index * 0.1 }}
               className="bg-white/[0.03] border border-white/5 overflow-hidden group hover:border-champagne/30 transition-all duration-500 flex flex-col h-full"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-black/40">
                 <Image
                   src={offer.image}
                   alt={offer.title}
                   fill
+                  priority={index < 3}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-6 left-6">
-                  <div className="bg-champagne/90 backdrop-blur-md px-3 py-1 rounded-none text-[8px] font-black uppercase tracking-[0.2em] text-black">
-                    Promo: {offer.code}
-                  </div>
-                </div>
               </div>
               
               <div className="p-8 flex flex-col flex-grow">

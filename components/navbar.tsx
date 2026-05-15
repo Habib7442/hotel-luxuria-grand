@@ -49,6 +49,7 @@ export const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Rooms", href: "/rooms" },
     { name: "Dining", href: "/dining" },
+    { name: "Offers", href: "/offers", badge: "HOT" },
     { name: "About Us", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
@@ -113,9 +114,14 @@ export const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-4xl font-cormorant font-bold text-champagne hover:text-brass transition-colors uppercase tracking-widest italic"
+                    className="text-4xl font-cormorant font-bold text-champagne hover:text-brass transition-colors uppercase tracking-widest italic flex items-center gap-4"
                   >
                     {link.name}
+                    {link.badge && (
+                      <span className="bg-red-600 text-white text-[10px] font-jakarta font-black px-2 py-0.5 rounded-none tracking-normal not-italic normal-case">
+                        {link.badge}
+                      </span>
+                    )}
                   </Link>
                 </motion.div>
               ))}
@@ -204,11 +210,16 @@ export const Navbar = () => {
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={cn(
-                    "text-[10px] font-jakarta font-bold uppercase tracking-[0.2em] transition-all duration-300",
+                    "text-[10px] font-jakarta font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-1.5",
                     isScrolled ? "text-champagne/90 hover:text-brass" : "text-white/80 hover:text-white"
                   )}
                 >
                   {link.name}
+                  {link.badge && (
+                    <span className="bg-red-600 text-white text-[7px] font-black px-1.5 py-0.5 rounded-none tracking-normal">
+                      {link.badge}
+                    </span>
+                  )}
                 </Link>
               ))}
             </div>

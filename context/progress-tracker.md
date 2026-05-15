@@ -24,6 +24,11 @@
     - [x] **Preloader**: Simplified animations and shortened duration to reveal content faster.
     - [x] **FeaturedRooms**: Refined `sizes` attribute for optimized responsive image loading.
     - [x] **VideoShowcase**: Implemented "Lite YouTube" pattern (Thumbnail first) to defer heavy iframes.
+- [x] **Content Expansion**: Added new seasonal offers (Sweet Indulgence, Weekday Special, Grand Combo Feast) to the Offers page.
+    - [x] Renamed assets from `public/assets/offers` for standard compliance.
+    - [x] Integrated new data into `OffersContent` component.
+    - [x] Removed promo codes from all offers and UI as per hotel preference.
+    - [x] Added "Offers" link to global Navbar with a "HOT" badge (Mobile & Desktop).
 
 ## Architecture Decisions
 - **Standardized Canonical**: Use `https://www.hotelluxuriagrand.com/` (with trailing slash).
