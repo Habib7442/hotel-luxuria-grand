@@ -29,6 +29,12 @@
     - [x] Integrated new data into `OffersContent` component.
     - [x] Removed promo codes from all offers and UI as per hotel preference.
     - [x] Added "Offers" link to global Navbar with a "HOT" badge (Mobile & Desktop).
+- [x] **Gallery Expansion & Feature Overhaul**:
+    - [x] Converted 32 new WhatsApp JPEGs in `public/assets/new_assets_3` to optimized WebPs sequentially using Node.js and `sharp`.
+    - [x] Integrated all 32 new assets into the gallery page with descriptive titles, aspect ratios, and categories.
+    - [x] Separated Photos and Videos with a premium, glassmorphic top-level tab switcher.
+    - [x] Implemented luxury 12-item pagination controls for Photos to ensure rapid loading.
+    - [x] Established DOM-level caching (visibility toggles with Framer Motion layout transitions) to eliminate image reloading flicker when changing pages or sub-filters.
 
 ## Architecture Decisions
 - **Standardized Canonical**: Use `https://www.hotelluxuriagrand.com/` (with trailing slash).
