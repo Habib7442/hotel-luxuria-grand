@@ -90,6 +90,9 @@ export default function GalleryContent() {
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = page * itemsPerPage;
 
+  // Slice visible photos for the current page
+  const visiblePhotos = filteredPhotos.slice(startIndex, endIndex);
+
   React.useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setSelectedItem(null);
@@ -188,21 +191,17 @@ export default function GalleryContent() {
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
         >
-          {/* Photos Tab Grid */}
-          {activeTab === "Photos" && (
-            photoItems.map((item, idx) => {
-              const matchesCategory = activeCategory === "All" || item.category === activeCategory;
-              const indexInActiveCategory = filteredPhotos.indexOf(item);
-              const matchesPage = indexInActiveCategory >= startIndex && indexInActiveCategory < endIndex;
-              const isVisible = matchesCategory && matchesPage;
-
-              return (
+          <AnimatePresence mode="popLayout" initial={false}>
+            {/* Photos Tab Grid */}
+            {activeTab === "Photos" && (
+              visiblePhotos.map((item) => (
                 <motion.div
-                  key={`photo-${idx}`}
+                  key={item.src}
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isVisible ? { opacity: 1, scale: 1, display: "block" } : { opacity: 0, scale: 0.9, transitionEnd: { display: "none" } }}
-                  transition={{ duration: 0.4 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
                   className={`group relative overflow-hidden cursor-pointer bg-black/20 ${
                     item.aspect === 'landscape' 
                       ? 'aspect-[4/3]' 
@@ -229,48 +228,49 @@ export default function GalleryContent() {
                     </div>
                   </div>
                 </motion.div>
-              );
-            })
-          )}
+              ))
+            )}
 
-          {/* Videos Tab Grid */}
-          {activeTab === "Videos" && (
-            videoItems.map((item, idx) => (
-              <motion.div
-                key={`video-${idx}`}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1, display: "block" }}
-                transition={{ duration: 0.4 }}
-                className="group relative overflow-hidden cursor-pointer bg-black/20 aspect-[9/16]"
-                onClick={() => setSelectedItem(item)}
-              >
-                <div className="w-full h-full relative">
-                  <Image 
-                    src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-[2s] group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-champagne/80 flex items-center justify-center shadow-2xl">
-                      <Play className="w-5 h-5 text-black fill-current translate-x-0.5" />
+            {/* Videos Tab Grid */}
+            {activeTab === "Videos" && (
+              videoItems.map((item) => (
+                <motion.div
+                  key={item.youtubeId}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="group relative overflow-hidden cursor-pointer bg-black/20 aspect-[9/16]"
+                  onClick={() => setSelectedItem(item)}
+                >
+                  <div className="w-full h-full relative">
+                    <Image 
+                      src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-champagne/80 flex items-center justify-center shadow-2xl">
+                        <Play className="w-5 h-5 text-black fill-current translate-x-0.5" />
+                      </div>
                     </div>
                   </div>
-                </div>
-                {/* Overlay on Hover */}
-                <div className="absolute inset-0 bg-onyx/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <span className="text-champagne text-[10px] uppercase tracking-[0.3em] mb-2">{item.category}</span>
-                  <h3 className="text-ivory font-jakarta font-bold text-xl uppercase tracking-tighter">{item.title}</h3>
-                  <div className="mt-4 w-8 h-[1px] bg-champagne group-hover:w-full transition-all duration-700" />
-                  <div className="absolute top-8 right-8 w-10 h-10 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-champagne transition-colors duration-500">
-                    <Maximize2 className="w-4 h-4 text-ivory group-hover:text-black" />
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-onyx/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span className="text-champagne text-[10px] uppercase tracking-[0.3em] mb-2">{item.category}</span>
+                    <h3 className="text-ivory font-jakarta font-bold text-xl uppercase tracking-tighter">{item.title}</h3>
+                    <div className="mt-4 w-8 h-[1px] bg-champagne group-hover:w-full transition-all duration-700" />
+                    <div className="absolute top-8 right-8 w-10 h-10 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-champagne transition-colors duration-500">
+                      <Maximize2 className="w-4 h-4 text-ivory group-hover:text-black" />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))
-          )}
+                </motion.div>
+              ))
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* Pagination Controls */}
