@@ -135,6 +135,7 @@ export function MenuFlipbook() {
           <a 
             href="/final menu 160426.pdf" 
             download
+            aria-label="Download Menu PDF"
             className="flex items-center space-x-2 text-champagne/60 hover:text-champagne transition-colors"
           >
             <Download className="w-4 h-4" />

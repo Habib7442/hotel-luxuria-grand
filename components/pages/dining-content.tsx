@@ -104,14 +104,14 @@ export default function DiningContent() {
                   <div className="w-12 h-12 rounded-full border border-champagne/20 flex items-center justify-center mb-6 group-hover:bg-champagne/10 transition-colors">
                     <Utensils className="text-champagne w-5 h-5" />
                   </div>
-                  <h4 className="text-ivory font-bold uppercase text-[10px] tracking-widest mb-3">Fine Dining</h4>
+                  <h3 className="text-ivory font-bold uppercase text-[10px] tracking-widest mb-3">Fine Dining</h3>
                   <p className="text-ivory/40 text-[11px] leading-relaxed uppercase tracking-wider">World-class cuisine prepared by our master chefs.</p>
                 </div>
                 <div className="group">
                   <div className="w-12 h-12 rounded-full border border-champagne/20 flex items-center justify-center mb-6 group-hover:bg-champagne/10 transition-colors">
                     <Coffee className="text-champagne w-5 h-5" />
                   </div>
-                  <h4 className="text-ivory font-bold uppercase text-[10px] tracking-widest mb-3">Café Culture</h4>
+                  <h3 className="text-ivory font-bold uppercase text-[10px] tracking-widest mb-3">Café Culture</h3>
                   <p className="text-ivory/40 text-[11px] leading-relaxed uppercase tracking-wider">Specially brewed coffee and artisanal pastries for your morning bliss.</p>
                 </div>
               </div>

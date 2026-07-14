@@ -66,7 +66,7 @@ export const Footer = () => {
 
           {/* Column 2: Navigation Links */}
           <div className="space-y-8">
-            <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Navigation</h4>
+            <h3 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Navigation</h3>
             <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
               {[
                 { name: "Rooms", href: "/rooms" },
@@ -87,7 +87,7 @@ export const Footer = () => {
 
           {/* Column 3: Contact Info */}
           <div className="space-y-8">
-            <h4 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Connect</h4>
+            <h3 className="text-champagne font-jakarta font-bold uppercase text-xs tracking-[0.3em]">Connect</h3>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <MapPin size={20} className="text-champagne mt-1 shrink-0" />
@@ -136,7 +136,7 @@ export const Footer = () => {
         </div>
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-white/40 text-[10px] font-jakarta uppercase tracking-[0.2em]">
+          <p className="text-white/60 text-[10px] font-jakarta uppercase tracking-[0.2em]">
             &copy; {currentYear} Hotel Luxuria Grand. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
@@ -149,7 +149,7 @@ export const Footer = () => {
               <Link 
                 key={link.name} 
                 href={link.href} 
-                className="text-white/40 hover:text-champagne transition-colors text-[9px] uppercase tracking-widest font-bold"
+                className="text-white/60 hover:text-champagne transition-colors text-[9px] uppercase tracking-widest font-bold"
               >
                 {link.name}
               </Link>

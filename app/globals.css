@@ -77,3 +77,46 @@ input[type="date"], input[type="time"] {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Custom Animations for Performance Optimization (LCP) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fadeInLetterSpacing {
+  from {
+    opacity: 0;
+    letter-spacing: 0.2em;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.6em;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-letter-spacing {
+  animation: fadeInLetterSpacing 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+.animate-slide-right {
+  animation: slideRight 1.5s infinite ease-in-out;
+}
+

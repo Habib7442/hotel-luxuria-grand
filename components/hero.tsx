@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { MoveRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -32,7 +31,7 @@ export const Hero = () => {
           alt="Hotel Luxuria Grand Exterior"
           fill
           sizes="100vw"
-          quality={100}
+          quality={80}
           className="object-cover brightness-[0.5]"
           priority
           fetchPriority="high"
@@ -74,40 +73,31 @@ export const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-16 text-center pt-20">
         <div className="space-y-6">
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: "0.2em", y: 15 }}
-            animate={{ opacity: 1, letterSpacing: "0.6em", y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="font-jakarta text-[11px] md:text-xs text-champagne uppercase font-bold text-center drop-shadow-md"
+          <p
+            className="font-jakarta text-[11px] md:text-xs text-champagne uppercase font-bold text-center drop-shadow-md animate-fade-in-letter-spacing"
           >
             Silchar&apos;s Most Glamorous Destination
-          </motion.p>
+          </p>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-[15vw] md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter"
+          <h1
+            className="text-[15vw] md:text-[100px] lg:text-[140px] font-jakarta font-extrabold text-ivory uppercase leading-[0.8] tracking-tighter animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
           >
             The Art of <br />
             <span className="text-champagne italic font-cormorant font-normal lowercase">Grand Living</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="text-ivory font-jakarta text-[11px] md:text-sm tracking-[0.3em] uppercase max-w-xl mx-auto pt-6 font-semibold drop-shadow-lg"
+          <p
+            className="text-ivory font-jakarta text-[11px] md:text-sm tracking-[0.3em] uppercase max-w-xl mx-auto pt-6 font-semibold drop-shadow-lg animate-fade-in-up"
+            style={{ animationDelay: "0.8s" }}
           >
             Refined accommodation on Ghungoor Kuarpar Road
-          </motion.p>
+          </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="pt-12 flex flex-col md:flex-row justify-center items-center gap-6"
+        <div
+          className="pt-12 flex flex-col md:flex-row justify-center items-center gap-6 animate-fade-in-up"
+          style={{ animationDelay: "1s" }}
         >
           <Button
             asChild
@@ -115,12 +105,9 @@ export const Hero = () => {
           >
             <Link href="/rooms" className="flex items-center gap-4 relative z-10">
               Start Your Journey
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              >
+              <div className="animate-slide-right">
                 <MoveRight className="w-5 h-5" />
-              </motion.div>
+              </div>
             </Link>
           </Button>
 
@@ -134,7 +121,7 @@ export const Hero = () => {
               Call to Book
             </a>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

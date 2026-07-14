@@ -38,11 +38,8 @@
     "typescript": "^5"
   },
   "browserslist": [
-    ">0.5%",
-    "last 4 versions",
-    "Firefox ESR",
+    "last 2 versions",
     "not dead",
-    "Samsung > 0",
-    "Chrome > 50"
+    "not IE 11"
   ]
 }

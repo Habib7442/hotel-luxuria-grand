@@ -1,10 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const ContactMap = () => {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const [loadMap, setLoadMap] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoadMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    if (mapRef.current) {
+      observer.observe(mapRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="contact" className="py-16 md:py-28 bg-onyx relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-16">
@@ -69,17 +88,24 @@ export const ContactMap = () => {
           </div>
 
           {/* Map Embed Placeholder / Visual */}
-          <div className="w-full lg:w-2/3 min-h-[500px] relative border border-white/5 overflow-hidden group/map">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5662.650353246465!2d92.78985312119059!3d24.76380951217689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e49000752b3a5%3A0x4d32406b06eb446!2sLuxuria%20Grand!5e0!3m2!1sen!2sin!4v1777781079925!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 w-full h-full"
-            ></iframe>
+          <div ref={mapRef} className="w-full lg:w-2/3 min-h-[500px] relative border border-white/5 overflow-hidden group/map bg-black/40 flex items-center justify-center">
+            {loadMap ? (
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5662.650353246465!2d92.78985312119059!3d24.76380951217689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e49000752b3a5%3A0x4d32406b06eb446!2sLuxuria%20Grand!5e0!3m2!1sen!2sin!4v1777781079925!5m2!1sen!2sin" 
+                title="Hotel Location Map"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            ) : (
+              <div className="text-champagne/60 font-jakarta uppercase tracking-widest text-xs">
+                Loading Map...
+              </div>
+            )}
             <div className="absolute inset-0 pointer-events-none border border-champagne/10" />
           </div>
         </div>

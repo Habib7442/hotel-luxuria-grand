@@ -153,7 +153,7 @@ export const Navbar = () => {
               transition={{ delay: 0.7 }}
               className="pt-10"
             >
-              <p className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold text-center">Hotel Luxuria Grand, Silchar</p>
+              <p className="text-white/60 text-[10px] uppercase tracking-[0.3em] font-bold text-center">Hotel Luxuria Grand, Silchar</p>
             </motion.div>
           </div>
         </motion.div>
